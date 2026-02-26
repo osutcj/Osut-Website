@@ -21,6 +21,9 @@ export const metadata: Metadata = {
     template: "%s - OSUT Cluj",
   },
   description: "Organizația Studenților din Universitatea Tehnică din Cluj-Napoca",
+  icons: {
+    icon: "/assets/images/images/Cometa rosie.png",
+  },
 };
 
 export default function RootLayout({
