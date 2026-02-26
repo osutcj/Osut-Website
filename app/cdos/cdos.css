@@ -1,0 +1,132 @@
+.cdos-container {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.cdos-text-outline {
+  font-size: clamp(20px, 4vw, 36px);
+  font-weight: bold;
+  color: transparent;
+  -webkit-text-stroke: 1px white;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+  width: 100%;
+  word-break: break-word;
+  white-space: normal;
+  line-height: 1.2;
+}
+
+.highlight {
+  -webkit-text-stroke: 1px red;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px;
+  margin-top: 2rem;
+}
+
+.button-download {
+  background-color: #a50000;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-block;
+  width: 100%;
+  max-width: 300px;
+  transition: 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+.button-download:hover {
+  background-color: #800000;
+}
+
+.scroll-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  width: 90%;
+  max-width: 100%;
+  margin: 5vh auto 0 auto;
+  display: flex;
+  scrollbar-width: thin;
+  scrollbar-color: #a50000 #222;
+  padding-bottom: 20px;
+}
+
+.scroll-container::-webkit-scrollbar {
+  height: 10px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background: #222;
+  border-radius: 10px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: #a50000;
+  border-radius: 10px;
+}
+
+.reprez {
+  margin: 1rem 3vw 1rem 0;
+  padding: 2rem;
+  max-width: 600px;
+  background-color: #222;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  color: #ffffff;
+  flex: 0 0 auto;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  word-break: break-word;
+}
+
+@media (max-width: 768px) {
+  .cdos-text-outline,
+  .highlight {
+    font-size: 28px;
+  }
+
+  .button-download {
+    font-size: 16px;
+    padding: 12px 24px;
+    max-width: 90%;
+  }
+
+  .button-container {
+    flex-direction: column;
+  }
+
+  .reprez {
+    padding: 1.5rem;
+    width: 85vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  .reprez {
+    width: 500px;
+  }
+}

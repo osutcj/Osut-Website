@@ -1,0 +1,199 @@
+"use client";
+
+import React, { useState, useEffect } from "react";
+
+interface Post {
+  id: number;
+  title: string;
+  content: string;
+  imageUrl: string;
+  createdAt: string;
+}
+
+export default function BlogSection() {
+  const [posts, setPosts] = useState<Post[]>([]);
+  const [selectedPost, setSelectedPost] = useState<Post | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 9;
+  const [isClosing, setIsClosing] = useState(false);
+
+  const handleCloseModal = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      setSelectedPost(null);
+      setIsClosing(false);
+    }, 250);
+  };
+
+  useEffect(() => {
+    // Fetch posts from our API
+    fetch("/api/posts")
+      .then((res) => res.json())
+      .then((data) => {
+        setPosts(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Error fetching posts:", err);
+        setLoading(false);
+      });
+  }, []);
+
+  return (
+    <div className="w-full flex justify-center py-6 mx-auto px-4 max-w-6xl">
+      <style>{`
+        @keyframes backdrop-in {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        @keyframes backdrop-out {
+          from { opacity: 1; }
+          to { opacity: 0; }
+        }
+        @keyframes modal-in {
+          from { opacity: 0; transform: scale(0.95) translateY(10px); }
+          to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        @keyframes modal-out {
+          from { opacity: 1; transform: scale(1) translateY(0); }
+          to { opacity: 0; transform: scale(0.95) translateY(10px); }
+        }
+        .animate-backdrop-in { animation: backdrop-in 0.25s ease-out forwards; }
+        .animate-backdrop-out { animation: backdrop-out 0.25s ease-in forwards; }
+        .animate-modal-in { animation: modal-in 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .animate-modal-out { animation: modal-out 0.25s cubic-bezier(0.5, 0, 0.2, 1) forwards; }
+
+        @keyframes card-in {
+          from { opacity: 0; transform: translateY(30px) scale(0.98); }
+          to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .blog-card-animate {
+          opacity: 0;
+          animation: card-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+      `}</style>
+      {loading ? (
+        <p className="text-white text-lg">Se încarcă articolele...</p>
+      ) : posts.length === 0 ? (
+        <div className="text-center">
+            <p className="text-white opacity-50 mb-4">Nu există articole momentan.</p>
+            <p className="bg-red-600/20 text-red-500 rounded px-4 py-2 border border-red-500/50">
+               Nu uitați să accesați <b>npx prisma studio</b> în terminal pentru a adăuga articole noi!
+            </p>
+        </div>
+      ) : (
+        <div className="flex flex-col items-center w-full gap-12">
+          {/* Posts Grid */}
+          <div key={currentPage} className="flex flex-wrap justify-center gap-8 w-full">
+            {posts
+              .slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage)
+              .map((post) => (
+                <div
+                  key={post.id}
+                  onClick={() => setSelectedPost(post)}
+                  className="blog-card-animate w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.35rem)] max-w-[380px] bg-[#0f0f0f] rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-white/5 flex flex-col"
+                >
+                  {/* Image Container */}
+                  <div className="w-full h-48 sm:h-56 relative overflow-hidden bg-white/10 shrink-0">
+                    <img
+                      src={post.imageUrl || "/assets/images/placeholder.jpg"}
+                      alt={post.title}
+                      className="w-full h-full object-cover rounded-t-2xl m-0 block"
+                    />
+                  </div>
+                  
+                  {/* Title Section */}
+                  <div className="p-6 flex-grow flex items-center justify-center">
+                    <h3 className="text-white font-extrabold text-center text-xl md:text-2xl leading-tight line-clamp-3">
+                      {post.title}
+                    </h3>
+                  </div>
+                </div>
+              ))}
+          </div>
+
+          {/* Pagination Controls */}
+          {posts.length > postsPerPage && (
+            <div className="flex items-center gap-8 mt-4 select-none">
+              <button
+                onClick={() => {
+                  if (currentPage > 1) {
+                    setCurrentPage(currentPage - 1);
+                    window.scrollTo({ top: document.getElementById('blog-anchor')?.offsetTop || 1200, behavior: 'smooth' });
+                  }
+                }}
+                disabled={currentPage === 1}
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-white hover:bg-red-600 transition-all disabled:opacity-20 disabled:hover:bg-white/5 active:scale-90"
+              >
+                <i className="fa-solid fa-arrow-left"></i>
+              </button>
+
+              <span className="text-white font-medium text-lg tracking-wide">
+                Pagina <span className="text-red-500 font-bold">{currentPage}</span> din {Math.ceil(posts.length / postsPerPage)}
+              </span>
+
+              <button
+                onClick={() => {
+                  if (currentPage < Math.ceil(posts.length / postsPerPage)) {
+                    setCurrentPage(currentPage + 1);
+                    window.scrollTo({ top: document.getElementById('blog-anchor')?.offsetTop || 1200, behavior: 'smooth' });
+                  }
+                }}
+                disabled={currentPage === Math.ceil(posts.length / postsPerPage)}
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-white hover:bg-red-600 transition-all disabled:opacity-20 disabled:hover:bg-white/5 active:scale-90"
+              >
+                <i className="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* MODAL POPUP */}
+      {selectedPost && (
+        <div 
+          className={`fixed inset-0 z-[9999] bg-black/80 flex items-center justify-center p-4 backdrop-blur-sm ${isClosing ? "animate-backdrop-out" : "animate-backdrop-in"}`}
+          onClick={handleCloseModal}
+        >
+          <div 
+            className={`bg-[#1a1a1a] rounded-2xl w-full max-w-3xl max-h-[90vh] flex flex-col overflow-y-auto shadow-2xl relative border border-white/10 ${isClosing ? "animate-modal-out" : "animate-modal-in"}`}
+            onClick={(e) => e.stopPropagation()} // Prevent bubbling so they can click inside the modal 
+          >
+            {/* Close Button */}
+            <button 
+              onClick={handleCloseModal}
+              className="absolute top-4 right-4 z-50 bg-black/50 hover:bg-red-600 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg transition-colors border border-white/20"
+            >
+              <span className="text-2xl font-bold leading-none mb-1">&times;</span>
+            </button>
+
+            {/* Modal Image */}
+            <div className="w-full h-64 sm:h-80 md:h-[400px] shrink-0 relative">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={selectedPost.imageUrl || "/assets/images/placeholder.jpg"}
+                  alt={selectedPost.title}
+                  className="w-full h-full object-cover"
+                />
+            </div>
+
+            {/* Modal Content */}
+            <div className="p-8 md:p-12">
+              <h2 className="text-2xl md:text-5xl font-extrabold text-white mb-2 leading-tight">
+                {selectedPost.title}
+              </h2>
+              <p className="text-sm md:text-base text-red-500 font-semibold mb-6 uppercase tracking-wider">
+                {new Date(selectedPost.createdAt).toLocaleDateString("ro-RO", { year: 'numeric', month: 'long', day: 'numeric'})}
+              </p>
+              <div className="h-px w-full bg-white/10 mb-6"></div>
+              <div className="text-gray-300 text-base md:text-lg leading-relaxed whitespace-pre-wrap">
+                {selectedPost.content}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
