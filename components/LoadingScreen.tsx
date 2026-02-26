@@ -24,8 +24,8 @@ export default function LoadingScreen() {
     };
 
     if (document.readyState === "complete") {
-      const timer = setTimeout(() => setLoading(false), 800);
-      const displayTimer = setTimeout(() => setDisplay(false), 1300);
+      const timer = setTimeout(() => setLoading(false), 100);
+      const displayTimer = setTimeout(() => setDisplay(false), 400);
       return () => {
         clearTimeout(timer);
         clearTimeout(displayTimer);
