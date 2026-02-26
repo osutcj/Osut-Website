@@ -60,7 +60,14 @@ export default function AdminDashboard() {
   const fetchPosts = () => {
     fetch("/api/posts")
       .then((res) => res.json())
-      .then((data) => setPosts(data))
+      .then((data) => {
+        if (Array.isArray(data)) {
+          setPosts(data);
+        } else {
+          console.error("API returned non-array data:", data);
+          setPosts([]);
+        }
+      })
       .catch((err) => console.error("Error fetching posts:", err));
   };
 
