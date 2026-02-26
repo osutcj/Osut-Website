@@ -31,7 +31,12 @@ export default function BlogSection() {
     fetch("/api/posts")
       .then((res) => res.json())
       .then((data) => {
-        setPosts(data);
+        if (Array.isArray(data)) {
+          setPosts(data);
+        } else {
+          console.error("API returned non-array data:", data);
+          setPosts([]);
+        }
         setLoading(false);
       })
       .catch((err) => {
