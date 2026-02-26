@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
+import { promises as fs } from "fs";
+import path from "path";
 import { put, del } from "@vercel/blob";
-
-export const runtime = 'edge';
 
 // The simple password to protect adding and deleting records
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "osutAdmin2026";
@@ -28,12 +28,26 @@ export async function POST(req: Request) {
     let imageUrl = "/assets/images/placeholder.jpg";
 
     // Handle File Upload
-    if (file && file.size > 0 && process.env.BLOB_READ_WRITE_TOKEN) {
-      // Upload to Vercel Blob
-      const blob = await put(`posts/${Date.now()}-${file.name}`, file, {
-        access: "public",
-      });
-      imageUrl = blob.url;
+    if (file && file.size > 0) {
+      if (process.env.BLOB_READ_WRITE_TOKEN) {
+        // Upload to Vercel Blob
+        const blob = await put(`posts/${Date.now()}-${file.name}`, file, {
+          access: "public",
+        });
+        imageUrl = blob.url;
+      } else {
+        // Fallback to local FS for development
+        const bytes = await file.arrayBuffer();
+        const buffer = Buffer.from(bytes);
+        const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
+        const ext = path.extname(file.name) || ".jpg";
+        const filename = `post-${uniqueSuffix}${ext}`;
+        const uploadDir = path.join(process.cwd(), "public", "assets", "uploads");
+        try { await fs.access(uploadDir); } catch { await fs.mkdir(uploadDir, { recursive: true }); }
+        const filePath = path.join(uploadDir, filename);
+        await fs.writeFile(filePath, buffer);
+        imageUrl = `/assets/uploads/${filename}`;
+      }
     }
 
     const customDate = formData.get("date") as string;
@@ -94,6 +108,17 @@ export async function PUT(req: Request) {
           access: "public",
         });
         newImageUrl = blob.url;
+      } else {
+        const bytes = await file.arrayBuffer();
+        const buffer = Buffer.from(bytes);
+        const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
+        const ext = path.extname(file.name) || ".jpg";
+        const filename = `post-${uniqueSuffix}${ext}`;
+        const uploadDir = path.join(process.cwd(), "public", "assets", "uploads");
+        try { await fs.access(uploadDir); } catch { await fs.mkdir(uploadDir, { recursive: true }); }
+        const filePath = path.join(uploadDir, filename);
+        await fs.writeFile(filePath, buffer);
+        newImageUrl = `/assets/uploads/${filename}`;
       }
 
       updateData.imageUrl = newImageUrl;
@@ -103,6 +128,13 @@ export async function PUT(req: Request) {
       if (existingPost?.imageUrl) {
         if (existingPost.imageUrl.includes("public.blob.vercel-storage.com")) {
           try { await del(existingPost.imageUrl); } catch (e) { console.error(e); }
+        } else if (existingPost.imageUrl.startsWith("/assets/uploads/")) {
+          try {
+            const oldFilePath = path.join(process.cwd(), "public", existingPost.imageUrl);
+            await fs.unlink(oldFilePath);
+          } catch (err) {
+            console.error("Could not delete old image on update:", err);
+          }
         }
       }
     }
@@ -145,6 +177,13 @@ export async function DELETE(req: Request) {
     if (post?.imageUrl) {
       if (post.imageUrl.includes("public.blob.vercel-storage.com")) {
         try { await del(post.imageUrl); } catch (e) { console.error(e); }
+      } else if (post.imageUrl.startsWith("/assets/uploads/")) {
+        const filePath = path.join(process.cwd(), "public", post.imageUrl);
+        try {
+          await fs.unlink(filePath);
+        } catch (err) {
+          console.error("Could not delete image file:", err);
+        }
       }
     }
 
