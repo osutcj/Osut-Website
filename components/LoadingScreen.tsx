@@ -19,15 +19,14 @@ export default function LoadingScreen() {
 
   useEffect(() => {
     const handleLoad = () => {
-      setTimeout(() => setLoading(false), 600);
-      setTimeout(() => setDisplay(false), 1100);
+      setLoading(false);
+      setTimeout(() => setDisplay(false), 300); // 300ms allows the CSS fade-out transition to finish
     };
 
     if (document.readyState === "complete") {
-      const timer = setTimeout(() => setLoading(false), 100);
-      const displayTimer = setTimeout(() => setDisplay(false), 400);
+      setLoading(false);
+      const displayTimer = setTimeout(() => setDisplay(false), 300);
       return () => {
-        clearTimeout(timer);
         clearTimeout(displayTimer);
       };
     } else {
