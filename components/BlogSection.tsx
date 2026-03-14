@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 
 interface Post {
   id: number;
@@ -101,10 +102,12 @@ export default function BlogSection() {
                 >
                   {/* Image Container */}
                   <div className="w-full h-48 sm:h-56 relative overflow-hidden bg-white/10 shrink-0">
-                    <img
+                    <Image
                       src={post.imageUrl || "/assets/images/placeholder.jpg"}
                       alt={post.title}
-                      className="w-full h-full object-cover rounded-t-2xl m-0 block"
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover rounded-t-2xl m-0 block"
                     />
                   </div>
                   
@@ -175,11 +178,12 @@ export default function BlogSection() {
 
             {/* Modal Image */}
             <div className="w-full h-64 sm:h-80 md:h-[400px] shrink-0 relative">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={selectedPost.imageUrl || "/assets/images/placeholder.jpg"}
                   alt={selectedPost.title}
-                  className="w-full h-full object-cover"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 800px"
+                  className="object-cover"
                 />
             </div>
 
