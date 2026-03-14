@@ -56,6 +56,7 @@ export default function LoadingScreen() {
         <img 
           src="/assets/images/images/Cometa rosie.png" 
           alt="Loading..." 
+          fetchPriority="high"
           className="w-full h-full object-contain pulse-logo"
         />
       </div>

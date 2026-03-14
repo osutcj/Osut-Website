@@ -17,7 +17,7 @@ export default function Header() {
         <div className="nav-logo">
           <Link href="/">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/assets/images/images/OSUT alb.png" alt="OSUT Logo" />
+            <img src="/assets/images/images/OSUT alb.png" alt="OSUT Logo" fetchPriority="high" />
           </Link>
         </div>
 

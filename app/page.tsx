@@ -231,7 +231,7 @@ export default function Home() {
                 </p>
               </td>
               <td className="layout-table d-sm-none align-middle p-4">
-                <img className="table-image max-w-sm ml-auto" src="/assets/images/images/cometa2.png" alt="Cometa" />
+                <img className="table-image max-w-sm ml-auto" src="/assets/images/images/cometa2.png" alt="Cometa" fetchPriority="high" />
               </td>
             </tr>
           </tbody>
@@ -274,7 +274,7 @@ export default function Home() {
             {PROJECT_ITEMS.map((item, idx) => (
               <SwiperSlide key={idx}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={item.image} alt={item.alt} loading="lazy" className="w-full h-[550px] object-cover" />
+                <img src={item.image} alt={item.alt} loading={idx === 0 ? "eager" : "lazy"} className="w-full h-[550px] object-cover" />
                 <div className="overlay p-8">
                   <div className="text whitespace-pre-wrap text-left max-w-2xl text-shadow-md text-lg leading-relaxed">{item.text}</div>
                 </div>
@@ -306,7 +306,7 @@ export default function Home() {
             {INITIATIVE_ITEMS.map((item, idx) => (
               <SwiperSlide key={idx}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={item.image} alt={item.alt} loading="lazy" className="w-full h-[550px] object-cover" />
+                <img src={item.image} alt={item.alt} loading={idx === 0 ? "eager" : "lazy"} className="w-full h-[550px] object-cover" />
                 <div className="overlay p-8">
                   <div className="text whitespace-pre-wrap text-left max-w-2xl text-shadow-md text-lg leading-relaxed">{item.text}</div>
                 </div>
@@ -338,7 +338,7 @@ export default function Home() {
             {OSUTLA_ITEMS.map((item, idx) => (
               <SwiperSlide key={idx}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={item.image} alt={item.alt} loading="lazy" className="w-full h-[550px] object-cover" />
+                <img src={item.image} alt={item.alt} loading={idx === 0 ? "eager" : "lazy"} className="w-full h-[550px] object-cover" />
                 <div className="overlay p-8">
                   <div className="text whitespace-pre-wrap text-left max-w-2xl text-shadow-md text-lg leading-relaxed">{item.text}</div>
                 </div>
