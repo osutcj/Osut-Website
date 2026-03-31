@@ -11,7 +11,7 @@ interface Post {
   createdAt: string;
 }
 
-export default function BlogSection() {
+export default function BlogSection({ limit }: { limit?: number } = {}) {
   const [posts, setPosts] = useState<Post[]>([]);
   const [selectedPost, setSelectedPost] = useState<Post | null>(null);
   const [loading, setLoading] = useState(true);
@@ -92,8 +92,7 @@ export default function BlogSection() {
         <div className="flex flex-col items-center w-full gap-12">
           {/* Posts Grid */}
           <div key={currentPage} className="flex flex-wrap justify-center gap-8 w-full">
-            {posts
-              .slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage)
+            {(limit ? posts.slice(0, limit) : posts.slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage))
               .map((post) => (
                 <div
                   key={post.id}
@@ -122,7 +121,7 @@ export default function BlogSection() {
           </div>
 
           {/* Pagination Controls */}
-          {posts.length > postsPerPage && (
+          {!limit && posts.length > postsPerPage && (
             <div className="flex items-center gap-8 mt-4 select-none">
               <button
                 onClick={() => {

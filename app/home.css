@@ -9,7 +9,6 @@ body {
 }
 
 body {
-  background-color: #121212;
 }
 
 .main-wrap {
@@ -95,7 +94,7 @@ body {
   font-weight: bold;
   margin: 2rem 0;
   color: transparent;
-  -webkit-text-stroke: 1px white;
+  -webkit-text-stroke: 1px var(--foreground);
   text-transform: uppercase;
 }
 

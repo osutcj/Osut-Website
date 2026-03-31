@@ -1,55 +1,68 @@
 import React from "react";
-import "./Footer.css";
+import Link from "next/link";
 
 export default function Footer() {
   return (
     <>
       <a id="Contact"></a>
-      <footer className="footer">
-        <div className="footer-content">
-          <div className="footer-logo">
-            <a href="https://www.utcluj.ro/">
+      <footer className="w-full bg-black text-zinc-300 py-16 px-6 lg:px-20 font-sans flex flex-col items-center">
+        <div className="w-full max-w-7xl flex flex-col lg:flex-row justify-between items-start gap-12 lg:gap-24">
+          
+          {/* Sectiune Stanga */}
+          <div className="flex flex-col gap-6 max-w-sm">
+            <Link href="/">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/images/images/UTalb.png" alt="Logo" />
-            </a>
+              <img src="/assets/images/images/OSUT alb.png" alt="OSUT Logo" className="h-14 w-auto object-contain" />
+            </Link>
+            <p className="text-sm font-light text-zinc-400 mt-2">Luptăm pentru studenți!</p>
+            
+            <div className="mt-6 flex flex-col gap-4">
+              <p className="text-sm font-semibold text-white">Member of:</p>
+              <div className="flex items-center gap-6">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/assets/images/images/anosr.png" className="h-8 w-auto brightness-0 invert opacity-90 relative top-1" alt="ANOSR" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/assets/images/images/ftc.png" className="h-[42px] w-auto brightness-0 invert opacity-90" alt="FTC" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/assets/images/images/cos.png" className="h-10 w-auto brightness-0 invert opacity-90" alt="COS" />
+              </div>
+            </div>
           </div>
-          <div className="footer-social">
-            <a href="https://www.facebook.com/OSUTCJ">
-              <i className="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://www.instagram.com/osutcluj/">
-              <i className="fab fa-instagram"></i>
-            </a>
-            <a href="mailto:osutcluj@gmail.com">
-              <i className="fas fa-envelope"></i>
-            </a>
+
+          {/* Sectiune Dreapta */}
+          <div className="flex flex-wrap gap-12 sm:gap-16 lg:gap-24 lg:pt-2">
+            
+            {/* Resurse */}
+            <div className="flex flex-col gap-4 text-left">
+              <h4 className="text-white font-semibold mb-2">Resurse</h4>
+              <Link href="/educational#studenti-reprezentanti" className="text-sm text-zinc-400 hover:text-white transition">Studenți reprezentanți</Link>
+              <Link href="/educational#resurse" className="text-sm text-zinc-400 hover:text-white transition">Regulamente</Link>
+              <Link href="/educational#osut-te-informeaza" className="text-sm text-zinc-400 hover:text-white transition">OSUT Te Informează</Link>
+              <Link href="/educational#resurse" className="text-sm text-zinc-400 hover:text-white transition">Demersuri</Link>
+            </div>
+
+            {/* Voluntariat */}
+            <div className="flex flex-col gap-4 text-left">
+              <h4 className="text-white font-semibold mb-2">Voluntariat</h4>
+              <Link href="/cum-devin-voluntar" className="text-sm text-zinc-400 hover:text-white transition">Cum devin voluntar OSUT Cluj?</Link>
+              {/* Link spre pagina cu detalii credite SAU un document */}
+              <Link href="/credite" className="text-sm text-zinc-400 hover:text-white transition">Credite de voluntariat</Link>
+              <Link href="/oportunitati" className="text-sm text-zinc-400 hover:text-white transition">Oportunități</Link>
+            </div>
+
+            {/* Retele de socializare (Stay in Touch style) */}
+            <div className="flex flex-col gap-4 text-left">
+              <h4 className="text-white font-semibold mb-2">Socials</h4>
+              <a href="https://www.facebook.com/OSUTCJ" target="_blank" rel="noreferrer" className="text-sm text-zinc-400 hover:text-white transition">Facebook</a>
+              <a href="https://www.instagram.com/osutcluj/" target="_blank" rel="noreferrer" className="text-sm text-zinc-400 hover:text-white transition">Instagram</a>
+              <a href="/contact/" className="text-sm text-zinc-400 hover:text-white transition">Contact</a>
+            </div>
+
           </div>
+
         </div>
-        <hr />
-        <div className="footer-bottom">
-          <a href="https://osut.org/">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/assets/images/images/OSUT alb.png" alt="Logo" />
-          </a>
-          <div className="footer-bottom-contact">
-            <h3 style={{ textAlign: "center", marginLeft: "0px" }}>Contact:</h3>
-            <p>
-              <b>Organizația Studenților din Universitatea Tehnică din Cluj-Napoca</b>
-            </p>
-            <p>
-              Email: <a href="mailto:osutcluj@gmail.com">osutcluj@gmail.com</a>
-            </p>
-            <p>
-              <b>Timiș Traian - President</b>
-            </p>
-            <p>
-              Phone Number: <i>0757332298</i>
-            </p>
-            <p>
-              Email: <a href="mailto:osutcluj@gmail.com">osutcluj@gmail.com</a>
-            </p>
-          </div>
-        </div>
+
+        
       </footer>
     </>
   );

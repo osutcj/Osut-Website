@@ -1,7 +1,20 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 import "./studenti-reprezentanti.css";
+import BlogSection from "@/components/BlogSection";
+
+const DOCUMENTS = [
+    { title: "CARTA", icon: "fas fa-book", downloadLink: "/assets/pdf/carta.pdf" },
+    { title: "ECTS", icon: "fas fa-graduation-cap", downloadLink: "/assets/pdf/ects.pdf" },
+    { title: "BURSE", icon: "fas fa-money-bill", downloadLink: "/assets/pdf/burse.pdf" },
+    { title: "TAXE", icon: "fas fa-file-invoice-dollar", downloadLink: "/assets/pdf/taxe.pdf" },
+    { title: "CĂMINE & CANTINE", icon: "fas fa-building", downloadLink: "/assets/pdf/caminecantine.pdf" },
+    { title: "CDOS", icon: "fas fa-file-alt", downloadLink: "/assets/pdf/CDOS.pdf" },
+    { title: "Ghidul Studentului (Licență)", icon: "fas fa-book-open", downloadLink: "/assets/pdf/ghid_student_licenta.pdf" },
+    { title: "Ghidul Studentului (Master)", icon: "fas fa-book-reader", downloadLink: "/assets/pdf/ghid_student_master.pdf" }
+];
 
 const senatMembers = [
     {nume: "Mitocaru", prenume: "Silviu", email: "mitocarusilviu227@gmail.com", phone: "0752769200"},
@@ -197,11 +210,11 @@ const ReprezCard = ({ member }: { member: { nume: string, prenume: string, email
     </div>
 );
 
-export default function StudentiReprezentanti() {
+export default function Educational() {
+    // States for Studenti Reprezentanti section
     const [activeTab, setActiveTab] = useState<"senat" | "consiliu" | null>(null);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [selectedFacultyId, setSelectedFacultyId] = useState<string | null>(null);
-
     const dropdownRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -219,81 +232,123 @@ export default function StudentiReprezentanti() {
     const selectedFaculty = selectedFacultyId ? faculties[selectedFacultyId as keyof typeof faculties] : null;
 
     return (
-        <main className="main-wrap bg-[#121212] font-sans pb-16 min-h-screen">
-            <div className="container mx-auto" style={{ marginTop: "10vh" }}>
-                <h2 className="sr-text-outline">STUDENȚI REPREZENTANȚI</h2>
+        <main className="bg-[#121212] font-sans pb-16 min-h-screen pt-40 text-white flex flex-col items-center">
+            
+            {/* 1. SECTION: OSUT TE INFORMEAZA */}
+            <div className="w-full flex flex-col items-center mb-24 px-6 lg:px-20" id="osut-te-informeaza">
+                <div className="w-full max-w-5xl relative flex justify-center items-center mb-10">
+                    <div className="absolute w-full h-[1px] bg-gradient-to-r from-transparent via-red-600 to-transparent top-1/2 -translate-y-1/2 opacity-70"></div>
+                    <h1 className="bg-[#121212] px-10 text-4xl md:text-5xl font-bold relative z-10 tracking-wide text-white text-center uppercase">OSUT te informează</h1>
+                </div>
+                
+                <div className="w-full max-w-7xl">
+                    <BlogSection />
+                </div>
             </div>
 
-            <div className="sr-menu-selector">
-                <button
-                    className={`sr-menu-btn ${activeTab === "senat" ? "active" : ""}`}
-                    onClick={() => setActiveTab("senat")}
-                >
-                    Senatul Universității
-                </button>
-                <button
-                    className={`sr-menu-btn ${activeTab === "consiliu" ? "active" : ""}`}
-                    onClick={() => setActiveTab("consiliu")}
-                >
-                    Consiliul Facultății
-                </button>
-            </div>
+            {/* 2. SECTION: RESURSE */}
+            <div className="w-full flex flex-col items-center mb-24 px-6 lg:px-20" id="resurse">
+                <div className="w-full max-w-5xl relative flex justify-center items-center mb-10">
+                    <div className="absolute w-full h-[1px] bg-gradient-to-r from-transparent via-red-600 to-transparent top-1/2 -translate-y-1/2 opacity-70"></div>
+                    <h1 className="bg-[#121212] px-10 text-4xl md:text-5xl font-bold relative z-10 tracking-wide text-white text-center uppercase">Resurse</h1>
+                </div>
 
-            {activeTab === "consiliu" && (
-                <div className="sr-faculty-selector">
-                    <div className="sr-custom-dropdown" ref={dropdownRef}>
-                        <button
-                            className={`sr-dropdown-trigger ${isDropdownOpen ? "open" : ""}`}
-                            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                <div className="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {DOCUMENTS.map((doc, i) => (
+                        <a 
+                            key={i} 
+                            href={doc.downloadLink} 
+                            download
+                            className="flex flex-row items-center justify-center gap-3 bg-[#b51c1c] hover:bg-[#8f1515] text-white px-6 py-5 rounded-xl font-bold text-sm transition-all duration-300 shadow-xl shadow-black/50 hover:shadow-red-900/50 hover:-translate-y-1 border border-red-900/40 text-center"
                         >
-                            <span>{selectedFaculty ? selectedFaculty.shortName : "Alege Facultatea"}</span>
-                            <span className="chevron">▼</span>
+                            <i className={`${doc.icon} text-lg`}></i>
+                            <span className="leading-tight">{doc.title}</span>
+                        </a>
+                    ))}
+                </div>
+            </div>
+
+            {/* 3. SECTION: STUDENȚI REPREZENTANȚI */}
+            <div className="w-full flex flex-col items-center mb-16 px-6 lg:px-20" id="studenti-reprezentanti">
+                <div className="w-full max-w-5xl relative flex justify-center items-center mb-10">
+                    <div className="absolute w-full h-[1px] bg-gradient-to-r from-transparent via-red-600 to-transparent top-1/2 -translate-y-1/2 opacity-70"></div>
+                    <h1 className="bg-[#121212] px-10 text-4xl md:text-5xl font-bold relative z-10 tracking-wide text-white text-center uppercase">Studenți Reprezentanți</h1>
+                </div>
+
+                <div className="w-full max-w-7xl">
+                    <div className="sr-menu-selector">
+                        <button
+                            className={`sr-menu-btn ${activeTab === "senat" ? "active" : ""}`}
+                            onClick={() => setActiveTab("senat")}
+                        >
+                            Senatul Universității
                         </button>
-                        <div className={`sr-dropdown-options ${isDropdownOpen ? "open" : ""}`}>
-                            {Object.values(faculties).map((fac) => (
+                        <button
+                            className={`sr-menu-btn ${activeTab === "consiliu" ? "active" : ""}`}
+                            onClick={() => setActiveTab("consiliu")}
+                        >
+                            Consiliul Facultății
+                        </button>
+                    </div>
+
+                    {activeTab === "consiliu" && (
+                        <div className="sr-faculty-selector">
+                            <div className="sr-custom-dropdown" ref={dropdownRef}>
                                 <button
-                                    key={fac.id}
-                                    className={`sr-dropdown-option ${selectedFacultyId === fac.id ? "selected" : ""}`}
-                                    onClick={() => {
-                                        setSelectedFacultyId(fac.id);
-                                        setIsDropdownOpen(false);
-                                    }}
+                                    className={`sr-dropdown-trigger outline-none ring-0 ${isDropdownOpen ? "open" : ""}`}
+                                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                                 >
-                                    {fac.shortName}
+                                    <span>{selectedFaculty ? selectedFaculty.shortName : "Alege Facultatea"}</span>
+                                    <span className="chevron">▼</span>
                                 </button>
-                            ))}
+                                <div className={`sr-dropdown-options ${isDropdownOpen ? "open" : ""}`}>
+                                    {Object.values(faculties).map((fac) => (
+                                        <button
+                                            key={fac.id}
+                                            className={`sr-dropdown-option ${selectedFacultyId === fac.id ? "selected" : ""}`}
+                                            onClick={() => {
+                                                setSelectedFacultyId(fac.id);
+                                                setIsDropdownOpen(false);
+                                            }}
+                                        >
+                                            {fac.shortName}
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            )}
+                    )}
 
-            {activeTab === "senat" && (
-                <div className="sr-section-content">
-                    <div className="sr-scroll-container">
-                        {senatMembers.map((member, idx) => (
-                            <ReprezCard key={idx} member={member} />
-                        ))}
-                    </div>
-                </div>
-            )}
+                    {activeTab === "senat" && (
+                        <div className="sr-section-content mt-10">
+                            <div className="sr-scroll-container">
+                                {senatMembers.map((member, idx) => (
+                                    <ReprezCard key={idx} member={member} />
+                                ))}
+                            </div>
+                        </div>
+                    )}
 
-            {activeTab === "consiliu" && selectedFaculty && (
-                <div className="sr-section-content">
-                    <div className="container mx-auto mt-4 px-4 text-center">
-                        <h2 className="sr-text-outline !inline-block" style={{ fontSize: "clamp(20px, 4vw, 36px)" }}>
-                            {selectedFaculty.name.split(' ').slice(0, 2).join(' ')}{" "}
-                            <span className="sr-highlight !inline-block" style={{ fontSize: "inherit" }}>
-                                {selectedFaculty.name.split(' ').slice(2).join(' ')}
-                            </span>
-                        </h2>
-                    </div>
-                    <div className="sr-scroll-container">
-                        {selectedFaculty.members.map((member, idx) => (
-                            <ReprezCard key={idx} member={member} />
-                        ))}
-                    </div>
+                    {activeTab === "consiliu" && selectedFaculty && (
+                        <div className="sr-section-content mt-10">
+                            <div className="container mx-auto px-4 text-center mb-12">
+                                <h2 className="text-3xl lg:text-4xl font-extrabold uppercase mb-6 inline-block">
+                                    {selectedFaculty.name.split(' ').slice(0, 2).join(' ')}{" "}
+                                    <span className="text-[#be1e2d] mx-2">
+                                        {selectedFaculty.name.split(' ').slice(2).join(' ')}
+                                    </span>
+                                </h2>
+                            </div>
+                            <div className="sr-scroll-container">
+                                {selectedFaculty.members.map((member, idx) => (
+                                    <ReprezCard key={idx} member={member} />
+                                ))}
+                            </div>
+                        </div>
+                    )}
                 </div>
-            )}
+            </div>
+            
         </main>
     );
 }
