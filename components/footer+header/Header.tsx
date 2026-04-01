@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { ThemeSwitcher } from "../ThemeSwitcher";
 import "./Header.css";
 
 export default function Header() {
@@ -40,15 +39,8 @@ export default function Header() {
                 </li>
               </ul>
             </li>
-            <li className="dropdown">
-              <Link href="/educational/">
-                Educațional <span className="dropdown-icon">▼</span>
-              </Link>
-              <ul className="dropdown-menu">
-                <li><Link href="/educational#osut-te-informeaza">OSUT te informează</Link></li>
-                <li><Link href="/educational#resurse">Resurse</Link></li>
-                <li><Link href="/educational#studenti-reprezentanti">Studenți Reprezentanți</Link></li>
-              </ul>
+            <li>
+              <Link href="/educational/">Educațional</Link>
             </li>
             <li>
               <Link href="/proiecte-si-initiative/">Proiecte și Inițiative</Link>
@@ -67,7 +59,6 @@ export default function Header() {
             </li>
           </ul>
           <div className="flex items-center gap-2">
-            <ThemeSwitcher />
             <Link href="/butonul-rosu/" className="red-button">
               Butonul Roșu
             </Link>
@@ -111,7 +102,6 @@ export default function Header() {
           Galerie
         </a>
         <div className="flex items-center justify-center my-4">
-          <ThemeSwitcher />
         </div>
         <Link href="/contact/" className="red-button" onClick={toggleSidebar}>
           Contact

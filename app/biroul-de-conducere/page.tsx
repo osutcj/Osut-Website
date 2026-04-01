@@ -3,38 +3,47 @@
 import React from "react";
 import "./bc.css";
 
-const TeamCard = ({ photo, lastName, firstName, role, fbLink, igLink, inLink }: any) => (
-    <div className="team-card">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={photo} alt={`${firstName} ${lastName}`} className="team-photo" />
-        <div className="team-name">
-            <span className="last-name">{lastName} </span>
-            <span className="first-name">{firstName}</span>
+const TeamCard = ({ photo, lastName, firstName, role, fbLink, igLink, inLink, photoPosition }: any) => (
+    <div className="bc-card">
+        <div className="bc-card-image-wrap">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+                src={photo}
+                alt={`${firstName} ${lastName}`}
+                className="bc-card-photo"
+                style={{ objectPosition: photoPosition || "top center" }}
+            />
         </div>
-        <div className="team-role">{role}</div>
-        <div className="links">
-            {fbLink && (
-                <a className="icon" href={fbLink} target="_blank" rel="noopener noreferrer">
-                    <i className="fab fa-facebook"></i>
-                </a>
-            )}
-            {inLink && (
-                <a className="icon" href={inLink} target="_blank" rel="noopener noreferrer">
-                    <i className="fab fa-linkedin"></i>
-                </a>
-            )}
-            {igLink && (
-                <a className="icon" href={igLink} target="_blank" rel="noopener noreferrer">
-                    <i className="fab fa-instagram"></i>
-                </a>
-            )}
+        <div className="bc-card-info">
+            <div className="bc-card-role">{role}</div>
+            <div className="bc-card-name">
+                <span className="bc-card-lastname">{lastName}</span>
+                <span className="bc-card-firstname">{firstName}</span>
+            </div>
+            <div className="bc-card-links">
+                {fbLink && (
+                    <a href={fbLink} target="_blank" rel="noopener noreferrer" className="bc-social-btn">
+                        <i className="fab fa-facebook-f"></i>
+                    </a>
+                )}
+                {igLink && (
+                    <a href={igLink} target="_blank" rel="noopener noreferrer" className="bc-social-btn">
+                        <i className="fab fa-instagram"></i>
+                    </a>
+                )}
+                {inLink && (
+                    <a href={inLink} target="_blank" rel="noopener noreferrer" className="bc-social-btn">
+                        <i className="fab fa-linkedin-in"></i>
+                    </a>
+                )}
+            </div>
         </div>
     </div>
 );
 
 const TEAM_MEMBERS = [
     {
-        photo: "/assets/images/images/bc/Timi%C8%99Traian.jpg", // Kept original naming but it's recommended to encode or not use special characters in paths, updated to what was likely uploaded
+        photo: "/assets/images/images/bc/Timi%C8%99Traian.jpg",
         lastName: "Timiș", firstName: "Traian",
         role: "Președinte",
         fbLink: "https://www.facebook.com/timis.traian02",
@@ -80,7 +89,7 @@ const TEAM_MEMBERS = [
         inLink: "https://www.linkedin.com/in/arina-licu-3355b520a/?ref=osut.org"
     },
     {
-        photo: "/assets/images/images/bc/B%C4%83l%C4%83nescuRare%C8%99.jpg", 
+        photo: "/assets/images/images/bc/B%C4%83l%C4%83nescuRare%C8%99.jpg",
         lastName: "Bălănescu", firstName: "Rareș",
         role: "Vicepreședinte Relații Interne",
         fbLink: "https://www.facebook.com/rares.balanescu?locale=ro_RO",
@@ -107,12 +116,16 @@ const TEAM_MEMBERS = [
 
 export default function BC() {
     return (
-        <main className="main-wrap bg-[#121212] min-h-screen text-white font-sans pb-16 pt-8">
-            <h1 className="bc-title">
-                <span className="white-text">BIROUL DE</span> <span className="red-text">CONDUCERE</span>
-            </h1>
+        <main className="bc-main">
+            <div className="bc-header">
+                <div className="bc-header-line"></div>
+                <h1 className="bc-title-new">
+                    <span>Biroul de</span>
+                    <span className="bc-title-red">Conducere</span>
+                </h1>
+            </div>
 
-            <div className="team-section">
+            <div className="bc-grid">
                 {TEAM_MEMBERS.map((member, i) => (
                     <TeamCard key={i} {...member} />
                 ))}

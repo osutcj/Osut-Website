@@ -9,22 +9,28 @@ export default function Footer() {
         <div className="w-full max-w-7xl flex flex-col lg:flex-row justify-between items-start gap-12 lg:gap-24">
           
           {/* Sectiune Stanga */}
-          <div className="flex flex-col gap-6 max-w-sm">
+          <div className="flex flex-col gap-4 max-w-sm">
             <Link href="/">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/images/images/OSUT alb.png" alt="OSUT Logo" className="h-14 w-auto object-contain" />
+              <img src="/assets/images/images/OSUT alb.png" alt="OSUT Logo" className="h-24 w-auto object-contain" />
             </Link>
-            <p className="text-sm font-light text-zinc-400 mt-2">Luptăm pentru studenți!</p>
             
-            <div className="mt-6 flex flex-col gap-4">
-              <p className="text-sm font-semibold text-white">Member of:</p>
-              <div className="flex items-center gap-6">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/assets/images/images/anosr.png" className="h-8 w-auto brightness-0 invert opacity-90 relative top-1" alt="ANOSR" />
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/assets/images/images/ftc.png" className="h-[42px] w-auto brightness-0 invert opacity-90" alt="FTC" />
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/assets/images/images/cos.png" className="h-10 w-auto brightness-0 invert opacity-90" alt="COS" />
+            
+            <div className="mt-8 flex flex-col gap-4">
+              <p className="text-base font-semibold text-white">OSUT Cluj este membră:</p>
+              <div className="flex items-center gap-10">
+                <a href="https://anosr.ro" target="_blank" rel="noreferrer" className="hover:opacity-100 transition-opacity">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/assets/images/images/anosr.png" className="h-16 w-auto brightness-0 invert opacity-90 relative top-1" alt="ANOSR" />
+                </a>
+                <a href="https://ftcluj.ro/" target="_blank" rel="noreferrer" className="hover:opacity-100 transition-opacity">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/assets/images/images/ftc.png" className="h-12 w-auto brightness-0 invert opacity-90" alt="FTC" />
+                </a>
+                <a href="https://www.facebook.com/cosclujnapoca/" target="_blank" rel="noreferrer" className="hover:opacity-100 transition-opacity">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/assets/images/images/cos.png" className="h-14 w-auto brightness-0 invert opacity-90" alt="COS" />
+                </a>
               </div>
             </div>
           </div>

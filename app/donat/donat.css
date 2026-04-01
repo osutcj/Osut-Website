@@ -1,98 +1,16 @@
-.donation-container {
-  color: white;
-  font-family: Arial, sans-serif;
-  width: 80%;
-  max-width: 900px;
-  margin: auto;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.6);
-  text-align: left;
-  position: relative;
-  margin-top: 10vh;
-  margin-bottom: 10vh;
-  background-color: #1a1a1a;
-  overflow: hidden;
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.donation-container h1 {
-  font-size: 2rem;
-  font-weight: bold;
-  color: white;
-  text-transform: uppercase;
+.animate-fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.donation-container h2 {
-  font-size: 1.5rem;
-  color: white;
-}
+/* Optional custom styling for the donation page */
 
-.highlight-35 {
-  color: red;
-  font-size: 2rem;
-  font-weight: bold;
-}
 
-.donation-container p {
-  text-align: justify;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-.donation-btn {
-  display: block;
-  background-color: #a50000;
-  color: white;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-align: center;
-  padding: 15px;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  width: 300px;
-  margin: 20px auto;
-  transition: 0.3s;
-  text-decoration: none;
-}
-
-.donation-btn:hover {
-  background-color: #800000;
-}
-
-.comet-image {
-  position: absolute;
-  top: 10px;
-  right: -20px;
-  width: 20vw;
-  height: auto;
-  z-index: 10;
-}
-
-@media (max-width: 768px) {
-  .donation-container {
-    width: 90%;
-    padding: 20px;
-  }
-
-  .donation-container h1 {
-    font-size: 1.8rem;
-  }
-
-  .donation-container h2 {
-    font-size: 1.3rem;
-  }
-
-  .donation-container p {
-    font-size: 0.9rem;
-  }
-
-  .donation-btn {
-    width: 80%;
-    font-size: 1rem;
-  }
-
-  .comet-image {
-    display: none;
-  }
+::selection {
+    background-color: rgba(181, 28, 28, 0.4);
+    color: white;
 }

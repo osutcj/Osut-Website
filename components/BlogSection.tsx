@@ -97,7 +97,7 @@ export default function BlogSection({ limit }: { limit?: number } = {}) {
                 <div
                   key={post.id}
                   onClick={() => setSelectedPost(post)}
-                  className="blog-card-animate w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.35rem)] max-w-[380px] bg-[#0f0f0f] rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-white/5 flex flex-col"
+                  className="blog-card-animate w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.35rem)] max-w-[380px] bg-[#0f0f0f] rounded-2xl overflow-hidden cursor-pointer shadow-lg transition-all duration-300 transform hover:-translate-y-[6px] border border-white/5 flex flex-col"
                 >
                   {/* Image Container */}
                   <div className="w-full h-48 sm:h-56 relative overflow-hidden bg-white/10 shrink-0">

@@ -8,17 +8,17 @@ const PROJECT_ITEMS = [
   {
     image: "/assets/images/images/Proiecte/viitoringiner.PNG",
     alt: "Viitor Inginer",
-    text: "Viitor Inginer este un proiect desfășurat de OSUT Cluj, care facilitează întâlnirea între studenții UTCN și elevii de liceu, prin vizite organizate în întreaga țară. În cadrul prezentărilor, elevii au ocazia să afle direct de la colegii lor mai mari ce înseamnă viața de student la Universitatea Tehnică din Cluj-Napoca. Proiectul urmărește combaterea abandonului școlar și sprijinirea adolescenților în alegerea facultății, oferindu-le informații esențiale pentru viitorul lor academic.\n\nDacă vrei să afli mai multe despre aceste subiecte, te așteptăm cu drag să ne întâlnim atunci când vom vizita liceul tău!"
+    text: "Viitor Inginer facilitează întâlnirea dintre voluntarii noștri și elevii de liceu din toată țara pentru a le arăta ce presupune cu adevărat viața de student la UTCN. Proiectul are ca scop combaterea abandonului școlar și sprijinul tinerilor în alegerea facultății prin discuții directe despre oportunitățile din universitate. În ultimul semestru, caravana a ajuns inclusiv în Republica Moldova, unde studenții au oferit informații esențiale și sfaturi utile elevilor care vor să urmeze o carieră în domeniu."
   },
   {
     image: "/assets/images/images/Proiecte/proiect-polihack.jpg",
     alt: "PoliHack",
-    text: "Ajuns la cea de-a 16-a ediție, PoliHack este un hackathon semestrial care provoacă studenții și elevii de liceu să își depășească limitele creativității și abilităților tehnice prin dezvoltarea de soluții inovatoare într-una dintre cele patru categorii: Embedded, AppDev, Web și Junior.\n\nOrganizat de Organizația Studenților din Universitatea Tehnică din Cluj-Napoca, PoliHack își propune să încurajeze participanții să colaboreze cu mentori apreciați din industrie și din mediul academic, oferindu-le o experiență autentică, similară cu cea din marile companii.\n\nPoliHack. The.Future.Is.Now."
+    text: "PoliHack provoacă studenții și elevii de liceu să își depășească limitele creativității și ale abilităților tehnice prin dezvoltarea unor soluții software sau hardware inovatoare. Proiectul a ajuns la ediția cu numărul 18 și a reunit 188 de participanți care au format 42 de echipe pentru a crea aplicații sau sisteme complexe. Sub îndrumarea unor mentori din industrie și din mediul academic, echipele transformă ideile în realitate, procesul având ca scop principal testarea cunoștințelor practice într-un cadru competitiv și colaborativ."
   },
   {
     image: "/assets/images/images/Proiecte/proiect-balul_bobocilor.png",
     alt: "Balul Bobocilor",
-    text: "An de an, OSUT Cluj pune în scenă Balul Bobocilor Universității Tehnice din Cluj-Napoca, un moment special care marchează începutul vieții de student. Acest eveniment, asemănător cu balurile din perioada liceului, oferă bobocilor ocazia de a-și demonstra abilitățile și de a lega prietenii noi, creând amintiri de neuitat. Spre deosebire de un bal obișnuit, noi ne străduim să transformăm această seară într-un adevărat spectacol, plin de momente artistice, momente inedite și surprize fascinante.\n\nFiecare Bal al Bobocilor spune o poveste aparte, iar bobocii și organizatorii depun eforturi pentru a oferi o experiență unică tuturor celor prezenți."
+    text: "Ediția din 2025, desfășurată sub tema „Arabian Nights”, a adus în lumină 8 perechi de boboci care și-au demonstrat creativitatea și talentul pentru a marca debutul vieții lor academice. Proiectul are ca scop integrarea noilor studenți în mediul universitar, oferindu-le cadrul perfect pentru a socializa, a lega prietenii și a se acomoda mai ușor cu spiritul comunității noastre."
   },
   {
     image: "/assets/images/images/Proiecte/sah.png",
@@ -28,22 +28,22 @@ const PROJECT_ITEMS = [
   {
     image: "/assets/images/images/Proiecte/polisport.png",
     alt: "PoliSport",
-    text: "PoliSport este un proiect de tradiție marca OSUT Cluj, care se desfășoară de peste 38 de ediții și continuă să atragă un număr tot mai mare de studenți pasionați de sport. Acesta implică organizarea de competiții sportive destinate amatorilor, derulate în Cluj-Napoca, și reprezintă o oportunitate excelentă pentru studenți de a-și demonstra talentul și aptitudinile sportive într-un mediu organizat și prietenos.\n\nInteresul pentru PoliSport a crescut constant, fiecare ediție înregistrând un număr tot mai mare de participanți înscriși. Acest lucru reflectă succesul proiectului în a aduce studenții împreună, încurajând interacțiunea, socializarea și un stil de viață activ. Competițiile nu doar că oferă o pauză binemeritată de la stresul cotidian, dar contribuie și la dezvoltarea personală a participanților, prin promovarea fair-play-ului și a spiritului de echipă.\n\nAstfel, PoliSport rămâne unul dintre cele mai apreciate proiecte studențești marca OSUT Cluj, îmbinând beneficiile sportului asupra sănătății cu cele ale unei comunități unite și implicate."
+    text: "PoliSport promovează fair-play-ul și un stil de viață activ prin competiții amicale dedicate tuturor studenților din universitate. Proiectul a ajuns la ediția cu numărul 40 și a reunit aproximativ 450 de participanți care s-au întrecut la fotbal, baschet, ping-pong și șah. Inițiativa are ca scop principal unirea comunității studențești prin sport, oferind un cadru dinamic unde pasiunea pentru mișcare devine cel mai bun prilej de socializare."
   },
   {
     image: "/assets/images/images/Proiecte/proiect-poliart.png",
     alt: "PoliArt",
-    text: "PoliArt este un proiect prin care studenții au ocazia de a lua o pauză de la viața academică și de a-și valorifica înclinațiile artistice prin operele lor. Acestea sunt expuse pe holurile facultăților din Universitatea Tehnică și, ulterior, într-o locație finală, pentru a le oferi ocazia să fie admirate de cât mai multe persoane.\n\nPoliArt este ocazia perfectă pentru iubitorii de artă să iasă din zona lor de confort, să treacă peste frici și să lege legături prețioase cu alți pasionați ca ei. Este momentul perfect în care își pot exprima stările și emoțiile prin cele mai creative moduri, indiferent de nivelul de experiență."
+    text: "PoliArt valorifică talentele artistice ale studenților prin crearea unei comunități unite de pasionați. Proiectul oferă un spațiu de expunere pentru lucrări de pictură, desen sau fotografie, atât în facultăți, cât și într-o expoziție finală de amploare. La ultima ediție, publicul a admirat peste 200 de opere ale studenților care au ales să iasă din zona de confort și să lege conexiuni cu alți artiști amatori, totul într-un mediu dedicat creativității."
   },
   {
     image: "/assets/images/images/Proiecte/proiect-crosulUT.png",
-    alt: "Crosul UTCN",
-    text: "Crosul Universității Tehnice este un eveniment sportiv cu o puternică latură comunitară și caritabilă, care aduce împreună participanți de toate vârstele, de la cei mai tineri, copii de 6-7 ani, până la adulți și seniori, toți uniți de dorința de a promova un stil de viață sănătos și de a susține o cauză nobilă. Cu o distanță accesibilă de 6 km, evenimentul își propune să fie atât o competiție, cât și o oportunitate de socializare și solidaritate.\n\nÎn ultimii ani, crosul a devenit tot mai diversificat, organizatorii aducând în fiecare ediție elemente noi pentru a menține interesul participanților. De exemplu, ultimele două ediții au fost tematice, oferind o experiență aparte: „Bring the Lights” și „Light Up the Night”. Aceste concepte au transformat crosul într-un spectacol vizual, desfășurat într-o atmosferă animată, cu iluminări speciale și decoruri care au dat un plus de farmec evenimentului.\n\nPe lângă latura sportivă, Crosul Universității Tehnice păstrează o puternică componentă caritabilă, direcționând fondurile strânse către inițiative umanitare importante. Acest aspect reușește să mobilizeze nu doar studenții, ci și întreaga comunitate clujeană, transformând alergarea într-un gest concret de sprijin pentru cei care au nevoie."
+    alt: "CrosulUT",
+    text: "Aflat la cea de-a 20-a ediție, Crosul UT reunește comunitatea clujeană într-o cursă caritabilă de 6 km menită să promoveze sportul și solidaritatea prin cauze umanitare importante. Evenimentul a atras la ultima ediție peste 200 de participanți de toate vârstele, transformând o simplă alergare într-un spectacol vizual plin de energie, unde stilul de viață sănătos se împletește cu dorința de a face bine."
   },
   {
     image: "/assets/images/images/Proiecte/infotech.png",
     alt: "InfoTech",
-    text: "Bine ați venit la InfoTech, poarta voastră către dezvoltare profesională și învățare practică în lumea ingineriei! Susținut de OSUT Cluj (Organizația Studenților din Universitatea Tehnică), InfoTech este dedicat să ofere studenților de la UTCN cunoștințele, abilitățile și conexiunile necesare pentru a prospera în industria IT.\n\nLa InfoTech, creăm un mediu de sprijin și implicare pentru studenți, cu activități practice, sesiuni de formare orientate către carieră și evenimente precum ContestNight, InfoNight și Open Days la companii de top. Organizăm workshopuri susținute de profesioniști din industrie, oferind îndrumare pe teme esențiale, cum ar fi redactarea unui CV, pregătirea pentru interviuri și explorarea oportunităților de carieră.\n\nFie că ești aici pentru a-ți dezvolta abilitățile tehnice, pentru a-ți extinde rețeaua de contacte sau pur și simplu pentru a explora noi posibilități, InfoTech este alături de tine la fiecare pas. Alătură-te nouă și fă următorul pas către îndeplinirea aspirațiilor tale profesionale!"
+    text: "Scopul proiectului InfoTech este să faciliteze tranziția studenților spre piața muncii prin oferirea de cunoștințe și conexiuni esențiale în industria tehnologiei. Inițiativa asigură accesul la workshopuri de programare, simulări de interviuri și vizite la companii importante din domeniu. Prin evenimente precum ContestNight sau InfoNight, studenții își dezvoltă abilitățile practice alături de profesioniști și transformă teoria în avantaje reale pentru viitoarea carieră."
   },
   {
     image: "/assets/images/images/Proiecte/ppp.jpg",
@@ -58,17 +58,17 @@ const PROJECT_ITEMS = [
   {
     image: "/assets/images/images/Proiecte/zut.png",
     alt: "ZUT",
-    text: "Zilele Universității Tehnice (ZUT) este un proiect marca OSUT Cluj dedicat întregii comunități studențești din Cluj-Napoca, cu precădere celor 20.000 din UTCN. Proiectul se desfășoară anual pe parcursul primei săptămâni a anului universitar și include atât activități culturale, cât și activități de divertisment. ZUT este unul dintre cele mai mari festivale studențești, gratuitatea evenimentului, cât și plasarea activităților în facultăți și în campusurile noastre asigură o participare diversificată.\n\nCu peste 5000 de participanți la toate activitățile, ultima ediție a inclus diverse activități captivante pentru studenți, precum “Ce spun studenții?”, Silent Party, campionate de e-sports sau un concert, avându-i în line-up pe DJ David Aquilla, Emeric Imre și pe Mira!\n\nTe așteptăm și la următoarea ediție pentru a descoperi viața studențească petrecută la Cluj!"
+    text: "Zilele Universității Tehnice (ZUT) transformă campusurile noastre într-un festival de amploare, dedicat tuturor celor 20.000 de studenți ai universității. Proiectul a ajuns la ediția cu numărul 20 și are ca scop principal integrarea studenților prin activități diverse, de la concerte live și silent party până la campionate de e-sports sau workshopuri. Ultima ediție a reunit peste 5.000 de participanți care s-au bucurat de acces gratuit la evenimente, demonstrând că ZUT rămâne cel mai important punct de întâlnire pentru întreaga comunitate la începutul fiecărui an universitar."
   },
   {
     image: "/assets/images/images/Proiecte/esucoverbun.jpg",
     alt: "ESU",
-    text: "Engineering Summer University este o tabără de vară de două săptămâni destinată elevilor de clasa a XI-a care doresc să descopere fascinantul domeniu al ingineriei și să experimenteze viața de student universitar într-un mediu dinamic și prietenos.\n\nCu un program interactiv și intens, participanții vor fi implicați în activități distractive și educative, care vor cuprinde cursuri teoretice, dar și o varietate de laboratoare care le vor permite să aplice cunoștințele învățate. Cursurile de inginerie sunt susținute de profesori de top din cadrul Universității Tehnice din Cluj-Napoca și sunt structurate într-un mod interactiv și practic."
+    text: "Scopul principal al Engineering Summer University este familiarizarea elevilor cu mediul universitar prin recrearea autentică a experienței de student la UTCN. Ultima ediție a reunit 194 de participanți care au explorat spiritul comunității noastre, descoperind ce înseamnă cu adevărat viața în facultate, îmbinând cursurile și laboratoarele practice cu activități pline de distracție."
   },
   {
     image: "/assets/images/images/Proiecte/infocafe.png",
     alt: "InfoCafe",
-    text: "InfoCafe este un proiect inițiat de OSUT Cluj, având ca obiectiv evaluarea respectării drepturilor și obligațiilor studenților din Universitatea Tehnică din Cluj-Napoca, în conformitate cu Codul Drepturilor și Obligațiilor Studenților (CDOS), precum și a gradului de informare al acestora cu privire la aceste aspecte. Procesul se desfășoară prin completarea unui formular online, anonim, de către studenți.\n\nProiectul se află într-o continuă creștere în ceea ce privește atât numărul studenților respondenți, cât și al voluntarilor implicați. Pe parcursul unei săptămâni, InfoCafe își propune să interacționeze direct cu studenții prin organizarea de standuri cu băuturi calde în clădirile și campusurile UTCN. Voluntarii promovează completarea formularului anonim, iar ca semn de apreciere, participanții primesc o cafea, ciocolată caldă sau un ceai.\n\nLa finalul campaniei, răspunsurile colectate sunt centralizate într-un raport transmis conducerii universității, pentru a sprijini luarea de măsuri menite să îmbunătățească calitatea procesului educațional."
+    text: "InfoCafe reprezintă principala metodă prin care consultăm mii de studenți din UTCN cu privire la respectarea drepturilor și obligațiilor lor în universitate. Prin standuri cu băuturi calde și chestionare online, voluntarii colectează feedback direct, care stă la baza elaborării Raportului CDOS. Acest document centralizează toate problemele și sugestiile primite și este prezentat oficial în Senatul Universității. Scopul final este ca vocea studenților să fie auzită clar, propunând măsuri concrete de îmbunătățire a politicilor educaționale și a experienței în campus."
   }
 ];
 
@@ -150,8 +150,8 @@ const INITIATIVE_AND_OSUTLA_ITEMS = [
   },
   {
     image: "/assets/images/images/Proiecte/drumetie.jpg",
-    alt: "Drumeție",
-    text: "În data de 19 octombrie 2024, Direcția Sport și Sănătate din cadrul organizației noastre a organizat o drumeție memorabilă la Cheile Turzii. Această activitate a avut ca scop promovarea unui stil de viață sănătos, consolidarea relațiilor dintre studenți și reconectarea cu natura. Fiecare pas pe traseu a fost o ocazie de a învăța, de a socializa și de a descoperi frumusețea și importanța mediului înconjurător. Ne dorim să continuăm să organizăm astfel de evenimente, care inspiră și aduc bucurie.\n\nRămâi alături de noi pentru a descoperi următoarele destinații ale OSUT Cluj!"
+    alt: "OSUT la …",
+    text: "OSUT la… reprezintă seria de inițiative dedicate exclusiv voluntarilor noștri, create ca momente de recreere și deconectare după activitatea intensă din organizație. Fie că este vorba despre OSUT la meci, drumeții la munte sau escapade în Vama Veche, aceste ieșiri au ca scop principal relaxarea și închegarea echipei. Prin aceste activități, voluntarii leagă prietenii strânse și se bucură de experiențe memorabile care transformă grupul de lucru într-o familie unită."
   },
   {
     image: "/assets/images/images/Proiecte/fosr.jpg",
@@ -170,20 +170,20 @@ export default function ProiecteSiInitiativePage() {
   const closePopup = () => setSelectedItem(null);
 
   return (
-    <main className="bg-[#121212] min-h-screen text-white pt-40 pb-20 font-sans">
+    <main className="bg-white dark:bg-[#121212] min-h-screen text-zinc-900 dark:text-white pt-40 pb-20 font-sans">
       
       {/* SECTIUNEA 1: PROIECTE */}
       <section className="w-full flex flex-col items-center mb-24 lg:px-20 px-6">
         <div className="w-full max-w-5xl relative flex justify-center items-center mb-16">
           <div className="absolute w-full h-[1px] bg-gradient-to-r from-transparent via-red-600 to-transparent opacity-70"></div>
-          <h1 className="bg-[#121212] px-10 text-4xl md:text-5xl font-bold relative z-10 tracking-wide text-white text-center uppercase">Proiecte</h1>
+          <h1 className="bg-white dark:bg-[#121212] px-10 text-4xl md:text-5xl font-bold relative z-10 tracking-wide text-zinc-900 dark:text-white text-center uppercase">Proiecte</h1>
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 max-w-7xl">
           {PROJECT_ITEMS.map((item, idx) => (
             <div 
               key={idx} 
-              className="group cursor-pointer bg-[#1c1c1c] rounded-2xl overflow-hidden border border-[#2a2a2a] shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-red-900/40 hover:border-red-600/50 flex flex-col"
+              className="group cursor-pointer bg-zinc-100 dark:bg-[#1c1c1c] rounded-2xl overflow-hidden border border-zinc-200 dark:border-[#2a2a2a] shadow-lg transition-all duration-300 hover:-translate-y-[6px] flex flex-col"
               onClick={() => openPopup(item)}
             >
               <div className="w-full h-48 relative overflow-hidden bg-black">
@@ -191,7 +191,7 @@ export default function ProiecteSiInitiativePage() {
                 <img src={item.image} alt={item.alt} className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110 opacity-90 group-hover:opacity-100" />
               </div>
               <div className="p-5 flex-grow flex items-center justify-center text-center">
-                <h3 className="text-xl font-semibold text-gray-100 group-hover:text-red-400 transition-colors">{item.alt}</h3>
+                <h3 className="text-xl font-semibold text-zinc-800 dark:text-gray-100 transition-colors">{item.alt}</h3>
               </div>
             </div>
           ))}
@@ -202,14 +202,14 @@ export default function ProiecteSiInitiativePage() {
       <section className="w-full flex flex-col items-center mb-20 lg:px-20 px-6">
         <div className="w-full max-w-5xl relative flex justify-center items-center mb-16">
           <div className="absolute w-full h-[1px] bg-gradient-to-r from-transparent via-red-600 to-transparent opacity-70"></div>
-          <h1 className="bg-[#121212] px-10 text-4xl md:text-5xl font-bold relative z-10 tracking-wide text-white text-center uppercase">Inițiative</h1>
+          <h1 className="bg-white dark:bg-[#121212] px-10 text-4xl md:text-5xl font-bold relative z-10 tracking-wide text-zinc-900 dark:text-white text-center uppercase">Inițiative</h1>
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 max-w-7xl">
           {INITIATIVE_AND_OSUTLA_ITEMS.map((item, idx) => (
             <div 
               key={idx} 
-              className="group cursor-pointer bg-[#1c1c1c] rounded-2xl overflow-hidden border border-[#2a2a2a] shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-red-900/40 hover:border-red-600/50 flex flex-col"
+              className="group cursor-pointer bg-zinc-100 dark:bg-[#1c1c1c] rounded-2xl overflow-hidden border border-zinc-200 dark:border-[#2a2a2a] shadow-lg transition-all duration-300 hover:-translate-y-[6px] flex flex-col"
               onClick={() => openPopup(item)}
             >
               <div className="w-full h-48 relative overflow-hidden bg-black">
@@ -217,7 +217,7 @@ export default function ProiecteSiInitiativePage() {
                 <img src={item.image} alt={item.alt} className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110 opacity-90 group-hover:opacity-100" />
               </div>
               <div className="p-5 flex-grow flex items-center justify-center text-center">
-                <h3 className="text-xl font-semibold text-gray-100 group-hover:text-red-400 transition-colors">{item.alt}</h3>
+                <h3 className="text-xl font-semibold text-zinc-800 dark:text-gray-100 transition-colors">{item.alt}</h3>
               </div>
             </div>
           ))}
@@ -229,27 +229,27 @@ export default function ProiecteSiInitiativePage() {
         <div className="fixed inset-0 z-[10000] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm transition-opacity" onClick={closePopup}>
           {/* Modal Container */}
           <div 
-            className="relative bg-[#1a1a1a] rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto shadow-2xl border border-zinc-800 flex flex-col md:flex-row animate-fadeIn"
+            className="relative bg-white dark:bg-[#1a1a1a] rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto shadow-2xl border border-zinc-200 dark:border-zinc-800 flex flex-col md:flex-row animate-fadeIn"
             onClick={(e) => e.stopPropagation()} // Prevent close when clicking inside the modal
           >
             {/* Close Button */}
             <button 
-              className="absolute top-4 right-4 z-50 text-white/70 hover:text-red-500 bg-black/50 hover:bg-black p-2 rounded-full transition-all"
+              className="absolute top-4 right-4 z-50 text-zinc-600 dark:text-white/70 hover:text-red-500 dark:hover:text-red-500 bg-white/50 dark:bg-black/50 hover:bg-white dark:hover:bg-black p-2 rounded-full transition-all"
               onClick={closePopup}
             >
               <i className="fas fa-times text-xl w-6 h-6 flex items-center justify-center"></i>
             </button>
             
             {/* Image Side */}
-            <div className="w-full md:w-5/12 h-64 md:h-auto relative bg-black shrink-0">
+            <div className="w-full md:w-5/12 h-64 md:h-auto relative bg-zinc-100 dark:bg-black shrink-0">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={selectedItem.image} alt={selectedItem.alt} className="w-full h-full object-cover" />
             </div>
             
             {/* Text Side */}
             <div className="p-8 md:p-10 flex flex-col w-full text-left">
-              <h2 className="text-3xl font-bold text-white mb-6 pb-4 border-b border-zinc-800">{selectedItem.alt}</h2>
-              <div className="text-zinc-300 whitespace-pre-wrap leading-relaxed text-[1rem]">
+              <h2 className="text-3xl font-bold text-zinc-900 dark:text-white mb-6 pb-4 border-b border-zinc-200 dark:border-zinc-800">{selectedItem.alt}</h2>
+              <div className="text-zinc-700 dark:text-zinc-300 whitespace-pre-wrap leading-relaxed text-[1rem]">
                 {selectedItem.text}
               </div>
             </div>

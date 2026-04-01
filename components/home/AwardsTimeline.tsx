@@ -94,27 +94,29 @@ export default function AwardsTimeline() {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight">Timeline <span className="text-red-600">Premii</span></h2>
-          <p className="text-zinc-600 dark:text-gray-400 mt-4 text-lg">O scurtă recapitulare a excelenței noastre (2019-2025)</p>
         </div>
         
-        <div className="relative border-l-4 border-zinc-300 dark:border-zinc-800 ml-3 md:ml-0 md:mx-auto md:w-full">
+        <div className="relative">
+          {/* Vertical Line */}
+          <div className="absolute left-3 md:left-1/2 h-full w-[2px] md:w-[4px] bg-zinc-300 dark:bg-zinc-800 -translate-x-1/2 z-0"></div>
+          
           {AWARDS.map((award, index) => (
-            <div key={index} className="mb-10 ml-8 md:ml-0 relative group">
+            <div key={index} className="mb-16 last:mb-0 relative group">
               {/* Timeline Dot */}
-              <div className={`absolute w-6 h-6 rounded-full -left-[40px] md:left-1/2 md:-ml-3 top-1 shadow-lg shadow-red-500/50 border-4 border-white dark:border-black ${award.color} z-20`}></div>
+              <div className={`absolute left-3 md:left-1/2 w-6 h-6 rounded-full -translate-x-1/2 top-2 shadow-lg shadow-red-500/50 border-4 border-white dark:border-black ${award.color} z-20`}></div>
               
               {/* Content Box */}
-              <div className={`flex flex-col md:flex-row items-center justify-between w-full md:px-0`}>
-                <div className={`w-full md:w-[45%] ${index % 2 === 0 ? 'md:text-right' : 'md:text-left md:ml-auto'}`}>
+              <div className={`flex flex-col md:flex-row items-center justify-between w-full`}>
+                <div className={`w-full md:w-[45%] pl-12 md:pl-0 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left md:ml-auto'}`}>
                   <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-6 rounded-2xl hover:border-red-500/50 transition-colors shadow-xl shadow-zinc-200 dark:shadow-black">
-                    <div className="flex items-baseline gap-2 mb-2 justify-start md:justify-[inherit]">
+                    <div className={`flex items-baseline gap-2 mb-2 ${index % 2 === 0 ? 'md:justify-end' : 'md:justify-start'}`}>
                       <span className="text-red-500 font-bold text-3xl tracking-widest">{award.year}</span>
                       <h3 className="text-xl font-bold text-zinc-900 dark:text-white uppercase tracking-wider">{award.event}</h3>
                     </div>
                     
-                    <ul className={`mt-4 space-y-2 flex flex-col ${index % 2 === 0 ? 'md:items-end' : 'md:items-start'}`}>
+                    <ul className={`mt-4 space-y-2 flex flex-col ${index % 2 === 0 ? 'md:items-end text-right' : 'md:items-start text-left'}`}>
                       {award.prizes.map((prize, pIndex) => (
-                        <li key={pIndex} className="text-zinc-700 dark:text-gray-300 text-sm md:text-base flex items-start gap-2 max-w-sm text-left">
+                        <li key={pIndex} className={`text-zinc-700 dark:text-gray-300 text-sm md:text-base flex items-start gap-2 max-w-sm ${index % 2 === 0 ? 'md:flex-row-reverse md:text-right' : 'text-left'}`}>
                           <span className="text-red-600 mt-1 flex-shrink-0">&bull;</span>
                           <span className="leading-snug">{prize}</span>
                         </li>

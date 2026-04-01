@@ -8,15 +8,13 @@ import DepartmentsSection from "@/components/despre/DepartmentsSection";
 
 export default function DespreNoi() {
   return (
-    <main className="main-wrap bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white font-sans min-h-screen pt-24 pb-10 overflow-hidden">
-      {/* Page Header / Contextual Image */}
-      <div className="flex justify-center mb-12 px-6">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img 
-          src="/assets/images/images/despre.png" 
-          className="max-w-xs md:max-w-md w-full object-contain filter drop-shadow-2xl" 
-          alt="Despre Noi" 
-        />
+    <main className="main-wrap bg-white dark:bg-[#121212] text-zinc-900 dark:text-white font-sans min-h-screen pt-36 pb-10 overflow-hidden">
+      {/* Page Header / Title */}
+      <div className="w-full max-w-5xl relative flex justify-center items-center mb-12 mx-auto px-6">
+        <div className="absolute w-full h-[2px] bg-gradient-to-r from-transparent via-red-600 to-transparent top-1/2 -translate-y-1/2 opacity-100"></div>
+        <h1 className="bg-white dark:bg-[#121212] px-10 text-4xl md:text-7xl font-bold relative z-10 tracking-wide text-zinc-900 dark:text-white text-center uppercase">
+          Despre <span className="text-red-600">Noi</span>
+        </h1>
       </div>
 
       <DespreHero />
@@ -25,11 +23,14 @@ export default function DespreNoi() {
       <DepartmentsSection />
 
       {/* Legacy features: Raport de activitate & Partners */}
-      <section className="py-24 bg-zinc-100 dark:bg-zinc-950 border-t border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white">
+      <section className="py-24 bg-zinc-100 dark:bg-[#121212] border-t border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white">
         <div className="max-w-6xl mx-auto px-6 flex flex-col items-center">
-          <h2 className="text-4xl md:text-5xl font-black uppercase tracking-widest text-center mb-10">
-            Raportul de <span className="text-red-600">activitate</span>
-          </h2>
+          <div className="w-full max-w-5xl relative flex justify-center items-center mb-10">
+            <div className="absolute w-full h-[2px] bg-gradient-to-r from-transparent via-red-600 to-transparent top-1/2 -translate-y-1/2 opacity-100"></div>
+            <h2 className="bg-zinc-100 dark:bg-[#121212] px-10 text-4xl md:text-5xl font-bold relative z-10 tracking-wide text-zinc-900 dark:text-white text-center uppercase">
+              Raportul de <span className="text-red-600">activitate</span>
+            </h2>
+          </div>
           
           <a 
             href="/assets/pdf/Raportul organizatiei semestrul 1 2024-2025.pdf" 

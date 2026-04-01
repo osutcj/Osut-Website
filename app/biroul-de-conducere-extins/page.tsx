@@ -3,32 +3,49 @@
 import React from "react";
 import "./bce.css";
 
-const TeamCard = ({ photo, lastName, firstName, role, fbLink, igLink, inLink }: any) => (
-    <div className="team-card">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={photo} alt={`${firstName} ${lastName}`} className="team-photo" />
-        <div className="team-name">
-            <span className="last-name">{lastName} </span>
-            <span className="first-name">{firstName}</span>
+const TeamCard = ({ photo, lastName, firstName, role, fbLink, igLink, inLink, photoPosition }: any) => (
+    <div className="bc-card">
+        <div className="bc-card-image-wrap">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+                src={photo}
+                alt={`${firstName} ${lastName}`}
+                className="bc-card-photo"
+                style={{ objectPosition: photoPosition || "top center" }}
+            />
         </div>
-        <div className="team-role">{role}</div>
-        <div className="links">
-            {fbLink && (
-                <a className="icon" href={fbLink} target="_blank" rel="noopener noreferrer">
-                    <i className="fab fa-facebook"></i>
-                </a>
-            )}
-            {igLink && (
-                <a className="icon" href={igLink} target="_blank" rel="noopener noreferrer">
-                    <i className="fab fa-instagram"></i>
-                </a>
-            )}
-            {inLink && (
-                <a className="icon" href={inLink} target="_blank" rel="noopener noreferrer">
-                    <i className="fab fa-linkedin"></i>
-                </a>
-            )}
+        <div className="bc-card-info">
+            <div className="bc-card-role">{role}</div>
+            <div className="bc-card-name">
+                <span className="bc-card-lastname">{lastName}</span>
+                <span className="bc-card-firstname">{firstName}</span>
+            </div>
+            <div className="bc-card-links">
+                {fbLink && (
+                    <a href={fbLink} target="_blank" rel="noopener noreferrer" className="bc-social-btn">
+                        <i className="fab fa-facebook-f"></i>
+                    </a>
+                )}
+                {igLink && (
+                    <a href={igLink} target="_blank" rel="noopener noreferrer" className="bc-social-btn">
+                        <i className="fab fa-instagram"></i>
+                    </a>
+                )}
+                {inLink && (
+                    <a href={inLink} target="_blank" rel="noopener noreferrer" className="bc-social-btn">
+                        <i className="fab fa-linkedin-in"></i>
+                    </a>
+                )}
+            </div>
         </div>
+    </div>
+);
+
+const SectionTitle = ({ label }: { label: string }) => (
+    <div className="bce-section-header">
+        <div className="bce-section-line"></div>
+        <h2 className="bce-section-title">{label}</h2>
+        <div className="bce-section-line"></div>
     </div>
 );
 
@@ -151,39 +168,28 @@ const PROIECTE = [
 
 export default function BCE() {
     return (
-        <main className="main-wrap bg-[#121212] min-h-screen text-white font-sans pb-16 pt-8">
-            <h1 className="bc-title">
-                <span className="white-text">BIROUL DE</span> <span className="red-text">CONDUCERE EXTINS</span>
-            </h1>
-
-            <div className="container mt-12 mb-8">
-                <h2 className="text-outline">DIRECȚII</h2>
+        <main className="bc-main">
+            <div className="bc-header">
+                <div className="bc-header-line"></div>
+                <h1 className="bc-title-new">
+                    <span>Biroul de</span>
+                    <span className="bc-title-red">Conducere Extins</span>
+                </h1>
             </div>
 
-            <div className="team-section">
-                {DIRECTII.map((member, i) => (
-                    <TeamCard key={i} {...member} />
-                ))}
+            <SectionTitle label="Direcții" />
+            <div className="bc-grid">
+                {DIRECTII.map((m, i) => <TeamCard key={i} {...m} />)}
             </div>
 
-            <div className="container mt-16 mb-8">
-                <h2 className="text-outline">SERVICII</h2>
+            <SectionTitle label="Servicii" />
+            <div className="bc-grid">
+                {SERVICII.map((m, i) => <TeamCard key={i} {...m} />)}
             </div>
 
-            <div className="team-section">
-                {SERVICII.map((member, i) => (
-                    <TeamCard key={i} {...member} />
-                ))}
-            </div>
-
-            <div className="container mt-16 mb-8">
-                <h2 className="text-outline">PROIECTE</h2>
-            </div>
-
-            <div className="team-section">
-                {PROIECTE.map((member, i) => (
-                    <TeamCard key={i} {...member} />
-                ))}
+            <SectionTitle label="Proiecte" />
+            <div className="bc-grid">
+                {PROIECTE.map((m, i) => <TeamCard key={i} {...m} />)}
             </div>
         </main>
     );

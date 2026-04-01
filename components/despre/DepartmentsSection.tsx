@@ -69,15 +69,13 @@ const DEPARTAMENTE = [
 
 export default function DepartmentsSection() {
   return (
-    <section className="py-24 bg-white dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white">
+    <section className="py-24 bg-white dark:bg-[#121212] border-t border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black uppercase tracking-widest text-zinc-900 dark:text-white">
+        <div className="w-full max-w-5xl relative flex justify-center items-center mb-16 mx-auto">
+          <div className="absolute w-full h-[2px] bg-gradient-to-r from-transparent via-red-600 to-transparent top-1/2 -translate-y-1/2 opacity-100"></div>
+          <h2 className="bg-white dark:bg-[#121212] px-10 text-4xl md:text-5xl font-bold relative z-10 tracking-wide text-zinc-900 dark:text-white text-center uppercase">
             Direcții și <span className="text-red-600">Servicii</span>
           </h2>
-          <p className="mt-4 text-zinc-600 dark:text-gray-400 text-lg">
-            Descoperă departamentele noastre și alege unde vrei să faci diferența.
-          </p>
         </div>
 
         <div className="flex flex-col gap-8">
@@ -98,7 +96,7 @@ export default function DepartmentsSection() {
               
               {/* Descriere (Dreapta pe md) */}
               <div className="md:w-2/3">
-                <p className="text-zinc-700 dark:text-gray-300 leading-relaxed text-justify relative">
+                <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed text-justify relative z-10 text-lg">
                   {dept.descriere}
                 </p>
               </div>

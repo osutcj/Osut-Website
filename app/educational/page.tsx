@@ -17,32 +17,34 @@ const DOCUMENTS = [
 ];
 
 const senatMembers = [
-    {nume: "Mitocaru", prenume: "Silviu", email: "mitocarusilviu227@gmail.com", phone: "0752769200"},
-    {nume: "Buzea", prenume: "Lorena", email: "lorena7buzea@gmail.com", phone: "0747055101"},
-    {nume: "Demean", prenume: "Vlad", email: "demeanvlad8@gmail.com", phone: "0736353111"},
-    {nume: "Duțulescu", prenume: "Aurelia-Georgiana", email: "dutulescureli14@gmail.com", phone: "0746532877"},
-    {nume: "Filip", prenume: "Cristian-Mihai", email: "cristifilip2002@gmail.com", phone: "0760993125"},
-    {nume: "Ihoș", prenume: "Iarina-Valentina", email: "iarinaihos@gmail.com", phone: "0744216598"},
-    {nume: "Abiculesei", prenume: "Denis-Andrei", email: "abiculeseidenis7@gmail.com", phone: "0745360232"},
-    {nume: "Ormindean", prenume: "Vlad-Cosmin", email: "ormindeanvlad@gmail.com", phone: "0743135003"},
-    {nume: "Timiș", prenume: "Traian-Marius", email: "traiantimis02@gmail.com", phone: "0757332298"},
-    {nume: "Bria", prenume: "Mara Aiyana", email: "aiyanamara@gmail.com", phone: "0758091841"},
-    {nume: "Vîrlan", prenume: "Dragoș George", email: "dragosvirlan2413@gmail.com", phone: "0746373983"},
-    {nume: "Licu", prenume: "Arina Andreea", email: "arina.licu04@gmail.com", phone: "0770938737"},
-    {nume: "Livinschi", prenume: "Cătălina", email: "catalinalivinschi97@gmail.com", phone: "0759145397"},
-    {nume: "Maxim", prenume: "Andrei Vasile", email: "andreimaxim805@gmail.com", phone: "0756465679"},
-    {nume: "Nistor", prenume: "Marius Gabriel", email: "nistormarius200@gmail.com", phone: "0749631616"},
-    {nume: "Arimia", prenume: "Andreea-Ștefania", email: "arimiaandreeastefania@gmail.com", phone: "0762385168"},
-    {nume: "Ciotea", prenume: "Alexandra-Anamaria", email: "lexaciotea@gmail.com", phone: "0741285543"},
-    {nume: "Orțan", prenume: "Adela-Lorena", email: "adelalorena16@gmail.com", phone: "0754273202"},
-    {nume: "Moldovan", prenume: "Ana-Maria", email: "anamariamoldovan09.amm@gmail.com", phone: "0743282230"},
-    {nume: "Spătăcean", prenume: "Lidia-Giorgiana", email: "sgiorgiana02@gmail.com", phone: "0783054447"},
-    {nume: "Rusu", prenume: "Horia Daniel", email: "horiarusu21@gmail.com", phone: "0747473335"},
-    {nume: "Borodi", prenume: "Cristina", email: "cristinaborodi2003@gmail.com", phone: "0762543494"},
-    {nume: "Dragoș", prenume: "Alex Răzvan", email: "dragosalex318@gmail.com", phone: "0757695110"},
-    {nume: "Dulf", prenume: "Diana Geanina", email: "diana.dulf@lspv.ro", phone: "0756499825"},
-    {nume: "Covaci", prenume: "Sebastian-Andrei", email: "seb.covaci@gmail.com", phone: "0752664094"},
-    {nume: "Șepși", prenume: "Roxana", email: "roxanasepsi_09@yahoo.com", phone: "0741900411"},
+    {nume: "Mitocaru", prenume: "Silviu-Gabriel"},
+    {nume: "Bălănescu", prenume: "Rareș"},
+    {nume: "Coș", prenume: "Tudor-Adrian"},
+    {nume: "Juravle", prenume: "Monica"},
+    {nume: "Moiceanu", prenume: "Elena-Ștefania"},
+    {nume: "Tudose", prenume: "Rareș"},
+    {nume: "Abiculesei", prenume: "Denis-Andrei"},
+    {nume: "Lenghel", prenume: "Carmen"},
+    {nume: "Ormindean", prenume: "Vlad-Cosmin"},
+    {nume: "Timiș", prenume: "Traian-Marius"},
+    {nume: "Bondrea", prenume: "Lucian-Andrei"},
+    {nume: "Bria", prenume: "Mara-Aiyana"},
+    {nume: "Afanas", prenume: "Neonila"},
+    {nume: "Licu", prenume: "Arina-Andreea"},
+    {nume: "Livinschi", prenume: "Cătălina"},
+    {nume: "Maxim", prenume: "Andrei-Vasile"},
+    {nume: "Arimia", prenume: "Andreea-Ștefania"},
+    {nume: "Bujdei", prenume: "Robert"},
+    {nume: "Ciotea", prenume: "Alexandra-Anamaria"},
+    {nume: "Chirilă", prenume: "Iulian"},
+    {nume: "Spătăcean", prenume: "Lidia-Giorgiana"},
+    {nume: "Precub", prenume: "Alexandru-Ioan"},
+    {nume: "Joia", prenume: "Simona"},
+    {nume: "Mureșan", prenume: "Ana-Maria"},
+    {nume: "Suciu", prenume: "Alexandra"},
+    {nume: "Sillai", prenume: "Beatrice"},
+    {nume: "Borbei", prenume: "Alexandra"},
+    {nume: "Covaci", prenume: "Sebastian-Gabriel"},
 ];
 
 const faculties = {
@@ -50,163 +52,175 @@ const faculties = {
         id: "arhitectura",
         name: "FACULTATEA DE ARHITECTURĂ ȘI URBANISM",
         shortName: "Facultatea de Arhitectură și Urbanism",
+        formular: "https://forms.office.com/e/F3bssFQU5E",
         members: [
-            {nume: "Dâscă", prenume: "Sabrina-Ioana", email: "sabrinadasca@gmail.com", phone: "0729579560"},
-            {nume: "Couti", prenume: "Paul", email: "coutipaul372@gmail.com", phone: "074528065"},
-            {nume: "Neculcea", prenume: "Davide", email: "davidee.neculcea@gmail.com", phone: "0745837559"},
+            {nume: "Couți", prenume: "Paul"},
+            {nume: "Dâscă", prenume: "Sabrina-Ioana"},
+            {nume: "Rusu", prenume: "George"},
         ]
     },
     automatica: {
         id: "automatica",
         name: "FACULTATEA DE AUTOMATICĂ ȘI CALCULATOARE",
         shortName: "Facultatea de Automatică și Calculatoare",
+        formular: "https://forms.office.com/e/2S0mtH8R6J",
         members: [
-            {nume: "Filip", prenume: "Cristian-Mihai", email: "cristifilip2002@gmail.com", phone: "0760993125"},
-            {nume: "Demean", prenume: "Vlad", email: "demeanvlad8@gmail.com", phone: "0736353111"},
-            {nume: "Nechita", prenume: "Florina-Elena", email: "nechitaflorina2002@gmail.com", phone: "0725534103"},
-            {nume: "Mozacu", prenume: "Ştefania-Cristina", email: "stefaniamozacu1@gmail.com", phone: "0756032882"},
-            {nume: "Bălănescu", prenume: "Rareș-Ioan", email: "raresbalanescu@gmail.com", phone: "0786825333"},
-            {nume: "Mureșan", prenume: "Daria", email: "dariamuresan100@gmail.com", phone: "0757203096"},
-            {nume: "Tudose", prenume: "Rareș", email: "tudoserares20@gmail.com", phone: "0742869019"},
-            {nume: "Avram", prenume: "Iulia", email: "iuliaavram455@gmail.com", phone: "0737615259"},
-            {nume: "Duțulescu", prenume: "Aurelia-Georgiana", email: "dutulescureli14@gmail.com", phone: "0746532877"},
-            {nume: "Vasile", prenume: "Maria-Lorena", email: "vasilemarialorena@gmail.com", phone: "0754637917"},
+            {nume: "Bălănescu", prenume: "Rareș"},
+            {nume: "Clim", prenume: "Diana"},
+            {nume: "Indreiu", prenume: "Daniela"},
+            {nume: "Juravle", prenume: "Monica"},
+            {nume: "Moiceanu", prenume: "Elena-Ștefania"},
+            {nume: "Murariu", prenume: "Georgiana"},
+            {nume: "Pavel", prenume: "Luca-Georgian"},
+            {nume: "Santeiu", prenume: "Anda-Ștefana"},
+            {nume: "Șișeștean", prenume: "Andrei"},
+            {nume: "Tudose", prenume: "Rareș"},
         ]
     },
     autovehicule: {
         id: "autovehicule",
-        name: "FACULTATEA DE AUTOVEHICULE RUTIERE, MECATRONICĂ SI MECANICĂ",
+        name: "FACULTATEA DE AUTOVEHICULE RUTIERE, MECATRONICĂ ȘI MECANICĂ",
         shortName: "Facultatea de Autovehicule Rutiere, Mecatronică și Mecanică",
+        formular: "https://forms.office.com/e/PCZqRCKGRv",
         members: [
-            {nume: "Balazs", prenume: "Andra-Renata", email: "andrarenata8@yahoo.com", phone: "0757232711"},
-            {nume: "Bria", prenume: "Mara-Aiyana", email: "aiyanamara@gmail.com", phone: "0758091841"},
-            {nume: "Crăcăoanu", prenume: "Răzvan-Ioan", email: "razvanioan071@gmail.com", phone: "0754530670"},
-            {nume: "Ungur", prenume: "Ştefania Denisa", email: "stefania_ungur@yahoo.com", phone: "0745170966"},
-            {nume: "Cotea", prenume: "Teona-Maria", email: "teonacotea@gmail.com", phone: "0770863134"},
-            {nume: "Faur", prenume: "David-Mihai", email: "faur.david850@gmail.com", phone: "0761192359"},
-            {nume: "Virlan", prenume: "Dragos-George", email: "dragosvirlan2413@gmail.com", phone: "0746373983"},
+            {nume: "Bondrea", prenume: "Lucian-Andrei"},
+            {nume: "Bria", prenume: "Mara-Aiyana"},
+            {nume: "Buzgariu", prenume: "Ioana Niculina"},
+            {nume: "Crăcăoanu", prenume: "Klaudia Maria"},
+            {nume: "Haitonic", prenume: "Dacian-Alexandru"},
+            {nume: "Iaută", prenume: "Claudiu-Marian"},
+            {nume: "Veres", prenume: "Georgian-Ionuț"},
         ]
     },
     constructii: {
         id: "constructii",
         name: "FACULTATEA DE CONSTRUCȚII",
         shortName: "Facultatea de Construcții",
+        formular: "https://forms.office.com/e/FGqc1UgaDV",
         members: [
-            {nume: "Lenghel", prenume: "Carmen-Anamaria", email: "carmenlenghek@gmail.com", phone: "0763600973"},
-            {nume: "Timiș", prenume: "Traian Marius", email: "traiantimis02@gmail.com", phone: "0757332298"},
-            {nume: "Abiculesei", prenume: "Denis-Andrei", email: "abiculeseidenis7@gmail.com", phone: "0745360232"},
-            {nume: "Buda", prenume: "Sebastian Petru", email: "sebipetrubuda@gmail.com", phone: "0771495509"},
-            {nume: "Secară", prenume: "Călin-Bogdan", email: "calinbogdan02@gmail.com", phone: "0734785227"},
-            {nume: "Ormindean", prenume: "Vlad Cosmin", email: "ormindeanvlad@gmail.com", phone: "0743135003"},
-            {nume: "Urian", prenume: "Andrei-Lucian", email: "urian.lucian@yahoo.com", phone: "0771239970"},
-            {nume: "Miherta", prenume: "Florentina-Ioana", email: "ioanamiherta2@gmail.com", phone: "0742683469"},
-            {nume: "Marcu", prenume: "Petra-Denisa", email: "marcudenisa3@gmail.com", phone: "0755194584"},
+            {nume: "Abiculesei", prenume: "Denis-Andrei"},
+            {nume: "Chira", prenume: "Daria-Larisa"},
+            {nume: "Lenghel", prenume: "Carmen-Anamaria"},
+            {nume: "Marcu", prenume: "Petra-Denisa"},
+            {nume: "Ormindean", prenume: "Vlad"},
+            {nume: "Stan", prenume: "Giulia"},
+            {nume: "Stoian-Pop", prenume: "Alexia-Ioana"},
+            {nume: "Timiș", prenume: "Traian-Marius"},
+            {nume: "Zinici", prenume: "Diana"},
         ]
     },
     electronica: {
         id: "electronica",
         name: "FACULTATEA DE ELECTRONICĂ, TELECOMUNICAȚII ȘI TEHNOLOGIA INFORMAȚIEI",
         shortName: "Facultatea de Electronică, Telecomunicații și Tehnologia Informației",
+        formular: "https://forms.office.com/e/gDaHAf3VcK",
         members: [
-            {nume: "Oros", prenume: "Ovidiu-Tiberiu", email: "Oros.Ov.Ovidiu@student.utcluj.ro", phone: "0758346910"},
-            {nume: "Nicoară", prenume: "Paul-Nicolae", email: "nicoara.ni.paul@student.utcluj.ro", phone: "0799856742"},
-            {nume: "Arimia", prenume: "Andreea-Ștefania", email: "Arimia.Io.Andreea@student.utcluj.ro", phone: "0762385168"},
-            {nume: "Drule", prenume: "Daniela-Ileana", email: "Drule.Vi.Daniela@student.utcluj.ro", phone: "0765502464"},
-            {nume: "Avram", prenume: "Maria", email: "Avram.Ma.Maria@student.utcluj.ro", phone: "0741139690"},
-            {nume: "Beldean", prenume: "Ioana Maria", email: "Beldean.Io.Ioana@student.utcluj.ro", phone: "0743975523"},
-            {nume: "Ciotea", prenume: "Alexandra-Anamaria", email: "Ciotea.Ad.Alexandra@student.utcluj.ro", phone: "0741285543"},
+            {nume: "Arimia", prenume: "Andreea-Ștefania"},
+            {nume: "Bujdei", prenume: "Robert"},
+            {nume: "Drule", prenume: "Daniela-Ileana"},
+            {nume: "Irimiciuc", prenume: "Cosmin"},
+            {nume: "Pop", prenume: "Lorena Maria"},
+            {nume: "Signori", prenume: "Gianmario"},
+            {nume: "Tivadar", prenume: "Dragoș-Filip"},
         ]
     },
     materiale: {
         id: "materiale",
         name: "FACULTATEA DE INGINERIA MATERIALELOR ȘI A MEDIULUI",
         shortName: "Facultatea de Ingineria Materialelor și a Mediului",
+        formular: "https://forms.office.com/e/LbLkr1vKdZ",
         members: [
-            {nume: "Borodi", prenume: "Cristina", email: "cristinaborodi2003@gmail.com", phone: "0762543494"},
-            {nume: "Adorean", prenume: "Lorena-Valentina", email: "adoreanlorena@gmail.com", phone: "0771008548"},
-            {nume: "Cojocaru", prenume: "Ana-Maria Nuți", email: "anamariaann222n@gmail.com", phone: "0764730269"},
-            {nume: "Gherman", prenume: "Anamaria Luisa", email: "ursan.annamarya.10@gmail.com", phone: "0756608672"},
+            {nume: "Goman", prenume: "Denis Gabriel"},
+            {nume: "Joia", prenume: "Simona"},
+            {nume: "Oltean", prenume: "Ariana"},
+            {nume: "Pop", prenume: "Radu-Florin"},
         ]
     },
     instalatii: {
         id: "instalatii",
         name: "FACULTATEA DE INGINERIE A INSTALAȚIILOR",
         shortName: "Facultatea de Inginerie a Instalațiilor",
+        formular: "https://forms.office.com/e/B09qBJHQkB",
         members: [
-            {nume: "Nasca", prenume: "Tudor", email: "nascatudor@gmail.com", phone: "0760237647"},
-            {nume: "Costea", prenume: "Alina-Paula-Daniela", email: "acostea53@yahoo.com", phone: "0731853115"},
-            {nume: "Rusu", prenume: "Horia-Daniel", email: "horiarusu21@gmail.com", phone: "0747473335"},
+            {nume: "Costea", prenume: "Alina Paula Denisa"},
+            {nume: "Nașca", prenume: "Tudor"},
+            {nume: "Precub", prenume: "Alexandru-Ioan"},
         ]
     },
     electrica: {
         id: "electrica",
         name: "FACULTATEA DE INGINERIE ELECTRICĂ",
         shortName: "Facultatea de Inginerie Electrică",
+        formular: "https://forms.office.com/e/M6Qgtq2Fwf",
         members: [
-            {nume: "Mihai", prenume: "Vlad-Gabriel", email: "mihaivg@gmail.com", phone: "0732801763"},
-            {nume: "Ocneru", prenume: "Diana", email: "ocnerudiana@gmail.com", phone: "0757949870"},
-            {nume: "Moldovan", prenume: "Ana-Maria", email: "anamariamoldovan09.amm@gmail.com", phone: "0743282230"},
-            {nume: "Spătăcean", prenume: "Lidia-Giorgiana", email: "sgiorgiana02@gmail.com", phone: "0783054447"},
-            {nume: "Dumitrean", prenume: "Denis-Andrei", email: "denisandreidumitrean@gmail.com", phone: "0768456800"},
-            {nume: "Prode", prenume: "Ioana Ștefania", email: "niastefa56@gmail.com", phone: "0741397575"},
+            {nume: "Chirilă", prenume: "Iulian"},
+            {nume: "Constandache", prenume: "Ionela"},
+            {nume: "Drăguș", prenume: "Ioan-Darius"},
+            {nume: "Dumitrean", prenume: "Denis"},
+            {nume: "Moldovan", prenume: "Ana-Maria"},
+            {nume: "Spătăcean", prenume: "Lidia-Giorgiana"},
         ]
     },
     industriala: {
         id: "industriala",
         name: "FACULTATEA DE INGINERIE INDUSTRIALĂ, ROBOTICĂ ȘI MANAGEMENTUL PRODUCȚIEI",
         shortName: "Facultatea de Inginerie Industrială",
+        formular: "https://forms.office.com/e/TJYTTEWUyB",
         members: [
-            {nume: "Licu", prenume: "Arina-Andreea", email: "arina.licu04@gmail.com", phone: "0770938737"},
-            {nume: "Nistor", prenume: "Marius-Gabriel", email: "nistormarius200@gmail.com", phone: "0749631616"},
-            {nume: "Livinschi", prenume: "Cătălina", email: "catalinalivinschi97@gmail.com", phone: "0759145397"},
-            {nume: "Maxim", prenume: "Andrei-Vasile", email: "andreimaxim805@gmail.com", phone: "0756465679"},
-            {nume: "Streza", prenume: "Cornel Bogdan", email: "bogdanstreza17@gmail.com", phone: "0761024876"},
-            {nume: "Meghețan", prenume: "Ana Camelia", email: "cameliameghesan105@gmail.com", phone: "0756824591"},
-            {nume: "Man", prenume: "Richard Daniel", email: "manricharddaniel@yahoo.com", phone: "0745670036"},
-            {nume: "Spătar", prenume: "Georgiana-Teodora", email: "georgispatar@gmail.com", phone: "0752137279"},
-            {nume: "Privigyei", prenume: "Ana-Maria-Alexandra", email: "privigyeianamaria@gmail.com", phone: "0758740453"},
+            {nume: "Afanas", prenume: "Neonila"},
+            {nume: "Dan", prenume: "Andrada Nicola"},
+            {nume: "Licu", prenume: "Arina-Andreea"},
+            {nume: "Livinschi", prenume: "Cătălina"},
+            {nume: "Maxim", prenume: "Andrei"},
+            {nume: "Mititean", prenume: "Florina"},
+            {nume: "Negură", prenume: "Daria Ana-Maria"},
+            {nume: "Streza", prenume: "Bogdan"},
+            {nume: "Suciu", prenume: "Bianca"},
         ]
     },
     "inginerie-bm": {
         id: "inginerie-bm",
         name: "FACULTATEA DE INGINERIE (CUNBM)",
         shortName: "Facultatea de Inginerie (CUNBM)",
+        formular: "https://forms.office.com/e/k2PqfE50u4",
         members: [
-            {nume: "Gyorgy", prenume: "Melissza Szemida", email: "Gyorgymelissza@gmail.com", phone: "0747487529"},
-            {nume: "Țînțaș", prenume: "Gheorghe-Mihăiță", email: "gheorghetintas.14@gmail.com", phone: "0751535197"},
-            {nume: "Sillai", prenume: "Beatrice", email: "sillaibeatrice@gmail.com", phone: "0732779412"},
+            {nume: "Gyorgy", prenume: "Melissza Scemida"},
+            {nume: "Koloszvary", prenume: "Alexandru Andrei"},
+            {nume: "Sillai", prenume: "Beatrice"},
+            {nume: "Țînțaș", prenume: "Gheorghe-Mihăiță"},
         ]
     },
     "litere-bm": {
         id: "litere-bm",
         name: "FACULTATEA DE LITERE (CUNBM)",
         shortName: "Facultatea de Litere (CUNBM)",
+        formular: "https://forms.office.com/e/Kq3UJvc4UW",
         members: [
-            {nume: "Dragoș", prenume: "Alex", email: "dragosalex318@gmail.com", phone: "0757695110"},
-            {nume: "Popdan", prenume: "Nicoleta Andreea", email: "nicoletapopdan20@gmail.com", phone: "0752063197"},
-            {nume: "Neamț", prenume: "Lorena-Alexandra", email: "lanlore236@gmail.com", phone: "0743080346"},
-            {nume: "Gaier", prenume: "Andreea-Cristiana", email: "andreeagaier.student@gmail.com", phone: "0764553543"},
+            {nume: "Gaier", prenume: "Andreea-Cristina"},
+            {nume: "Mureșan", prenume: "Ana-Maria"},
+            {nume: "Popdan", prenume: "Nicoleta-Andreea"},
+            {nume: "Suciu", prenume: "Alexandra"},
         ]
     },
     "stiinte-bm": {
         id: "stiinte-bm",
         name: "FACULTATEA DE ȘTIINȚE (CUNBM)",
         shortName: "Facultatea de Științe (CUNBM)",
+        formular: "https://forms.office.com/e/xc03HQNVBe",
         members: [
-            {nume: "Şepşi", prenume: "Roxana", email: "roxanasepsi_09@yahoo.com", phone: "0741900411"},
-            {nume: "Deak", prenume: "Szilvia Szabina", email: "szilvia.deak@lspv.ro", phone: "0756371095"},
-            {nume: "Covaci", prenume: "Sebastian Gabriel", email: "seb.covaci@gmail.com", phone: "0752664094"},
-            {nume: "Leonte", prenume: "Cosmin", email: "asassinulyoutubuluy@gmail.com", phone: "0757184357"},
+            {nume: "Borbei", prenume: "Alexandra"},
+            {nume: "Borșa", prenume: "Cătălin"},
+            {nume: "Leonte", prenume: "Cosmin"},
+            {nume: "Covaci", prenume: "Sebastian-Gabriel"},
+            {nume: "Rus", prenume: "Gabriela Maria"},
         ]
     },
 };
 
-const ReprezCard = ({ member }: { member: { nume: string, prenume: string, email: string, phone: string } }) => (
+const ReprezCard = ({ member }: { member: { nume: string, prenume: string } }) => (
     <div className="sr-reprez">
         <h1>{member.nume}</h1>
         <h2>{member.prenume}</h2>
-        <h4>Email: <a href={`mailto:${member.email}`} className="sr-contact-link">{member.email}</a></h4>
-        <h4>Phone Number: <a href={`tel:${member.phone}`} className="sr-contact-link">{member.phone}</a></h4>
     </div>
 );
 
@@ -232,13 +246,13 @@ export default function Educational() {
     const selectedFaculty = selectedFacultyId ? faculties[selectedFacultyId as keyof typeof faculties] : null;
 
     return (
-        <main className="bg-[#121212] font-sans pb-16 min-h-screen pt-40 text-white flex flex-col items-center">
+        <main className="bg-white dark:bg-[#121212] font-sans pb-16 min-h-screen pt-40 text-zinc-900 dark:text-white flex flex-col items-center">
             
             {/* 1. SECTION: OSUT TE INFORMEAZA */}
             <div className="w-full flex flex-col items-center mb-24 px-6 lg:px-20" id="osut-te-informeaza">
                 <div className="w-full max-w-5xl relative flex justify-center items-center mb-10">
                     <div className="absolute w-full h-[1px] bg-gradient-to-r from-transparent via-red-600 to-transparent top-1/2 -translate-y-1/2 opacity-70"></div>
-                    <h1 className="bg-[#121212] px-10 text-4xl md:text-5xl font-bold relative z-10 tracking-wide text-white text-center uppercase">OSUT te informează</h1>
+                    <h1 className="bg-white dark:bg-[#121212] px-10 text-4xl md:text-5xl font-bold relative z-10 tracking-wide text-zinc-900 dark:text-white text-center uppercase">OSUT te informează</h1>
                 </div>
                 
                 <div className="w-full max-w-7xl">
@@ -250,7 +264,7 @@ export default function Educational() {
             <div className="w-full flex flex-col items-center mb-24 px-6 lg:px-20" id="resurse">
                 <div className="w-full max-w-5xl relative flex justify-center items-center mb-10">
                     <div className="absolute w-full h-[1px] bg-gradient-to-r from-transparent via-red-600 to-transparent top-1/2 -translate-y-1/2 opacity-70"></div>
-                    <h1 className="bg-[#121212] px-10 text-4xl md:text-5xl font-bold relative z-10 tracking-wide text-white text-center uppercase">Resurse</h1>
+                    <h1 className="bg-white dark:bg-[#121212] px-10 text-4xl md:text-5xl font-bold relative z-10 tracking-wide text-zinc-900 dark:text-white text-center uppercase">Resurse</h1>
                 </div>
 
                 <div className="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -272,7 +286,7 @@ export default function Educational() {
             <div className="w-full flex flex-col items-center mb-16 px-6 lg:px-20" id="studenti-reprezentanti">
                 <div className="w-full max-w-5xl relative flex justify-center items-center mb-10">
                     <div className="absolute w-full h-[1px] bg-gradient-to-r from-transparent via-red-600 to-transparent top-1/2 -translate-y-1/2 opacity-70"></div>
-                    <h1 className="bg-[#121212] px-10 text-4xl md:text-5xl font-bold relative z-10 tracking-wide text-white text-center uppercase">Studenți Reprezentanți</h1>
+                    <h1 className="bg-white dark:bg-[#121212] px-10 text-4xl md:text-5xl font-bold relative z-10 tracking-wide text-zinc-900 dark:text-white text-center uppercase">Studenți Reprezentanți</h1>
                 </div>
 
                 <div className="w-full max-w-7xl">
@@ -331,14 +345,6 @@ export default function Educational() {
 
                     {activeTab === "consiliu" && selectedFaculty && (
                         <div className="sr-section-content mt-10">
-                            <div className="container mx-auto px-4 text-center mb-12">
-                                <h2 className="text-3xl lg:text-4xl font-extrabold uppercase mb-6 inline-block">
-                                    {selectedFaculty.name.split(' ').slice(0, 2).join(' ')}{" "}
-                                    <span className="text-[#be1e2d] mx-2">
-                                        {selectedFaculty.name.split(' ').slice(2).join(' ')}
-                                    </span>
-                                </h2>
-                            </div>
                             <div className="sr-scroll-container">
                                 {selectedFaculty.members.map((member, idx) => (
                                     <ReprezCard key={idx} member={member} />
