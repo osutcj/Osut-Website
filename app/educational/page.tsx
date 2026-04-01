@@ -17,6 +17,8 @@ const DOCUMENTS = [
 ];
 
 const senatMembers = [
+    {nume: "Licu", prenume: "Arina-Andreea", subtitlu: "Student Reprezentant în BOS"},
+    {nume: "Timiș", prenume: "Traian-Marius", subtitlu: "Student Reprezentant în BCA"},
     {nume: "Mitocaru", prenume: "Silviu-Gabriel"},
     {nume: "Bălănescu", prenume: "Rareș"},
     {nume: "Coș", prenume: "Tudor-Adrian"},
@@ -26,11 +28,9 @@ const senatMembers = [
     {nume: "Abiculesei", prenume: "Denis-Andrei"},
     {nume: "Lenghel", prenume: "Carmen"},
     {nume: "Ormindean", prenume: "Vlad-Cosmin"},
-    {nume: "Timiș", prenume: "Traian-Marius"},
     {nume: "Bondrea", prenume: "Lucian-Andrei"},
     {nume: "Bria", prenume: "Mara-Aiyana"},
     {nume: "Afanas", prenume: "Neonila"},
-    {nume: "Licu", prenume: "Arina-Andreea"},
     {nume: "Livinschi", prenume: "Cătălina"},
     {nume: "Maxim", prenume: "Andrei-Vasile"},
     {nume: "Arimia", prenume: "Andreea-Ștefania"},
@@ -98,6 +98,7 @@ const faculties = {
         shortName: "Facultatea de Construcții",
         formular: "https://forms.office.com/e/FGqc1UgaDV",
         members: [
+            {nume: "Timiș", prenume: "Traian-Marius", subtitlu: "Student Reprezentant în BCA"},
             {nume: "Abiculesei", prenume: "Denis-Andrei"},
             {nume: "Chira", prenume: "Daria-Larisa"},
             {nume: "Lenghel", prenume: "Carmen-Anamaria"},
@@ -105,7 +106,6 @@ const faculties = {
             {nume: "Ormindean", prenume: "Vlad"},
             {nume: "Stan", prenume: "Giulia"},
             {nume: "Stoian-Pop", prenume: "Alexia-Ioana"},
-            {nume: "Timiș", prenume: "Traian-Marius"},
             {nume: "Zinici", prenume: "Diana"},
         ]
     },
@@ -164,12 +164,12 @@ const faculties = {
     industriala: {
         id: "industriala",
         name: "FACULTATEA DE INGINERIE INDUSTRIALĂ, ROBOTICĂ ȘI MANAGEMENTUL PRODUCȚIEI",
-        shortName: "Facultatea de Inginerie Industrială",
+        shortName: "Facultatea de Inginerie Industrială, Robotică și Managementul Producției",
         formular: "https://forms.office.com/e/TJYTTEWUyB",
         members: [
+            {nume: "Licu", prenume: "Arina-Andreea", subtitlu: "Student Reprezentant în BOS"},
             {nume: "Afanas", prenume: "Neonila"},
             {nume: "Dan", prenume: "Andrada Nicola"},
-            {nume: "Licu", prenume: "Arina-Andreea"},
             {nume: "Livinschi", prenume: "Cătălina"},
             {nume: "Maxim", prenume: "Andrei"},
             {nume: "Mititean", prenume: "Florina"},
@@ -217,10 +217,15 @@ const faculties = {
     },
 };
 
-const ReprezCard = ({ member }: { member: { nume: string, prenume: string } }) => (
+const ReprezCard = ({ member }: { member: { nume: string, prenume: string, subtitlu?: string } }) => (
     <div className="sr-reprez">
         <h1>{member.nume}</h1>
         <h2>{member.prenume}</h2>
+        {member.subtitlu && (
+            <p className="sr-subtitle" style={{ color: '#ffffff', fontWeight: 'bold', fontSize: '16px', marginTop: '10px', textTransform: 'uppercase' }}>
+                {member.subtitlu}
+            </p>
+        )}
     </div>
 );
 
