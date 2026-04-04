@@ -76,7 +76,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  alternatives: {
+  alternates: {
     canonical: "https://osut.org",
   },
 };
