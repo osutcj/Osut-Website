@@ -2,7 +2,7 @@
 
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { Sun, HalfMoon } from "iconoir-react";
+import { SunLight, HalfMoon } from "iconoir-react";
 
 export default function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
@@ -24,7 +24,7 @@ export default function ThemeSwitcher() {
       aria-label="Toggle Theme"
     >
       {theme === "dark" ? (
-        <Sun width={24} height={24} />
+        <SunLight width={24} height={24} />
       ) : (
         <HalfMoon width={24} height={24} />
       )}
