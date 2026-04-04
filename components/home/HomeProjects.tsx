@@ -13,8 +13,8 @@ const PROJECTS = [
   { name: "PoliHack", logo: "/assets/images/images/Proiecte/Logo-uri/logo-polihack.png" },
   { name: "PoliSport", logo: "/assets/images/images/Proiecte/Logo-uri/logo-polisport.png" },
   { name: "InfoCafe", logo: "/assets/images/images/Proiecte/Logo-uri/logo-infocafe.png" },
-  { name: "ZUT", logo: "" },
-  { name: "Viitor Inginer", logo: "" }
+  { name: "ZUT", logo: "/assets/images/images/Proiecte/zut.png" },
+  { name: "Viitor Inginer", logo: "/assets/images/images/Proiecte/viitoringiner.PNG" }
 ];
 
 export default function HomeProjects() {
@@ -42,12 +42,15 @@ export default function HomeProjects() {
             >
               <div className="relative z-10 w-full h-full flex items-center justify-center">
                 {project.logo ? (
-                  /* eslint-disable-next-line @next/next/no-img-element */
-                  <img 
-                    src={project.logo} 
-                    alt={project.name} 
-                    className="max-w-[85%] max-h-[85%] object-contain transition-transform duration-500 group-hover:scale-110 filter brightness-100 dark:brightness-95 dark:group-hover:brightness-110" 
-                  />
+                  <div className="relative w-full h-full p-2">
+                    <Image 
+                      src={project.logo} 
+                      alt={project.name} 
+                      fill
+                      sizes="(max-width: 768px) 50vw, 25vw"
+                      className="object-contain transition-transform duration-500 group-hover:scale-110 filter brightness-100 dark:brightness-95 dark:group-hover:brightness-110" 
+                    />
+                  </div>
                 ) : (
                   <div className="text-xl font-bold text-zinc-400 dark:text-zinc-500 group-hover:text-zinc-900 dark:group-hover:text-white transition-all duration-300 transform group-hover:scale-105 text-center uppercase tracking-wider">
                     {project.name}

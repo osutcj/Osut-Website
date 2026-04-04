@@ -29,7 +29,7 @@ export default function BlogSection({ limit }: { limit?: number } = {}) {
 
   useEffect(() => {
     // Fetch posts from our API
-    fetch("/api/posts")
+    fetch(`/api/posts?t=${Date.now()}`, { cache: 'no-store' })
       .then((res) => res.json())
       .then((data) => {
         if (Array.isArray(data)) {
@@ -84,9 +84,6 @@ export default function BlogSection({ limit }: { limit?: number } = {}) {
       ) : posts.length === 0 ? (
         <div className="text-center">
             <p className="text-white opacity-50 mb-4">Nu există articole momentan.</p>
-            <p className="bg-red-600/20 text-red-500 rounded px-4 py-2 border border-red-500/50">
-               Nu uitați să accesați <b>npx prisma studio</b> în terminal pentru a adăuga articole noi!
-            </p>
         </div>
       ) : (
         <div className="flex flex-col items-center w-full gap-12">
@@ -102,7 +99,7 @@ export default function BlogSection({ limit }: { limit?: number } = {}) {
                   {/* Image Container */}
                   <div className="w-full h-48 sm:h-56 relative overflow-hidden bg-white/10 shrink-0">
                     <Image
-                      src={post.imageUrl || "/assets/images/placeholder.jpg"}
+                      src={post.imageUrl || "/assets/images/images/bgr.png"}
                       alt={post.title}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -178,7 +175,7 @@ export default function BlogSection({ limit }: { limit?: number } = {}) {
             {/* Modal Image */}
             <div className="w-full h-64 sm:h-80 md:h-[400px] shrink-0 relative">
                 <Image
-                  src={selectedPost.imageUrl || "/assets/images/placeholder.jpg"}
+                  src={selectedPost.imageUrl || "/assets/images/images/bgr.png"}
                   alt={selectedPost.title}
                   fill
                   sizes="(max-width: 768px) 100vw, 800px"

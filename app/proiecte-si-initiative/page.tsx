@@ -33,7 +33,7 @@ const PROJECT_ITEMS = [
   {
     image: "/assets/images/images/Proiecte/proiect-poliart.png",
     alt: "PoliArt",
-    text: "PoliArt valorifică talentele artistice ale studenților prin crearea unei comunități unite de pasionați. Proiectul oferă un spațiu de expunere pentru lucrări de pictură, desen sau fotografie, atât în facultăți, cât și într-o expoziție finală de amploare. La ultima ediție, publicul a admirat peste 200 de opere ale studenților care au ales să iasă din zona de confort și să lege conexiuni cu alți artiști amatori, totul într-un mediu dedicat creativității."
+    text: "PoliArt valorifică talentele artistice ale studenților prin crearea unei comunități unite de pasionați. Proiectul oferă un spațiu de expunere pentru lucrări de pictură, desen sau fotografie, atât în facultăți, cât și într-o expoziție finală de amploare. Atunci când publicul a admirat peste 200 de opere ale studenților care au ales să iasă din zona de confort și să lege conexiuni cu alți artiști amatori, totul într-un mediu dedicat creativității."
   },
   {
     image: "/assets/images/images/Proiecte/proiect-crosulUT.png",
@@ -66,7 +66,7 @@ const PROJECT_ITEMS = [
     text: "Scopul principal al Engineering Summer University este familiarizarea elevilor cu mediul universitar prin recrearea autentică a experienței de student la UTCN. Ultima ediție a reunit 194 de participanți care au explorat spiritul comunității noastre, descoperind ce înseamnă cu adevărat viața în facultate, îmbinând cursurile și laboratoarele practice cu activități pline de distracție."
   },
   {
-    image: "/assets/images/images/Proiecte/infocafe.png",
+    image: "/assets/images/images/Proiecte/proiect-infocafe.png",
     alt: "InfoCafe",
     text: "InfoCafe reprezintă principala metodă prin care consultăm mii de studenți din UTCN cu privire la respectarea drepturilor și obligațiilor lor în universitate. Prin standuri cu băuturi calde și chestionare online, voluntarii colectează feedback direct, care stă la baza elaborării Raportului CDOS. Acest document centralizează toate problemele și sugestiile primite și este prezentat oficial în Senatul Universității. Scopul final este ca vocea studenților să fie auzită clar, propunând măsuri concrete de îmbunătățire a politicilor educaționale și a experienței în campus."
   }
@@ -76,7 +76,7 @@ const INITIATIVE_AND_OSUTLA_ITEMS = [
   {
     image: "/assets/images/images/Proiecte/infonight.jpg",
     alt: "InfoNight",
-    text: "Ești de neînlocuit. Abilitățile tale sunt de neegalat. Suntem aici pentru a te ajuta să găsești locul în care chiar îți aparții. Aici intervine InfoNight - un eveniment interesant de networking în care studenții interacționează cu diverse companii care prezintă oportunitățile pe care le au de oferit într-un mod captivant. Este o modalitate excelentă pentru participanți de a-și extinde rețeaua profesională, de a dobândi cunoștințe despre diferite industrii și de a explora căi către viitoarele lor cariere, totul într-un singur loc!"
+    text: "Ești de neînlocuit. Abilitățile tale sunt de neegalat. Suntem aici pentru a te ajuta să găsești locul în care chiar îți aparții. Aici intervine InfoNight - un eveniment interesant de networking în care studenții interacționează cu diverse companii care prezintă oportunitățile pe care le au de oferit într-un mod captivant. Este o modalitate excelentă pentru participanți de a-și extinde rețeaua profesională, de a dobândi cunoștințe despre diferite industrii și de a explora căi către viitoarelor lor cariere, totul într-un singur loc!"
   },
   {
     image: "/assets/images/images/Proiecte/ContestNight.png",
@@ -91,7 +91,7 @@ const INITIATIVE_AND_OSUTLA_ITEMS = [
   {
     image: "/assets/images/images/training/sas.png",
     alt: "Antreprenoriat",
-    text: "Începerea propriei afaceri poate fi atât palpitantă, cât și descurajantă. Această formare, condusă de Georgina Lupu, te va ghida prin elementele fundamentale ale lansării unei startup. Vei învăța cum să identifici idei de afaceri viabile, cum să dezvolți un plan de afaceri, să asiguri finanțare și care sunt principalele provocări cu care se confruntă noii antreprenori. Fie că lucrezi deja la un startup sau doar explorezi ideea de antreprenoriat, această sesiune îți va oferi instrumentele și mentalitatea necesare pentru a reuși."
+    text: "Începerea propriei afaceri poate fi atât palpitantă, cât și descurajantă. Această formare, condusă de Georgina Lupu, te va ghida prin elementele fundamentale ale lansării unei startup. Vei învăța cum să identificați idei de afaceri viabile, cum să dezvolți un plan de afaceri, să asiguri finanțare și care sunt principalele provocări cu care se confruntă noii antreprenori. Fie că lucrezi deja la un startup sau doar explorezi ideea de antreprenoriat, această sesiune îți va oferi instrumentele și mentalitatea necesare pentru a reuși."
   },
   {
     image: "/assets/images/images/training/int.png",
@@ -106,7 +106,7 @@ const INITIATIVE_AND_OSUTLA_ITEMS = [
   {
     image: "/assets/images/images/training/fe.png",
     alt: "Finanțe",
-    text: "Gestionarea eficientă a finanțelor tale este un pas critic în atingerea stabilității și în realizarea obiectivelor tale pe termen lung. În cadrul acestui training, Olimpia Pop te va ghida prin elementele esențiale ale finanțelor personale, oferindu-ți instrumente practice pentru a prelua controlul asupra banilor tăi. Vei învăța cum să creezi un buget realist, să îți gestionzi cheltuielile cu înțelepciune și să stabilești obiceiuri inteligente de economisire. Olimpia va discuta, de asemenea, strategii pentru stabilirea obiectivelor financiare, evitarea capcanelor financiare comune și construirea unei fundații sigure pentru viitor. Această sesiune interactivă este concepută pentru a-ți oferi cunoștințele și încrederea necesare pentru a lua decizii financiare informate, fie că gestionezi primul tău salariu, fie că planifici pentru repere financiare mai mari. Participă și începe-ți călătoria către independența financiară!"
+    text: "Gestionarea eficientă a finanțelor tale este un pas critic în atingerea stabilității și în realizarea obiectivelor tale pe termen lung. În cadrul acestui training, Olimpia Pop te va ghida prin elementele esențiale ale finanțelor personale, oferindu-ți instrumente practice pentru a prelua controlul asupra banilor tăi. Vei învăța cum să creezi un buget realist, să îți gestionzi cheltuielile cu înțelepciune și să stabiliți obiceiuri inteligente de economisire. Olimpia va discuta, de asemenea, strategii pentru stabilirea obiectivelor financiare, evitarea capcanelor financiare comune și construirea unei fundații sigure pentru viitor. Această sesiune interactivă este concepută pentru a-ți oferi cunoștințele și încrederea necesare pentru a lua decizii financiare informate, fie că gestionezi primul tău salariu, fie că planifici pentru repere financiare mai mari. Participă și începe-ți călătoria către independența financiară!"
   },
   {
     image: "/assets/images/images/training/it1.jpg",
@@ -179,7 +179,7 @@ export default function ProiecteSiInitiativePage() {
           <h1 className="bg-white dark:bg-[#121212] px-10 text-4xl md:text-5xl font-bold relative z-10 tracking-wide text-zinc-900 dark:text-white text-center uppercase">Proiecte</h1>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 max-w-7xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-7xl w-full">
           {PROJECT_ITEMS.map((item, idx) => (
             <div 
               key={idx} 
@@ -187,8 +187,13 @@ export default function ProiecteSiInitiativePage() {
               onClick={() => openPopup(item)}
             >
               <div className="w-full h-48 relative overflow-hidden bg-black">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={item.image} alt={item.alt} className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110 opacity-90 group-hover:opacity-100" />
+                <Image 
+                  src={item.image} 
+                  alt={item.alt} 
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110 opacity-90 group-hover:opacity-100" 
+                />
               </div>
               <div className="p-5 flex-grow flex items-center justify-center text-center">
                 <h3 className="text-xl font-semibold text-zinc-800 dark:text-gray-100 transition-colors">{item.alt}</h3>
@@ -205,7 +210,7 @@ export default function ProiecteSiInitiativePage() {
           <h1 className="bg-white dark:bg-[#121212] px-10 text-4xl md:text-5xl font-bold relative z-10 tracking-wide text-zinc-900 dark:text-white text-center uppercase">Inițiative</h1>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 max-w-7xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-7xl w-full">
           {INITIATIVE_AND_OSUTLA_ITEMS.map((item, idx) => (
             <div 
               key={idx} 
@@ -213,8 +218,13 @@ export default function ProiecteSiInitiativePage() {
               onClick={() => openPopup(item)}
             >
               <div className="w-full h-48 relative overflow-hidden bg-black">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={item.image} alt={item.alt} className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110 opacity-90 group-hover:opacity-100" />
+                <Image 
+                  src={item.image} 
+                  alt={item.alt} 
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110 opacity-90 group-hover:opacity-100" 
+                />
               </div>
               <div className="p-5 flex-grow flex items-center justify-center text-center">
                 <h3 className="text-xl font-semibold text-zinc-800 dark:text-gray-100 transition-colors">{item.alt}</h3>
@@ -242,8 +252,13 @@ export default function ProiecteSiInitiativePage() {
             
             {/* Image Side */}
             <div className="w-full md:w-5/12 h-64 md:h-auto relative bg-zinc-100 dark:bg-black shrink-0">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={selectedItem.image} alt={selectedItem.alt} className="w-full h-full object-cover" />
+              <Image 
+                src={selectedItem.image} 
+                alt={selectedItem.alt} 
+                fill
+                sizes="(max-width: 768px) 100vw, 40vw"
+                className="w-full h-full object-cover" 
+              />
             </div>
             
             {/* Text Side */}

@@ -90,7 +90,10 @@ const AWARDS = [
 
 export default function AwardsTimeline() {
   return (
-    <section className="py-20 bg-zinc-50 dark:bg-black text-zinc-900 dark:text-white px-6 w-full relative z-10">
+    <section 
+      className="py-20 bg-zinc-50 dark:bg-[#1a1a1a] text-zinc-900 dark:text-white px-6 w-full relative z-10 border-y border-white/5"
+      suppressHydrationWarning
+    >
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight">Timeline <span className="text-red-600">Premii</span></h2>

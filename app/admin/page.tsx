@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 
 interface Post {
@@ -28,6 +28,12 @@ export default function AdminDashboard() {
   const [showPreview, setShowPreview] = useState(false);
   const [isFullPreviewOpen, setIsFullPreviewOpen] = useState(false); // Modal state for full preview
   const [previewImageUrl, setPreviewImageUrl] = useState<string | null>(null);
+  const [toast, setToast] = useState<{ message: string, type: 'success' | 'error' } | null>(null);
+
+  const showToast = (message: string, type: 'success' | 'error' = 'success') => {
+    setToast({ message, type });
+    setTimeout(() => setToast(null), 4000);
+  };
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -50,7 +56,7 @@ export default function AdminDashboard() {
       } else {
         setErrorMsg("Parolă incorectă! Acces refuzat.");
       }
-    } catch (err) {
+    } catch {
       setErrorMsg("Eroare de conexiune la server.");
     } finally {
       setLoading(false);
@@ -58,7 +64,7 @@ export default function AdminDashboard() {
   };
 
   const fetchPosts = () => {
-    fetch("/api/posts")
+    fetch(`/api/posts?t=${Date.now()}`, { cache: 'no-store' })
       .then((res) => res.json())
       .then((data) => {
         if (Array.isArray(data)) {
@@ -91,7 +97,7 @@ export default function AdminDashboard() {
         const post = posts.find(p => p.id === editingId);
         setPreviewImageUrl(post?.imageUrl || null);
       } else {
-        setPreviewImageUrl("/assets/images/placeholder.jpg");
+        setPreviewImageUrl("/assets/images/images/bgr.png");
       }
       return;
     }
@@ -102,7 +108,6 @@ export default function AdminDashboard() {
 
     try {
       const formData = new FormData();
-      formData.append("password", password);
       formData.append("title", title);
       formData.append("content", content);
       formData.append("date", displayDate);
@@ -117,6 +122,9 @@ export default function AdminDashboard() {
 
       const res = await fetch("/api/admin/posts", {
         method: editingId ? "PUT" : "POST",
+        headers: {
+          "Authorization": password
+        },
         body: formData,
       });
 
@@ -133,12 +141,13 @@ export default function AdminDashboard() {
         setShowPreview(false);
         setPreviewImageUrl(null);
         fetchPosts(); 
+        showToast("Postarea a fost salvată cu succes! Modificările vor fi vizibile peste câteva secunde.");
         
         // Reset file input in DOM
         const fileInput = document.getElementById("imageUpload") as HTMLInputElement;
         if (fileInput) fileInput.value = "";
       }
-    } catch (err) {
+    } catch {
       setErrorMsg("Eroare de rețea. Verifică conexiunea.");
     } finally {
       setLoading(false);
@@ -172,30 +181,33 @@ export default function AdminDashboard() {
   const handleDelete = async (id: number) => {
     if (!confirm("Sigur dorești să ștergi definitiv această postare?")) return;
     
-    // Trigger CSS fade off screen class
+    // Optimistic UI Update: remove from local state immediately
+    const previousPosts = [...posts];
+    setPosts(posts.filter(p => p.id !== id));
     setDeletingId(id);
 
-    // wait matching the CSS transition duration
-    setTimeout(async () => {
-      try {
-        const res = await fetch(`/api/admin/posts?id=${id}`, {
-          method: "DELETE",
-          headers: {
-            "Authorization": password
-          }
-        });
-        if (res.ok) {
-          fetchPosts(); // Reload board
-        } else {
-          const data = await res.json();
-          alert(data.error || "Eroare la ștergere.");
+    try {
+      const res = await fetch(`/api/admin/posts?id=${id}`, {
+        method: "DELETE",
+        headers: {
+          "Authorization": password
         }
-      } catch (err) {
-        alert("Eroare de rețea.");
-      } finally {
-        setDeletingId(null);
+      });
+      
+      if (res.ok) {
+        showToast("Postarea a fost ștearsă cu succes!");
+        fetchPosts(); 
+      } else {
+        const data = await res.json();
+        setPosts(previousPosts); // Rollback
+        showToast(data.error || "Eroare la ștergere.", "error");
       }
-    }, 450); 
+    } catch {
+      setPosts(previousPosts); // Rollback
+      showToast("Eroare de rețea.", "error");
+    } finally {
+      setDeletingId(null);
+    }
   };
 
   // ----- 1. Login Screen (if not authenticated) -----
@@ -294,6 +306,18 @@ export default function AdminDashboard() {
       `}</style>
       <div className="max-w-7xl mx-auto">
         
+        {/* Toast Notification */}
+        {toast && (
+          <div className={`fixed top-24 right-6 z-[10001] px-6 py-4 rounded-2xl shadow-2xl animate-modal-in border flex items-center gap-3 transition-all ${
+            toast.type === 'success' ? 'bg-green-600/90 border-green-500 text-white' : 'bg-red-600/90 border-red-500 text-white'
+          }`}>
+            <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
+              <i className={`fas ${toast.type === 'success' ? 'fa-check' : 'fa-exclamation-triangle'} text-xs`}></i>
+            </div>
+            <p className="font-bold text-sm">{toast.message}</p>
+          </div>
+        )}
+
         {/* Header Bar */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-10 gap-4 border-b border-white/10 pb-6">
           <div>
@@ -330,8 +354,9 @@ export default function AdminDashboard() {
                 {/* PREVIEW CARD - Mocking the Ghost UI */}
                 <div className="bg-[#0f0f0f] rounded-2xl overflow-hidden shadow-2xl border border-white/10 flex flex-col mx-auto w-full max-w-[380px]">
                   <div className="w-full h-48 relative overflow-hidden bg-white/5">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                      src={previewImageUrl || "/assets/images/placeholder.jpg"}
+                      src={previewImageUrl || "/assets/images/images/bgr.png"}
                       alt="preview"
                       className="w-full h-full object-cover"
                     />
@@ -456,11 +481,12 @@ export default function AdminDashboard() {
                     
                     {/* Small preview image */}
                     <div className="w-24 h-24 shrink-0 bg-black/40 rounded-xl overflow-hidden relative">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img 
-                        src={post.imageUrl || "/assets/images/placeholder.jpg"} 
+                      <Image 
+                        src={post.imageUrl || "/assets/images/images/bgr.png"} 
                         alt="thumb" 
-                        className="w-full h-full object-cover" 
+                        fill
+                        sizes="96px"
+                        className="object-cover" 
                       />
                     </div>
                     
@@ -527,8 +553,9 @@ export default function AdminDashboard() {
 
             {/* Modal Image */}
             <div className="w-full h-64 sm:h-80 md:h-[400px] shrink-0 relative">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={previewImageUrl || "/assets/images/placeholder.jpg"}
+                  src={previewImageUrl || "/assets/images/images/bgr.png"}
                   alt="preview"
                   className="w-full h-full object-cover"
                 />

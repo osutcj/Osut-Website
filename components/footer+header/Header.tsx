@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
+import Image from "next/image";
+import NextLink from "next/link";
 import "./Header.css";
 
 export default function Header() {
@@ -15,42 +16,48 @@ export default function Header() {
     <>
       <nav className="custom-navbar">
         <div className="nav-logo">
-          <Link href="/">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/assets/images/images/OSUT alb.png" alt="OSUT Logo" fetchPriority="high" />
-          </Link>
+          <NextLink href="/" className="relative block h-12 w-32">
+            <Image 
+              src="/assets/images/images/OSUT alb.png" 
+              alt="OSUT Logo" 
+              fill
+              sizes="128px"
+              priority
+              loading="eager"
+              className="object-contain"
+            />
+          </NextLink>
         </div>
 
         <div className="nav-right">
           <ul className="nav-menu">
             <li className="dropdown">
-              <Link href="#">
+              <NextLink href="#">
                 Despre <span className="dropdown-icon">▼</span>
-              </Link>
+              </NextLink>
               <ul className="dropdown-menu">
                 <li>
-                  <Link href="/despre-noi/">Despre noi</Link>
+                  <NextLink href="/despre-noi/">Despre noi</NextLink>
                 </li>
                 <li>
-                  <Link href="/biroul-de-conducere/">Biroul de Conducere</Link>
+                  <NextLink href="/biroul-de-conducere/">Biroul de Conducere</NextLink>
                 </li>
                 <li>
-                  <Link href="/biroul-de-conducere-extins/">Biroul de Conducere Extins</Link>
+                  <NextLink href="/biroul-de-conducere-extins/">Biroul de Conducere Extins</NextLink>
                 </li>
               </ul>
             </li>
             <li>
-              <Link href="/educational/">Educațional</Link>
+              <NextLink href="/educational/">Educațional</NextLink>
             </li>
             <li>
-              <Link href="/proiecte-si-initiative/">Proiecte și Inițiative</Link>
-            </li>
-            {/* <li><Link href="/contact/">Oportunități</Link></li> */}
-            <li>
-              <Link href="/donat/">Donează</Link>
+              <NextLink href="/proiecte-si-initiative/">Proiecte și Inițiative</NextLink>
             </li>
             <li>
-              <Link href="/green/">Sustenabilitate</Link>
+              <NextLink href="/donat/">Donează</NextLink>
+            </li>
+            <li>
+              <NextLink href="/green/">Sustenabilitate</NextLink>
             </li>
             <li>
               <a href="https://osutcluj.pixieset.com/" target="_blank" rel="noopener noreferrer">
@@ -59,9 +66,9 @@ export default function Header() {
             </li>
           </ul>
           <div className="flex items-center gap-2">
-            <Link href="/butonul-rosu/" className="red-button">
+            <NextLink href="/butonul-rosu/" className="red-button">
               Butonul Roșu
-            </Link>
+            </NextLink>
           </div>
         </div>
 
@@ -72,40 +79,39 @@ export default function Header() {
         </div>
       </nav>
 
-      {/* Sidebar for Mobile */}
       <div className={`sidebar ${isSidebarOpen ? "active" : ""}`} id="mobileSidebar">
         <span className="close-btn" onClick={toggleSidebar}>
           &times;
         </span>
-        <Link href="/despre-noi/" onClick={toggleSidebar}>
+        <NextLink href="/despre-noi/" onClick={toggleSidebar}>
           Despre noi
-        </Link>
-        <Link href="/biroul-de-conducere/" onClick={toggleSidebar}>
+        </NextLink>
+        <NextLink href="/biroul-de-conducere/" onClick={toggleSidebar}>
           Biroul de Conducere
-        </Link>
-        <Link href="/biroul-de-conducere-extins/" onClick={toggleSidebar}>
+        </NextLink>
+        <NextLink href="/biroul-de-conducere-extins/" onClick={toggleSidebar}>
           Biroul de Conducere Extins
-        </Link>
-        <Link href="/educational/" onClick={toggleSidebar}>
+        </NextLink>
+        <NextLink href="/educational/" onClick={toggleSidebar}>
           Educațional
-        </Link>
-        <Link href="/proiecte-si-initiative/" onClick={toggleSidebar}>
+        </NextLink>
+        <NextLink href="/proiecte-si-initiative/" onClick={toggleSidebar}>
           Proiecte și Inițiative
-        </Link>
-        <Link href="/donat/" onClick={toggleSidebar}>
+        </NextLink>
+        <NextLink href="/donat/" onClick={toggleSidebar}>
           Donează
-        </Link>
-        <Link href="/green/" onClick={toggleSidebar}>
+        </NextLink>
+        <NextLink href="/green/" onClick={toggleSidebar}>
           Sustenabilitate
-        </Link>
+        </NextLink>
         <a href="https://osutcluj.pixieset.com/" target="_blank" rel="noopener noreferrer" onClick={toggleSidebar}>
           Galerie
         </a>
         <div className="flex items-center justify-center my-4">
         </div>
-        <Link href="/contact/" className="red-button" onClick={toggleSidebar}>
+        <NextLink href="/contact/" className="red-button" onClick={toggleSidebar}>
           Contact
-        </Link>
+        </NextLink>
       </div>
     </>
   );

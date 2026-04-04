@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import "./donat.css";
 
 export default function Donat() {
@@ -15,12 +16,7 @@ export default function Donat() {
 
     return (
         <main className="min-h-screen bg-[#121212] text-white font-sans pt-40 pb-20 px-6 overflow-hidden relative">
-            {/* Background Decorations */}
-
-
             <div className="max-w-5xl mx-auto relative z-10">
-                {/* Hero Header */}
-                {/* Hero Header */}
                 <div className="w-full max-w-5xl relative flex justify-center items-center mb-16 mx-auto">
                     <div className="absolute w-full h-[2px] bg-gradient-to-r from-transparent via-red-600 to-transparent top-1/2 -translate-y-1/2 opacity-100"></div>
                     <h1 className="bg-[#121212] px-10 text-4xl md:text-7xl font-bold relative z-10 tracking-wide text-white text-center uppercase leading-tight">
@@ -28,7 +24,6 @@ export default function Donat() {
                     </h1>
                 </div>
                 
-                {/* IBAN Section */}
                 <div className="text-center mb-24 px-6">
                     <div 
                         onClick={copyToClipboard}
@@ -46,7 +41,6 @@ export default function Donat() {
                     </div>
                 </div>
 
-                {/* 3.5% Section */}
                 <div className="mb-24 text-center">
                 <div className="w-full max-w-5xl relative flex justify-center items-center mb-10 mx-auto">
                     <div className="absolute w-full h-[2px] bg-gradient-to-r from-transparent via-red-600 to-transparent top-1/2 -translate-y-1/2 opacity-100"></div>
@@ -59,7 +53,6 @@ export default function Donat() {
                     </p>
                 </div>
 
-                {/* Instructions Section */}
                 <div className="mb-20">
                     <div className="w-full max-w-5xl relative flex justify-center items-center mb-12 mx-auto">
                         <div className="absolute w-full h-[2px] bg-gradient-to-r from-transparent via-red-600 to-transparent top-1/2 -translate-y-1/2 opacity-100"></div>
@@ -69,7 +62,6 @@ export default function Donat() {
                     </div>
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {/* Step 1 */}
                         <div className="py-10 border-b md:border-b-0 md:border-r border-zinc-800 px-6">
                             <div className="w-14 h-14 bg-red-600 rounded-2xl flex items-center justify-center font-black text-2xl mb-8 text-white shadow-[0_0_20px_rgba(220,38,38,0.3)]">1</div>
                             <h3 className="text-2xl font-bold uppercase mb-6 text-white tracking-tight">Completarea formularului:</h3>
@@ -78,7 +70,6 @@ export default function Donat() {
                             </p>
                         </div>
 
-                        {/* Step 2 */}
                         <div className="py-10 px-6">
                             <div className="w-14 h-14 bg-red-600 rounded-2xl flex items-center justify-center font-black text-2xl mb-8 text-white shadow-[0_0_20px_rgba(220,38,38,0.3)]">2</div>
                             <h3 className="text-2xl font-bold uppercase mb-6 text-white tracking-tight">Depunerea formularului:</h3>
@@ -89,7 +80,6 @@ export default function Donat() {
                     </div>
                 </div>
 
-                {/* Footer/CTA Section */}
                 <div className="text-center relative py-16 px-8 rounded-[3rem] bg-zinc-900/20 border border-zinc-800/50 overflow-hidden backdrop-blur-sm">
                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#b51c1c] to-transparent"></div>
                     
@@ -107,12 +97,15 @@ export default function Donat() {
                         <div className="absolute inset-0 bg-white/20 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300"></div>
                     </a>
 
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img 
-                        src="/assets/images/images/cometa2.png" 
-                        alt="Cometă" 
-                        className="absolute -top-10 -right-10 w-44 opacity-20 pointer-events-none transform -rotate-12 group-hover:opacity-30" 
-                    />
+                    <div className="absolute -top-10 -right-10 w-44 h-44">
+                      <Image 
+                          src="/assets/images/images/cometa2.png" 
+                          alt="Cometă" 
+                          fill
+                          sizes="176px"
+                          className="opacity-20 pointer-events-none transform -rotate-12 group-hover:opacity-30 object-contain" 
+                      />
+                    </div>
                 </div>
             </div>
         </main>

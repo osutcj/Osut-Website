@@ -1,14 +1,11 @@
 import { NextResponse } from "next/server";
-import prisma from "@/lib/prisma";
+import { getPosts } from "@/lib/posts";
+
+export const dynamic = "force-dynamic";
 
 export async function GET() {
   try {
-    const posts = await prisma.post.findMany({
-      orderBy: [
-        { createdAt: "desc" },
-        { id: "desc" }
-      ],
-    });
+    const posts = await getPosts();
     return NextResponse.json(posts);
   } catch (error) {
     console.error("Error fetching posts:", error);

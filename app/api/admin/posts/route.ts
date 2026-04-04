@@ -1,42 +1,53 @@
 import { NextResponse } from "next/server";
-import prisma from "@/lib/prisma";
 import { promises as fs } from "fs";
 import path from "path";
-import { put, del } from "@vercel/blob";
+import { put } from "@vercel/blob";
+import { getPosts, savePosts, deleteImage, Post } from "@/lib/posts";
 
-// The simple password to protect adding and deleting records
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "osutAdmin2026";
+// Password MUST be provided via environment variable
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
+
+/**
+ * Helper to validate the admin password from the Authorization header.
+ */
+function validateAuth(req: Request) {
+  const authHeader = req.headers.get("Authorization");
+  if (!ADMIN_PASSWORD) {
+    console.error("ADMIN_PASSWORD is not set in environment variables!");
+    return false;
+  }
+  const isValid = authHeader === ADMIN_PASSWORD;
+  if (!isValid) {
+    console.log("Auth failed: Header doesn't match ADMIN_PASSWORD");
+  }
+  return isValid;
+}
 
 export async function POST(req: Request) {
   try {
+    if (!validateAuth(req)) {
+      return NextResponse.json({ error: "Neautorizat! Parolă incorectă sau lipsă." }, { status: 401 });
+    }
+
     const formData = await req.formData();
-    const password = formData.get("password") as string;
     const title = formData.get("title") as string;
     const content = formData.get("content") as string;
     const file = formData.get("image") as File | null;
+    const customDate = formData.get("date") as string;
 
-    // Check password
-    if (password !== ADMIN_PASSWORD) {
-      return NextResponse.json({ error: "Parolă incorectă!" }, { status: 401 });
-    }
-
-    // Validate inputs
     if (!title || !content) {
       return NextResponse.json({ error: "Titlul și conținutul sunt obligatorii!" }, { status: 400 });
     }
 
-    let imageUrl = "/assets/images/placeholder.jpg";
+    let imageUrl = "/assets/images/images/bgr.png";
 
-    // Handle File Upload
     if (file && file.size > 0) {
       if (process.env.BLOB_READ_WRITE_TOKEN) {
-        // Upload to Vercel Blob
         const blob = await put(`posts/${Date.now()}-${file.name}`, file, {
           access: "public",
         });
         imageUrl = blob.url;
       } else {
-        // Fallback to local FS for development
         const bytes = await file.arrayBuffer();
         const buffer = Buffer.from(bytes);
         const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
@@ -50,59 +61,64 @@ export async function POST(req: Request) {
       }
     }
 
-    const customDate = formData.get("date") as string;
+    const posts = await getPosts();
+    const maxId = posts.length > 0 ? Math.max(...posts.map(p => p.id)) : 0;
+    
+    const newPost: Post = {
+      id: maxId + 1,
+      title,
+      content,
+      imageUrl,
+      createdAt: customDate ? new Date(customDate).toISOString() : new Date().toISOString()
+    };
 
-    // Insert into database
-    const post = await prisma.post.create({
-      data: { 
-        title, 
-        content, 
-        imageUrl,
-        createdAt: customDate ? new Date(customDate) : new Date()
-      },
-    });
+    posts.push(newPost);
+    await savePosts(posts);
 
-    return NextResponse.json(post);
+    return NextResponse.json(newPost);
   } catch (error) {
-    console.error("Error creating post:", error);
-    return NextResponse.json({ error: "Eroare la crearea postării." }, { status: 500 });
+    const message = error instanceof Error ? error.message : "Unknown error";
+    console.error("Error in POST /api/admin/posts:", error);
+    return NextResponse.json({ error: `Eroare server: ${message}` }, { status: 500 });
   }
 }
 
 export async function PUT(req: Request) {
   try {
+    if (!validateAuth(req)) {
+      return NextResponse.json({ error: "Neautorizat!" }, { status: 401 });
+    }
+
     const formData = await req.formData();
-    const password = formData.get("password") as string;
-    const id = formData.get("id") as string;
+    const idStr = formData.get("id") as string;
     const title = formData.get("title") as string;
     const content = formData.get("content") as string;
     const file = formData.get("image") as File | null;
+    const customDate = formData.get("date") as string;
 
-    // Check password
-    if (password !== ADMIN_PASSWORD) {
-      return NextResponse.json({ error: "Parolă incorectă!" }, { status: 401 });
-    }
-
-    if (!id) {
+    if (!idStr) {
       return NextResponse.json({ error: "Lipsă ID postare." }, { status: 400 });
     }
 
-    // Validate inputs
+    const id = Number(idStr);
+    const posts = await getPosts();
+    const postIndex = posts.findIndex((p) => p.id === id);
+
+    if (postIndex === -1) {
+      return NextResponse.json({ error: "Postarea nu a fost găsită." }, { status: 404 });
+    }
+
     if (!title || !content) {
       return NextResponse.json({ error: "Titlul și conținutul sunt obligatorii!" }, { status: 400 });
     }
 
-    const customDate = formData.get("date") as string;
-    const updateData: any = { title, content };
-
+    const updatedPost = { ...posts[postIndex], title, content };
     if (customDate) {
-      updateData.createdAt = new Date(customDate);
+      updatedPost.createdAt = new Date(customDate).toISOString();
     }
 
-    // Handle File Upload if a new file is provided
     if (file && file.size > 0) {
       let newImageUrl = "";
-      
       if (process.env.BLOB_READ_WRITE_TOKEN) {
         const blob = await put(`posts/${Date.now()}-${file.name}`, file, {
           access: "public",
@@ -111,99 +127,68 @@ export async function PUT(req: Request) {
       } else {
         const bytes = await file.arrayBuffer();
         const buffer = Buffer.from(bytes);
-        const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
-        const ext = path.extname(file.name) || ".jpg";
-        const filename = `post-${uniqueSuffix}${ext}`;
+        const filename = `post-${Date.now()}${path.extname(file.name) || ".jpg"}`;
         const uploadDir = path.join(process.cwd(), "public", "assets", "uploads");
         try { await fs.access(uploadDir); } catch { await fs.mkdir(uploadDir, { recursive: true }); }
-        const filePath = path.join(uploadDir, filename);
-        await fs.writeFile(filePath, buffer);
+        await fs.writeFile(path.join(uploadDir, filename), buffer);
         newImageUrl = `/assets/uploads/${filename}`;
       }
 
-      updateData.imageUrl = newImageUrl;
-
-      // Delete the old image
-      const existingPost = await prisma.post.findUnique({ where: { id: Number(id) } });
-      if (existingPost?.imageUrl) {
-        if (existingPost.imageUrl.includes("public.blob.vercel-storage.com")) {
-          try { await del(existingPost.imageUrl); } catch (e) { console.error(e); }
-        } else if (existingPost.imageUrl.startsWith("/assets/uploads/")) {
-          try {
-            const oldFilePath = path.join(process.cwd(), "public", existingPost.imageUrl);
-            await fs.unlink(oldFilePath);
-          } catch (err) {
-            console.error("Could not delete old image on update:", err);
-          }
-        }
-      }
+      await deleteImage(posts[postIndex].imageUrl);
+      updatedPost.imageUrl = newImageUrl;
     }
 
-    // Update database
-    const updatedPost = await prisma.post.update({
-      where: { id: Number(id) },
-      data: updateData,
-    });
+    posts[postIndex] = updatedPost;
+    await savePosts(posts);
 
     return NextResponse.json(updatedPost);
   } catch (error) {
-    console.error("Error updating post:", error);
-    return NextResponse.json({ error: "Eroare la actualizarea postării." }, { status: 500 });
+    const message = error instanceof Error ? error.message : "Unknown error";
+    console.error("Error in PUT /api/admin/posts:", error);
+    return NextResponse.json({ error: `Eroare server: ${message}` }, { status: 500 });
   }
 }
 
 export async function DELETE(req: Request) {
   try {
-    const { searchParams } = new URL(req.url);
-    const id = searchParams.get("id");
-    const password = req.headers.get("Authorization");
-
-    // Check password
-    if (password !== ADMIN_PASSWORD) {
-      return NextResponse.json({ error: "Parolă incorectă!" }, { status: 401 });
+    if (!validateAuth(req)) {
+      return NextResponse.json({ error: "Neautorizat!" }, { status: 401 });
     }
 
-    if (!id) {
+    const { searchParams } = new URL(req.url);
+    const idStr = searchParams.get("id");
+
+    if (!idStr) {
       return NextResponse.json({ error: "Lipsă ID postare." }, { status: 400 });
     }
 
-    // Fetch before delete to get image URL
-    const post = await prisma.post.findUnique({ where: { id: Number(id) } });
+    const id = Number(idStr);
+    const posts = await getPosts();
+    const postToDelete = posts.find((p) => p.id === id);
 
-    // Delete from database
-    await prisma.post.delete({ where: { id: Number(id) } });
-
-    // Attempt to delete the image file
-    if (post?.imageUrl) {
-      if (post.imageUrl.includes("public.blob.vercel-storage.com")) {
-        try { await del(post.imageUrl); } catch (e) { console.error(e); }
-      } else if (post.imageUrl.startsWith("/assets/uploads/")) {
-        const filePath = path.join(process.cwd(), "public", post.imageUrl);
-        try {
-          await fs.unlink(filePath);
-        } catch (err) {
-          console.error("Could not delete image file:", err);
-        }
-      }
+    if (!postToDelete) {
+      return NextResponse.json({ error: "Postarea nu a fost găsită." }, { status: 404 });
     }
+
+    const updatedPosts = posts.filter((p) => p.id !== id);
+    await savePosts(updatedPosts);
+    await deleteImage(postToDelete.imageUrl);
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error("Error deleting post:", error);
-    return NextResponse.json({ error: "Eroare la ștergerea postării." }, { status: 500 });
+    const message = error instanceof Error ? error.message : "Unknown error";
+    console.error("Error in DELETE /api/admin/posts:", error);
+    return NextResponse.json({ error: `Eroare server: ${message}` }, { status: 500 });
   }
 }
 
 export async function GET(req: Request) {
   try {
-    const password = req.headers.get("Authorization");
-
-    if (password === ADMIN_PASSWORD) {
+    if (validateAuth(req)) {
       return NextResponse.json({ authenticated: true });
     }
-    
     return NextResponse.json({ authenticated: false }, { status: 401 });
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: "Eroare server." }, { status: 500 });
   }
 }

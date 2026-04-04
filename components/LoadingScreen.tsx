@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState, useEffect, useLayoutEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 export default function LoadingScreen() {
   const pathname = usePathname();
@@ -9,8 +10,6 @@ export default function LoadingScreen() {
   const [display, setDisplay] = useState(true);
   const [prevPath, setPrevPath] = useState(pathname);
 
-  // Synchronous phase: If path changed, immediately set loading to true
-  // This runs during the render phase, preventing the "flash" of content
   if (pathname !== prevPath) {
     setPrevPath(pathname);
     setLoading(true);
@@ -20,15 +19,16 @@ export default function LoadingScreen() {
   useEffect(() => {
     const handleLoad = () => {
       setLoading(false);
-      setTimeout(() => setDisplay(false), 300); // 300ms allows the CSS fade-out transition to finish
+      setTimeout(() => setDisplay(false), 300);
     };
 
     if (document.readyState === "complete") {
-      setLoading(false);
-      const displayTimer = setTimeout(() => setDisplay(false), 300);
-      return () => {
-        clearTimeout(displayTimer);
-      };
+      // Use a timeout to move state update out of the synchronous render/effect execution
+      const timer = setTimeout(() => {
+        setLoading(false);
+        setTimeout(() => setDisplay(false), 300);
+      }, 0);
+      return () => clearTimeout(timer);
     } else {
       window.addEventListener("load", handleLoad);
       return () => window.removeEventListener("load", handleLoad);
@@ -52,11 +52,12 @@ export default function LoadingScreen() {
         }
       `}</style>
       <div className="relative w-32 h-32 md:w-48 md:h-48">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img 
+        <Image 
           src="/assets/images/images/Cometa rosie.png" 
           alt="Loading..." 
-          fetchPriority="high"
+          fill
+          sizes="(max-width: 768px) 128px, 192px"
+          priority
           className="w-full h-full object-contain pulse-logo"
         />
       </div>
