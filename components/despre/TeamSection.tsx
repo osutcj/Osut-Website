@@ -57,6 +57,19 @@ export default function TeamSection() {
               Dincolo de proiecte și ședințe, OSUT Cluj este spațiul în care studenția capătă un sens mult mai profund, transformându-se într-o experiență de viață completă. Pentru mulți dintre membri, acest loc devine rapid o a doua casă, locul în care munca se împletește firesc cu momentele de relaxare și activitățile de bonding, dând naștere unor prietenii solide care depășesc anii facultății. Pe lângă conexiunile umane, parcursul în organizație deschide porți către o dezvoltare personală și profesională. Voluntarii au ocazia să interacționeze direct cu mari companii și să își testeze abilitățile în situații reale, de la organizarea de evenimente până la gestionarea resurselor. Toate aceste experiențe sunt susținute de sesiuni de formare și traininguri, atât la nivel local, cât și național, oferind un bagaj de cunoștințe practice extrem de valoros. În tot acest proces de învățare, universitatea recunoaște oficial implicarea prin credite de voluntariat, oferind o confirmare academică a efortului depus. A fi voluntar aici înseamnă să faci parte dintr-un mecanism viu, care luptă pentru drepturile colegilor și care construiește un mediu universitar mai vibrant. Este, în esență, șansa de a crește frumos alături de oameni care împărtășesc aceleași valori și de a transforma studenția într-o aventură memorabilă.
             </p>
           </div>
+
+          <div className="w-full h-[1px] bg-zinc-200 dark:bg-zinc-800"></div>
+
+          {/* Cum poți deveni voluntar? */}
+          <div id="cum-devin-voluntar" className="relative group">
+            <h3 className="text-3xl md:text-5xl font-black uppercase text-red-600 mb-8 tracking-tighter">
+              Cum poți deveni voluntar?
+            </h3>
+            <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed text-justify mb-10 relative z-10 text-xl font-medium">
+              Drumul în OSUT Cluj începe de cele mai multe ori cu dorința de a schimba ceva și de a găsi o comunitate faină în care să te dezvolți. Recrutările pentru noii membri au loc de două ori pe an, fiind organizate la începutul fiecărui semestru. Aceasta este ocazia perfectă pentru studenții care vor să se implice în viața universitară, să învețe lucruri noi și să lege prietenii care de multe ori durează toată viața.
+            </p>
+            
+          </div>
         </div>
       </div>
     </section>

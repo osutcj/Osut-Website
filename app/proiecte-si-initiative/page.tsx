@@ -6,17 +6,17 @@ import Image from "next/image";
 // Data
 const PROJECT_ITEMS = [
   {
-    image: "/assets/images/images/Proiecte/viitoringiner.PNG",
+    image: "/assets/images/images/Proiecte/Logo-uri/logo-vi.png",
     alt: "Viitor Inginer",
     text: "Viitor Inginer facilitează întâlnirea dintre voluntarii noștri și elevii de liceu din toată țara pentru a le arăta ce presupune cu adevărat viața de student la UTCN. Proiectul are ca scop combaterea abandonului școlar și sprijinul tinerilor în alegerea facultății prin discuții directe despre oportunitățile din universitate. În ultimul semestru, caravana a ajuns inclusiv în Republica Moldova, unde studenții au oferit informații esențiale și sfaturi utile elevilor care vor să urmeze o carieră în domeniu."
   },
   {
-    image: "/assets/images/images/Proiecte/proiect-polihack.jpg",
+    image: "/assets/images/images/Proiecte/Logo-uri/logo-polihack.png",
     alt: "PoliHack",
     text: "PoliHack provoacă studenții și elevii de liceu să își depășească limitele creativității și ale abilităților tehnice prin dezvoltarea unor soluții software sau hardware inovatoare. Proiectul a ajuns la ediția cu numărul 18 și a reunit 188 de participanți care au format 42 de echipe pentru a crea aplicații sau sisteme complexe. Sub îndrumarea unor mentori din industrie și din mediul academic, echipele transformă ideile în realitate, procesul având ca scop principal testarea cunoștințelor practice într-un cadru competitiv și colaborativ."
   },
   {
-    image: "/assets/images/images/Proiecte/proiect-balul_bobocilor.png",
+    image: "/assets/images/images/Proiecte/Logo-uri/logo-bal.png",
     alt: "Balul Bobocilor",
     text: "Ediția din 2025, desfășurată sub tema „Arabian Nights”, a adus în lumină 8 perechi de boboci care și-au demonstrat creativitatea și talentul pentru a marca debutul vieții lor academice. Proiectul are ca scop integrarea noilor studenți în mediul universitar, oferindu-le cadrul perfect pentru a socializa, a lega prietenii și a se acomoda mai ușor cu spiritul comunității noastre."
   },
@@ -26,32 +26,32 @@ const PROJECT_ITEMS = [
     text: "UT Chess Wars este un campionat de șah dedicat studenților, organizat cu scopul de a promova jocul de șah în rândul tinerilor și de a crea o comunitate de pasionați ai acestui joc strategic. Acesta reunește studenți din diverse domenii academice, oferindu-le oportunitatea de a-și testa abilitățile într-o competiție prietenoasă și provocatoare.\n\nFormatul campionatului variază, dar de obicei include partide de șah în sistem eliminatoriu, cu scopul de a premia cei mai buni jucători.\n\nPe lângă competiția sportivă, UT Chess Wars are și un rol educativ, încurajând gândirea strategică, dezvoltarea abilităților de rezolvare a problemelor și stimularea colaborării între studenți. De asemenea, este și un eveniment social, în care participanții se întâlnesc și interacționează în lumea misterioasă a șahului, creând legături între colegii din diferite facultăți sau universități.\n\nAcest campionat poate atrage atât jucători experimentați, cât și începători, oferind șansa fiecăruia să-și îmbunătățească jocul și să învețe din experiențele celorlalți."
   },
   {
-    image: "/assets/images/images/Proiecte/polisport.png",
+    image: "/assets/images/images/Proiecte/Logo-uri/logo-polisport.png",
     alt: "PoliSport",
     text: "PoliSport promovează fair-play-ul și un stil de viață activ prin competiții amicale dedicate tuturor studenților din universitate. Proiectul a ajuns la ediția cu numărul 40 și a reunit aproximativ 450 de participanți care s-au întrecut la fotbal, baschet, ping-pong și șah. Inițiativa are ca scop principal unirea comunității studențești prin sport, oferind un cadru dinamic unde pasiunea pentru mișcare devine cel mai bun prilej de socializare."
   },
   {
-    image: "/assets/images/images/Proiecte/proiect-poliart.png",
+    image: "/assets/images/images/Proiecte/Logo-uri/logo-poliart.png",
     alt: "PoliArt",
     text: "PoliArt valorifică talentele artistice ale studenților prin crearea unei comunități unite de pasionați. Proiectul oferă un spațiu de expunere pentru lucrări de pictură, desen sau fotografie, atât în facultăți, cât și într-o expoziție finală de amploare. Atunci când publicul a admirat peste 200 de opere ale studenților care au ales să iasă din zona de confort și să lege conexiuni cu alți artiști amatori, totul într-un mediu dedicat creativității."
   },
   {
-    image: "/assets/images/images/Proiecte/proiect-crosulUT.png",
+    image: "/assets/images/images/Proiecte/Logo-uri/logo-cros.png",
     alt: "CrosulUT",
     text: "Aflat la cea de-a 20-a ediție, Crosul UT reunește comunitatea clujeană într-o cursă caritabilă de 6 km menită să promoveze sportul și solidaritatea prin cauze umanitare importante. Evenimentul a atras la ultima ediție peste 200 de participanți de toate vârstele, transformând o simplă alergare într-un spectacol vizual plin de energie, unde stilul de viață sănătos se împletește cu dorința de a face bine."
   },
   {
-    image: "/assets/images/images/Proiecte/infotech.png",
+    image: "/assets/images/images/Proiecte/Logo-uri/logo-infotech.png",
     alt: "InfoTech",
     text: "Scopul proiectului InfoTech este să faciliteze tranziția studenților spre piața muncii prin oferirea de cunoștințe și conexiuni esențiale în industria tehnologiei. Inițiativa asigură accesul la workshopuri de programare, simulări de interviuri și vizite la companii importante din domeniu. Prin evenimente precum ContestNight sau InfoNight, studenții își dezvoltă abilitățile practice alături de profesioniști și transformă teoria în avantaje reale pentru viitoarea carieră."
   },
   {
-    image: "/assets/images/images/Proiecte/ppp.jpg",
+    image: "/assets/images/images/Proiecte/PPP.jpg",
     alt: "Private Poli Party",
     text: "Private Poli Party este cel mai așteptat party semestrial de către studenții Universității Tehnice și nu numai. Cu peste 1200 de bilete vândute în ultimele 3 ediții, Private Poli Party reprezintă începutul perfect de semestru alături de colegi și de prieteni. Te așteptăm și pe tine să petreci până dimineața pe muzică pentru toate gusturile în Club Noa!\n\nNe vedem la party?"
   },
   {
-    image: "/assets/images/images/Proiecte/css.png",
+    image: "/assets/images/images/Proiecte/Logo-uri/logo_css.png",
     alt: "Ce Spun Studenții",
     text: "Te-ai întrebat mereu cum gândesc colegii și prietenii tăi? Acum este șansa ta să aflii răspunsul lor la cele mai amuzante și interesante situații.\nO adaptare a emisiunii “Family Feud” este cea mai bună ocazie să vezi cum unele dintre cele mai simple întrebări te pot pune în dificultate și cum evenimentele uzuale din viața oricărei persoane au o rezolvare complet diferită de la om la om. Cu reflexe bune, intuiție și cel mai important, un strop de noroc poți chiar tu să fi câștigătorul acestui joc!\nCele două echipe se află puse față în față cu un set de întrebări neașteptate la care trebuie să răspundă cu cele mai comune variante, în cel mai scurt timp. Fiecare rundă câștigată te duce tot mai aproape de marele premiu, dar nu uita că o mică greșeală te poate scoate din competiție. Entuziasmul și adrenalina își pot spune cuvântul, ducând atât emoțiile participanților, cât și pe cele ale spectatorilor la cele mai înalte nivele. Un concurs perfect daca ești o fire competitivă, dar și dacă ești doar în cătare de distracție și voie bună alături de persoanele tale preferate."
   },
@@ -61,12 +61,12 @@ const PROJECT_ITEMS = [
     text: "Zilele Universității Tehnice (ZUT) transformă campusurile noastre într-un festival de amploare, dedicat tuturor celor 20.000 de studenți ai universității. Proiectul a ajuns la ediția cu numărul 20 și are ca scop principal integrarea studenților prin activități diverse, de la concerte live și silent party până la campionate de e-sports sau workshopuri. Ultima ediție a reunit peste 5.000 de participanți care s-au bucurat de acces gratuit la evenimente, demonstrând că ZUT rămâne cel mai important punct de întâlnire pentru întreaga comunitate la începutul fiecărui an universitar."
   },
   {
-    image: "/assets/images/images/Proiecte/esucoverbun.jpg",
+    image: "/assets/images/images/Proiecte/Logo-uri/esu_logo.png",
     alt: "ESU",
     text: "Scopul principal al Engineering Summer University este familiarizarea elevilor cu mediul universitar prin recrearea autentică a experienței de student la UTCN. Ultima ediție a reunit 194 de participanți care au explorat spiritul comunității noastre, descoperind ce înseamnă cu adevărat viața în facultate, îmbinând cursurile și laboratoarele practice cu activități pline de distracție."
   },
   {
-    image: "/assets/images/images/Proiecte/proiect-infocafe.png",
+    image: "/assets/images/images/Proiecte/Logo-uri/logo-infocafe2.png",
     alt: "InfoCafe",
     text: "InfoCafe reprezintă principala metodă prin care consultăm mii de studenți din UTCN cu privire la respectarea drepturilor și obligațiilor lor în universitate. Prin standuri cu băuturi calde și chestionare online, voluntarii colectează feedback direct, care stă la baza elaborării Raportului CDOS. Acest document centralizează toate problemele și sugestiile primite și este prezentat oficial în Senatul Universității. Scopul final este ca vocea studenților să fie auzită clar, propunând măsuri concrete de îmbunătățire a politicilor educaționale și a experienței în campus."
   }
@@ -186,13 +186,13 @@ export default function ProiecteSiInitiativePage() {
               className="group cursor-pointer bg-zinc-100 dark:bg-[#1c1c1c] rounded-2xl overflow-hidden border border-zinc-200 dark:border-[#2a2a2a] shadow-lg transition-all duration-300 hover:-translate-y-[6px] flex flex-col"
               onClick={() => openPopup(item)}
             >
-              <div className="w-full h-48 relative overflow-hidden bg-black">
+              <div className="w-full h-48 relative overflow-hidden bg-zinc-200 dark:bg-[#151515] flex items-center justify-center p-4">
                 <Image 
                   src={item.image} 
                   alt={item.alt} 
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                  className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110 opacity-90 group-hover:opacity-100" 
+                  className="object-contain p-4 transition-transform duration-500 group-hover:scale-110 opacity-90 group-hover:opacity-100" 
                 />
               </div>
               <div className="p-5 flex-grow flex items-center justify-center text-center">
@@ -257,7 +257,7 @@ export default function ProiecteSiInitiativePage() {
                 alt={selectedItem.alt} 
                 fill
                 sizes="(max-width: 768px) 100vw, 40vw"
-                className="w-full h-full object-cover" 
+                className="w-full h-full object-contain p-6" 
               />
             </div>
             

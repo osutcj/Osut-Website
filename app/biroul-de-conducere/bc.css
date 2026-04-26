@@ -39,6 +39,52 @@
   font-size: clamp(2.8rem, 6.5vw, 5.5rem);
 }
 
+/* ===== Banner ===== */
+.bc-banner {
+  position: relative;
+  width: calc(100% + 4rem);
+  margin-left: -2rem;
+  margin-top: -8rem;
+  margin-bottom: 2rem;
+  height: 80vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bc-banner-img {
+  object-fit: cover;
+  object-position: center center;
+}
+
+.bc-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(18, 18, 18, 0.5) 0%,
+    rgba(18, 18, 18, 0.65) 50%,
+    rgba(18, 18, 18, 0.95) 100%
+  );
+  z-index: 1;
+}
+
+.bc-banner-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding-top: 5rem;
+}
+
+.bc-banner-content .bc-title-new {
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.7);
+}
+
+.bc-banner-content .bc-title-red {
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.7);
+}
+
 /* ===== Grid ===== */
 .bc-grid {
   display: flex;

@@ -5,16 +5,16 @@ import Image from "next/image";
 import Link from "next/link";
 
 const PROJECTS = [
-  { name: "Balul Bobocilor", logo: "/assets/images/images/Proiecte/Logo-uri/logo-balul_bobocilor.png" },
+  { name: "Balul Bobocilor", logo: "/assets/images/images/Proiecte/Logo-uri/logo-bal.png" },
   { name: "CrosulUT", logo: "/assets/images/images/Proiecte/Logo-uri/logo-cros.png" },
   { name: "ESU", logo: "/assets/images/images/Proiecte/Logo-uri/esu_logo.png" },
   { name: "InfoTech", logo: "/assets/images/images/Proiecte/Logo-uri/logo-infotech.png" },
-  { name: "PoliArt", logo: "/assets/images/images/Proiecte/Logo-uri/logo_poliart.png" },
+  { name: "PoliArt", logo: "/assets/images/images/Proiecte/Logo-uri/logo-poliart.png" },
   { name: "PoliHack", logo: "/assets/images/images/Proiecte/Logo-uri/logo-polihack.png" },
   { name: "PoliSport", logo: "/assets/images/images/Proiecte/Logo-uri/logo-polisport.png" },
-  { name: "InfoCafe", logo: "/assets/images/images/Proiecte/Logo-uri/logo-infocafe.png" },
+  { name: "InfoCafe", logo: "/assets/images/images/Proiecte/Logo-uri/logo-infocafe2.png" },
   { name: "ZUT", logo: "/assets/images/images/Proiecte/zut.png" },
-  { name: "Viitor Inginer", logo: "/assets/images/images/Proiecte/viitoringiner.PNG" }
+  { name: "Viitor Inginer", logo: "/assets/images/images/Proiecte/Logo-uri/logo-vi.png" }
 ];
 
 export default function HomeProjects() {

@@ -11,6 +11,40 @@ interface Post {
   createdAt: string;
 }
 
+/**
+ * Parses markdown-style links [text](url) within content and returns React elements.
+ */
+function renderContent(text: string): React.ReactNode[] {
+  const parts: React.ReactNode[] = [];
+  const regex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  let lastIndex = 0;
+  let match;
+
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index));
+    }
+    parts.push(
+      <a
+        key={match.index}
+        href={match[2]}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-red-400 hover:text-red-300 underline underline-offset-2 transition-colors"
+      >
+        {match[1]}
+      </a>
+    );
+    lastIndex = regex.lastIndex;
+  }
+
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex));
+  }
+
+  return parts;
+}
+
 export default function AdminDashboard() {
   const [password, setPassword] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -428,6 +462,9 @@ export default function AdminDashboard() {
                   className="w-full px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-red-500 transition-colors min-h-[250px] resize-y leading-relaxed"
                   placeholder="Scrie corpul articolului aici..."
                 />
+                <p className="text-xs text-gray-500 mt-1.5">
+                  💡 Pentru un link: <code className="bg-white/10 px-1.5 py-0.5 rounded text-gray-400">[textul vizibil](https://link.com)</code>
+                </p>
               </div>
 
               <div>
@@ -571,7 +608,7 @@ export default function AdminDashboard() {
               </p>
               <div className="h-px w-full bg-white/10 mb-6"></div>
               <div className="text-gray-300 text-base md:text-lg leading-relaxed whitespace-pre-wrap">
-                {content}
+                {renderContent(content)}
               </div>
             </div>
           </div>

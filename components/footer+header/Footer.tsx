@@ -68,6 +68,25 @@ export default function Footer() {
 
           {/* Sectiune Dreapta */}
           <div className="flex flex-wrap gap-12 sm:gap-16 lg:gap-24 lg:pt-2">
+
+            {/* Voluntariat */}
+            <div className="flex flex-col gap-4 text-left">
+              <h4 className="text-white font-semibold mb-2">Voluntariat</h4>
+              <Link
+                href="/despre-noi#cum-devin-voluntar"
+                className="text-sm text-zinc-400 hover:text-white transition"
+              >
+                Cum devin voluntar OSUT Cluj?
+              </Link>
+              {/* Link spre pagina cu detalii credite SAU un document */}
+              <Link
+                href="/assets/pdf/Regulament credite voluntariat.pdf"
+                className="text-sm text-zinc-400 hover:text-white transition"
+              >
+                Credite de voluntariat
+              </Link>
+            </div>
+
             {/* Resurse */}
             <div className="flex flex-col gap-4 text-left">
               <h4 className="text-white font-semibold mb-2">Resurse</h4>
@@ -89,38 +108,7 @@ export default function Footer() {
               >
                 OSUT Te Informează
               </Link>
-              <Link
-                href="/educational#resurse"
-                className="text-sm text-zinc-400 hover:text-white transition"
-              >
-                Demersuri
-              </Link>
             </div>
-
-            {/* Voluntariat */}
-            <div className="flex flex-col gap-4 text-left">
-              <h4 className="text-white font-semibold mb-2">Voluntariat</h4>
-              <Link
-                href="/cum-devin-voluntar"
-                className="text-sm text-zinc-400 hover:text-white transition"
-              >
-                Cum devin voluntar OSUT Cluj?
-              </Link>
-              {/* Link spre pagina cu detalii credite SAU un document */}
-              <Link
-                href="/credite"
-                className="text-sm text-zinc-400 hover:text-white transition"
-              >
-                Credite de voluntariat
-              </Link>
-              <Link
-                href="/oportunitati"
-                className="text-sm text-zinc-400 hover:text-white transition"
-              >
-                Oportunități
-              </Link>
-            </div>
-
             {/* Retele de socializare (Stay in Touch style) */}
             <div className="flex flex-col gap-4 text-left">
               <h4 className="text-white font-semibold mb-2">Socials</h4>

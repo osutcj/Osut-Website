@@ -12,10 +12,11 @@ interface TeamMember {
     fbLink?: string;
     igLink?: string;
     inLink?: string;
+    email?: string;
     photoPosition?: string;
 }
 
-const TeamCard = ({ photo, lastName, firstName, role, fbLink, igLink, inLink, photoPosition }: TeamMember) => (
+const TeamCard = ({ photo, lastName, firstName, role, fbLink, igLink, inLink, email, photoPosition }: TeamMember) => (
     <div className="bc-card">
         <div className="bc-card-image-wrap">
             <Image
@@ -49,6 +50,11 @@ const TeamCard = ({ photo, lastName, firstName, role, fbLink, igLink, inLink, ph
                         <i className="fab fa-linkedin-in"></i>
                     </a>
                 )}
+                {email && (
+                    <a href={`mailto:${email}`} className="bc-social-btn">
+                        <i className="fas fa-envelope"></i>
+                    </a>
+                )}
             </div>
         </div>
     </div>
@@ -58,94 +64,114 @@ const TEAM_MEMBERS: TeamMember[] = [
     {
         photo: "/assets/images/images/bc/TimișTraian.jpg",
         lastName: "Timiș",
-        firstName: "Traian-Marius",
+        firstName: "Traian",
         role: "Președinte",
-        fbLink: "https://www.facebook.com/traianmarius.timis",
-        igLink: "https://www.instagram.com/traian_timis/",
-        inLink: "https://www.linkedin.com/in/traian-marius-timi%C8%99-011103250/"
-    },
-    {
-        photo: "/assets/images/images/bc/CioteaAlexandra.jpg",
-        lastName: "Ciotea",
-        firstName: "Alexandra-Anamaria",
-        role: "Secretar General",
-        fbLink: "https://www.facebook.com/ale.ciotea",
-        igLink: "https://www.instagram.com/aleciotea/",
-        inLink: "https://www.linkedin.com/in/alexandra-anamaria-ciotea-044102250/"
-    },
-    {
-        photo: "/assets/images/images/bc/LicuArina.jpg",
-        lastName: "Licu",
-        firstName: "Arina-Andreea",
-        role: "Vicepreședinte Educațional",
-        fbLink: "https://www.facebook.com/arina.licu.1",
-        igLink: "https://www.instagram.com/arina_licu/",
-        inLink: "https://www.linkedin.com/in/arina-andreea-licu-444102250/"
-    },
-    {
-        photo: "/assets/images/images/bc/OrmindeanVlad.jpg",
-        lastName: "Ormindean",
-        firstName: "Vlad-Cosmin",
-        role: "Vicepreședinte Interne",
-        fbLink: "https://www.facebook.com/vlad.ormindean",
-        igLink: "https://www.instagram.com/vladormindean/",
-        inLink: "https://www.linkedin.com/in/vlad-cosmin-ormindean-044102250/"
-    },
-    {
-        photo: "/assets/images/images/bc/MoiceanuElena.jpg",
-        lastName: "Moiceanu",
-        firstName: "Elena-Ștefania",
-        role: "Vicepreședinte Externe",
-        fbLink: "https://www.facebook.com/elena.moiceanu.1",
-        igLink: "https://www.instagram.com/elenamoiceanu/",
-        inLink: "https://www.linkedin.com/in/elena-%C8%99tefania-moiceanu-044102250/"
-    },
-    {
-        photo: "/assets/images/images/bc/ArimiaAndreea.jpg",
-        lastName: "Arimia",
-        firstName: "Andreea-Ștefania",
-        role: "Vicepreședinte Imagine",
-        fbLink: "https://www.facebook.com/andreeastefania.arimia.1",
-        igLink: "https://www.instagram.com/andreeastefaniaarimia/",
-        inLink: "https://www.linkedin.com/in/andreea-%C8%99tefania-arimia-044102250/"
-    },
-    {
-        photo: "/assets/images/images/bc/BălănescuRareș.jpg",
-        lastName: "Bălănescu",
-        firstName: "Rareș",
-        role: "Vicepreședinte Proiecte",
-        fbLink: "https://www.facebook.com/rares.balanescu.1",
-        igLink: "https://www.instagram.com/raresbalanescu/",
-        inLink: "https://www.linkedin.com/in/rare%C8%99-b%C4%83l%C4%83nescu-044102250/"
+        fbLink: "https://www.facebook.com/timis.traian02",
+        igLink: "https://www.instagram.com/timistm/",
+        inLink: "https://www.linkedin.com/in/traian-timis/",
+        email: "traian.timis@osutcluj.com"
     },
     {
         photo: "/assets/images/images/bc/TudoseRares.jpg",
         lastName: "Tudose",
         firstName: "Rareș",
-        role: "Vicepreședinte IT",
-        fbLink: "https://www.facebook.com/rares.tudose.1",
-        igLink: "https://www.instagram.com/rarestudose/",
-        inLink: "https://www.linkedin.com/in/rare%C8%99-tudose-044102250/"
+        role: "Director Executiv",
+        fbLink: "https://www.facebook.com/rares.tudose08",
+        igLink: "https://www.instagram.com/rares_tudose/",
+        inLink: "https://www.linkedin.com/in/rare%C8%99-tudose/",
+        email: "rares.tudose@osutcluj.com"
     },
     {
         photo: "/assets/images/images/bc/OrtanAdela.jpg",
-        lastName: "Ortan",
-        firstName: "Adela-Mălina",
-        role: "Cenzor",
+        lastName: "Orțan",
+        firstName: "Adela",
+        role: "Secretar General",
         fbLink: "https://www.facebook.com/adela.ortan",
-        igLink: "https://www.instagram.com/adelaortan/",
-        inLink: "https://www.linkedin.com/in/adela-m%C4%83lina-ortan-044102250/"
+        igLink: "https://www.instagram.com/adela_ortan/",
+        inLink: "https://www.linkedin.com/in/adela-ortan/",
+        email: "adela.ortan@osutcluj.com"
     },
+    {
+        photo: "/assets/images/images/bc/ArimiaAndreea.jpg",
+        lastName: "Arimia",
+        firstName: "Andreea",
+        role: "Vicepreședinte Electro",
+        fbLink: "https://www.facebook.com/andreea.arimia",
+        igLink: "https://www.instagram.com/andreeaa_stefaniaa/?ref=osut.org",
+        inLink: "https://www.linkedin.com/in/andreea-arimia-0713972a2/",
+        email: "andreea.arimia@osutcluj.com"
+    },
+    {
+        photo: "/assets/images/images/bc/OrmindeanVlad.jpg",
+        lastName: "Ormindean",
+        firstName: "Vlad",
+        role: "Vicepreședinte Construcții",
+        fbLink: "https://www.facebook.com/vlad.ormindean.1/",
+        igLink: "https://www.instagram.com/__vld._/?ref=osut.org",
+        inLink: "https://www.linkedin.com/in/vlad-ormindean-089752375/",
+        email: "vlad.ormindean@osutcluj.com"
+    },
+    {
+        photo: "/assets/images/images/bc/LicuArina.jpg",
+        lastName: "Licu",
+        firstName: "Arina",
+        role: "Vicepreședinte Mecanică",
+        fbLink: "https://www.facebook.com/arina.licu",
+        igLink: "https://www.instagram.com/arina_andreea?igsh=ZGQzZDg2NXdiZTg3&utm_source=qr",
+        inLink: "https://www.linkedin.com/in/arina-licu-3355b520a/",
+        email: "arina.licu@osutcluj.com"
+    },
+    {
+        photo: "/assets/images/images/bc/BălănescuRareș.jpg",
+        lastName: "Bălănescu",
+        firstName: "Rareș",
+        role: "Vicepreședinte Relații Interne",
+        fbLink: "https://www.facebook.com/rares.balanescu?locale=ro_RO",
+        igLink: "https://www.instagram.com/rares.bala_4/?ref=osut.org",
+        inLink: "https://www.linkedin.com/in/rares-balanescu-790958298/",
+        email: "rares.balanescu@osutcluj.com"
+    },
+    {
+        photo: "/assets/images/images/bc/CioteaAlexandra.jpg",
+        lastName: "Ciotea",
+        firstName: "Alexandra",
+        role: "Vicepreședinte Relații Externe",
+        fbLink: "https://www.facebook.com/alexandra.ciotea.58",
+        igLink: "https://www.instagram.com/lexa.ciotea?igsh=YmptNDZyOHZ5cTdh&utm_source=qr",
+        inLink: "https://www.linkedin.com/in/alexandra-anamaria-ciotea-9832a42b1/",
+        email: "alexandra.ciotea@osutcluj.com"
+    },
+    {
+        photo: "/assets/images/images/bc/MoiceanuElena.jpg",
+        lastName: "Moiceanu",
+        firstName: "Elena",
+        role: "Director PR",
+        fbLink: "https://www.facebook.com/ella.moiceanu",
+        igLink: "https://www.instagram.com/ellamoiceanu/?ref=osut.org",
+        inLink: "https://www.linkedin.com/in/elena-moiceanu-494031269/",
+        email: "elena.moiceanu@osutcluj.com"
+    }
 ];
 
 export default function BiroulDeConducere() {
     return (
         <main className="bc-main">
-            <div className="bc-header">
-                <div className="bc-header-line"></div>
-                <h1 className="bc-title-new">
-                    Biroul de <span className="bc-title-red">Conducere</span>
-                </h1>
+            <div className="bc-banner">
+                <Image
+                    src="/assets/images/images/bc/Poza BC.jpg"
+                    alt="Biroul de Conducere - Fotografie de grup"
+                    fill
+                    sizes="100vw"
+                    className="bc-banner-img"
+                    priority
+                />
+                <div className="bc-banner-overlay"></div>
+                <div className="bc-banner-content">
+                    <div className="bc-header-line"></div>
+                    <h1 className="bc-title-new">
+                        Biroul de <span className="bc-title-red">Conducere</span>
+                    </h1>
+                </div>
             </div>
 
             <div className="bc-grid">

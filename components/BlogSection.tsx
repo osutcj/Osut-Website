@@ -11,6 +11,43 @@ interface Post {
   createdAt: string;
 }
 
+/**
+ * Parses markdown-style links [text](url) within content and returns React elements.
+ */
+function renderContent(text: string): React.ReactNode[] {
+  const parts: React.ReactNode[] = [];
+  const regex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  let lastIndex = 0;
+  let match;
+
+  while ((match = regex.exec(text)) !== null) {
+    // Push text before the link
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index));
+    }
+    // Push the link element
+    parts.push(
+      <a
+        key={match.index}
+        href={match[2]}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-red-400 hover:text-red-300 underline underline-offset-2 transition-colors"
+      >
+        {match[1]}
+      </a>
+    );
+    lastIndex = regex.lastIndex;
+  }
+
+  // Push remaining text
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex));
+  }
+
+  return parts;
+}
+
 export default function BlogSection({ limit }: { limit?: number } = {}) {
   const [posts, setPosts] = useState<Post[]>([]);
   const [selectedPost, setSelectedPost] = useState<Post | null>(null);
@@ -193,7 +230,7 @@ export default function BlogSection({ limit }: { limit?: number } = {}) {
               </p>
               <div className="h-px w-full bg-white/10 mb-6"></div>
               <div className="text-gray-300 text-base md:text-lg leading-relaxed whitespace-pre-wrap">
-                {selectedPost.content}
+                {renderContent(selectedPost.content)}
               </div>
             </div>
           </div>

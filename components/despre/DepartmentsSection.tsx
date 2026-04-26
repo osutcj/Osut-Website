@@ -11,7 +11,12 @@ import {
   Camera, 
   Code, 
   VideoCamera, 
-  Wrench 
+  Wrench,
+  GraduationCap,
+  Trophy,
+  Cpu,
+  Terminal,
+  Group
 } from "iconoir-react";
 
 const DEPARTAMENTE = [
@@ -64,6 +69,36 @@ const DEPARTAMENTE = [
     titlu: "Tehnic Administrativ",
     icon: <Wrench width={32} height={32} />,
     descriere: "Echipa de la Tehnic-Administrativ pune totul în mișcare și aduce proiectele la viață prin soluții logistice imediate. Voluntarii se ocupă de tot ce ține de montaj, verificări și pregătirea necesarelor pentru evenimente, fiind prezenți la fiecare activitate a organizației. Dacă vrei să înveți cum să rezolvi rapid orice problemă de organizare și să cunoști cel mai bine sediul și resursele noastre, aici este locul tău."
+  },
+  {
+    titlu: "Balul Bobocilor",
+    icon: <MusicDoubleNote width={32} height={32} />,
+    descriere: "Ediția din 2025, desfășurată sub tema \u201eArabian Nights\u201d, a adus în lumină 8 perechi de boboci care și-au demonstrat creativitatea și talentul pentru a marca debutul vieții lor academice. Proiectul are ca scop integrarea noilor studenți în mediul universitar, oferindu-le cadrul perfect pentru a socializa, a lega prietenii și a se acomoda mai ușor cu spiritul comunității noastre."
+  },
+  {
+    titlu: "Engineering Summer University",
+    icon: <GraduationCap width={32} height={32} />,
+    descriere: "Scopul principal al Engineering Summer University este familiarizarea elevilor cu mediul universitar prin recrearea autentică a experienței de student la UTCN. Ultima ediție a reunit 194 de participanți care au explorat spiritul comunității noastre, descoperind ce înseamnă cu adevărat viața în facultate, îmbinând cursurile și laboratoarele practice cu activități pline de distracție."
+  },
+  {
+    titlu: "Gala Aniversară",
+    icon: <Trophy width={32} height={32} />,
+    descriere: "Gala Aniversară este evenimentul prin care celebrăm realizările și dedicarea voluntarilor OSUT Cluj din semestrul trecut. Aceasta reunește întreaga echipă într-o seară festivă unde sunt recunoscuți cei mai activi voluntari, cele mai de impact proiecte și momentele care au definit activitatea organizației. Este ocazia perfectă de a privi în urmă cu mândrie și de a ne motiva pentru provocările viitoare."
+  },
+  {
+    titlu: "InfoTech",
+    icon: <Cpu width={32} height={32} />,
+    descriere: "Scopul proiectului InfoTech este să faciliteze tranziția studenților spre piața muncii prin oferirea de cunoștințe și conexiuni esențiale în industria tehnologiei. Inițiativa asigură accesul la workshopuri de programare, simulări de interviuri și vizite la companii importante din domeniu. Prin evenimente precum ContestNight sau InfoNight, studenții își dezvoltă abilitățile practice alături de profesioniști și transformă teoria în avantaje reale pentru viitoarea carieră."
+  },
+  {
+    titlu: "PoliHack",
+    icon: <Terminal width={32} height={32} />,
+    descriere: "PoliHack provoacă studenții și elevii de liceu să își depășească limitele creativității și ale abilităților tehnice prin dezvoltarea unor soluții software sau hardware inovatoare. Proiectul a ajuns la ediția cu numărul 18 și a reunit 188 de participanți care au format 42 de echipe pentru a crea aplicații sau sisteme complexe. Sub îndrumarea unor mentori din industrie și din mediul academic, echipele transformă ideile în realitate, procesul având ca scop principal testarea cunoștințelor practice într-un cadru competitiv și colaborativ."
+  },
+  {
+    titlu: "Viitor Inginer",
+    icon: <Group width={32} height={32} />,
+    descriere: "Viitor Inginer facilitează întâlnirea dintre voluntarii noștri și elevii de liceu din toată țara pentru a le arăta ce presupune cu adevărat viața de student la UTCN. Proiectul are ca scop combaterea abandonului școlar și sprijinul tinerilor în alegerea facultății prin discuții directe despre oportunitățile din universitate. În ultimul semestru, caravana a ajuns inclusiv în Republica Moldova, unde studenții au oferit informații esențiale și sfaturi utile elevilor care vor să urmeze o carieră în domeniu."
   }
 ];
 
@@ -74,7 +109,7 @@ export default function DepartmentsSection() {
         <div className="w-full max-w-5xl relative flex justify-center items-center mb-16 mx-auto">
           <div className="absolute w-full h-[2px] bg-gradient-to-r from-transparent via-red-600 to-transparent top-1/2 -translate-y-1/2 opacity-100"></div>
           <h2 className="bg-white dark:bg-[#121212] px-10 text-4xl md:text-5xl font-bold relative z-10 tracking-wide text-zinc-900 dark:text-white text-center uppercase">
-            Direcții și <span className="text-red-600">Servicii</span>
+            Departamente
           </h2>
         </div>
 
