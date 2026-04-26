@@ -16,34 +16,34 @@ const DOCUMENTS = [
 ];
 
 const senatMembers = [
-    {nume: "Licu", prenume: "Arina-Andreea", subtitlu: "Student Reprezentant în BOS"},
-    {nume: "Timiș", prenume: "Traian-Marius", subtitlu: "Student Reprezentant în BCA"},
-    {nume: "Mitocaru", prenume: "Silviu-Gabriel"},
-    {nume: "Bălănescu", prenume: "Rareș"},
-    {nume: "Coș", prenume: "Tudor-Adrian"},
-    {nume: "Juravle", prenume: "Monica"},
-    {nume: "Moiceanu", prenume: "Elena-Ștefania"},
-    {nume: "Tudose", prenume: "Rareș"},
-    {nume: "Abiculesei", prenume: "Denis-Andrei"},
-    {nume: "Lenghel", prenume: "Carmen"},
-    {nume: "Ormindean", prenume: "Vlad-Cosmin"},
-    {nume: "Bondrea", prenume: "Lucian-Andrei"},
-    {nume: "Bria", prenume: "Mara-Aiyana"},
-    {nume: "Afanas", prenume: "Neonila"},
-    {nume: "Livinschi", prenume: "Cătălina"},
-    {nume: "Maxim", prenume: "Andrei-Vasile"},
-    {nume: "Arimia", prenume: "Andreea-Ștefania"},
-    {nume: "Bujdei", prenume: "Robert"},
-    {nume: "Ciotea", prenume: "Alexandra-Anamaria"},
-    {nume: "Chirilă", prenume: "Iulian"},
-    {nume: "Spătăcean", prenume: "Lidia-Giorgiana"},
-    {nume: "Precub", prenume: "Alexandru-Ioan"},
-    {nume: "Joia", prenume: "Simona"},
-    {nume: "Mureșan", prenume: "Ana-Maria"},
-    {nume: "Suciu", prenume: "Alexandra"},
-    {nume: "Sillai", prenume: "Beatrice"},
-    {nume: "Borbei", prenume: "Alexandra"},
-    {nume: "Covaci", prenume: "Sebastian-Gabriel"},
+    {nume: "Licu", prenume: "Arina-Andreea", subtitlu: "Student Reprezentant în BOS", an: "Licență, Anul 3", specializare: "Robotică", email: "Licu.Ga.Arina@student.utcluj.ro"},
+    {nume: "Timiș", prenume: "Traian-Marius", subtitlu: "Student Reprezentant în BCA", an: "Master, Anul 1", specializare: "Construcții Durabile de Beton", email: "Timis.Al.Traian@student.utcluj.ro"},
+    {nume: "Mitocaru", prenume: "Silviu-Gabriel", an: "Anul 4", specializare: "Arhitectură", email: "Mitocaru.Mi.Silviu@student.utcluj.ro"},
+    {nume: "Bălănescu", prenume: "Rareș", an: "Licență, Anul 4", specializare: "Calculatoare și Tehnologia Informației", email: "Balanescu.Co.Rares@student.utcluj.ro"},
+    {nume: "Coș", prenume: "Tudor", an: "Licență, Anul 3", specializare: "Automatică și Informatică Aplicată (engleză)", email: "Cos.ad.tudor@student.utcluj.ro"},
+    {nume: "Juravle", prenume: "Monica", an: "Licență, Anul 4", specializare: "Calculatoare și Tehnologia Informației", email: "Juravle.Va.Monica@student.utcluj.ro"},
+    {nume: "Moiceanu", prenume: "Elena-Ștefania", an: "Licență, Anul 2", specializare: "Automatică și Informatică Aplicată (engleză)", email: "Moiceanu.Io.Elena@student.utcluj.ro"},
+    {nume: "Tudose", prenume: "Rareș", an: "Licență, Anul 4", specializare: "Calculatoare și Tehnologia Informației", email: "Tudose.Ar.Rares@student.utcluj.ro"},
+    {nume: "Abiculesei", prenume: "Denis-Andrei", an: "Licență, Anul 3", specializare: "Inginerie și Management în Construcții", email: "Abiculesei.So.Denis@student.utcluj.ro"},
+    {nume: "Lenghel", prenume: "Carmen", an: "Licență, Anul 3", specializare: "Măsurători Terestre și Cadastru", email: "Lenghel.Io.Carmen@student.utcluj.ro"},
+    {nume: "Ormindean", prenume: "Vlad-Cosmin", an: "Licență, Anul 2", specializare: "Inginerie Civilă", email: "Ormindean.Si.Vlad@student.utcluj.ro"},
+    {nume: "Bondrea", prenume: "Lucian-Andrei", an: "Licență, Anul 3", specializare: "Autovehicule Rutiere", email: "Bondrea.Ad.Lucian@student.utcluj.ro"},
+    {nume: "Bria", prenume: "Mara-Aiyana", an: "Licență, Anul 2", specializare: "Mecatronică", email: "Bria.Du.Mara@student.utcluj.ro"},
+    {nume: "Afanas", prenume: "Neonila", an: "Licență, Anul 2", specializare: "Inginerie Economică Industrială", email: "Afanas.Va.Neonila@student.utcluj.ro"},
+    {nume: "Livinschi", prenume: "Cătălina", an: "Licență, Anul 3", specializare: "Robotică", email: "Livinschi.Vi.Ca@student.utcluj.ro"},
+    {nume: "Maxim", prenume: "Andrei-Vasile", an: "Licență, Anul 4", specializare: "Tehnologia Construcțiilor de Mașini (engleză)", email: "Maxim.va.andrei@student.utcluj.ro"},
+    {nume: "Arimia", prenume: "Andreea-Ștefania", an: "Licență, Anul 3", specializare: "Inginerie Economică în Domeniul Electric, Electronic și Energetic", email: "Arimia.Io.Andreea@student.utcluj.ro"},
+    {nume: "Bujdei", prenume: "Robert", an: "Licență, Anul 2", specializare: "Inginerie Electronică, Telecomunicații și Tehnologii Informaționale (engleză)", email: "Bujdei.Gh.Robert@student.utcluj.ro"},
+    {nume: "Ciotea", prenume: "Alexandra-Anamaria", an: "Licență, Anul 4", specializare: "Tehnologii și Sisteme de Telecomunicații (engleză)", email: "Ciotea.Ad.Alexandra@student.utcluj.ro"},
+    {nume: "Chirilă", prenume: "Iulian", an: "Licență, Anul 3", specializare: "Ingineria sistemelor electroenergetice", email: "Chirila.Ci.Iulian@student.utcluj.ro"},
+    {nume: "Spătăcean", prenume: "Lidia-Giorgiana", an: "Master, Anul 2", specializare: "Științe Inginerești Aplicate în medicină", email: "Spatacean.Gh.Lidia@student.utcluj.ro"},
+    {nume: "Precub", prenume: "Alexandru-Ioan", an: "Licență, Anul 1", specializare: "Instalații pentru Construcții", email: "Precub.Io.Alexandru@student.utcluj.ro"},
+    {nume: "Joia", prenume: "Simona", an: "Licență, Anul 3", specializare: "Ingineria și Protecția Mediului în Industrie", email: "Joia.Da.Simona@student.utcluj.ro"},
+    {nume: "Mureșan", prenume: "Ana-Maria", an: "-", specializare: "-", email: "Muresan.co.maria@student.utcluj.ro"},
+    {nume: "Suciu", prenume: "Alexandra", an: "-", specializare: "-", email: "Suciu.Al.Alexandra@student.utcluj.ro"},
+    {nume: "Sillai", prenume: "Beatrice", an: "-", specializare: "-", email: "Sillai.Al.Beatrice@student.utcluj.ro"},
+    {nume: "Borbei", prenume: "Alexandra", an: "-", specializare: "-", email: "Borbei.al.alexandra@student.utcluj.ro"},
+    {nume: "Covaci", prenume: "Sebastian-Gabriel", an: "-", specializare: "-", email: "Covaci.CS.Sebastian@student.utcluj.ro"}
 ];
 
 const faculties = {
@@ -53,9 +53,9 @@ const faculties = {
         shortName: "Facultatea de Arhitectură și Urbanism",
         formular: "https://forms.office.com/e/F3bssFQU5E",
         members: [
-            {nume: "Couți", prenume: "Paul"},
-            {nume: "Dâscă", prenume: "Sabrina-Ioana"},
-            {nume: "Rusu", prenume: "George"},
+            {nume: "Couți", prenume: "Paul", subtitlu: "Student Reprezentant în BCF", an: "Anul 3", specializare: "Arhitectură", email: "Couti.Ma.Paul@student.utcluj.ro"},
+            {nume: "Dâscă", prenume: "Sabrina-Ioana", an: "Anul 4", specializare: "Arhitectură", email: "Dasca.Pe.Sabrina@student.utcluj.ro"},
+            {nume: "Rusu", prenume: "George", an: "Anul 2", specializare: "Arhitectură", email: "rusu.da.george@student.utcluj.ro"},
         ]
     },
     automatica: {
@@ -64,16 +64,16 @@ const faculties = {
         shortName: "Facultatea de Automatică și Calculatoare",
         formular: "https://forms.office.com/e/2S0mtH8R6J",
         members: [
-            {nume: "Bălănescu", prenume: "Rareș"},
-            {nume: "Clim", prenume: "Diana"},
-            {nume: "Indreiu", prenume: "Daniela"},
-            {nume: "Juravle", prenume: "Monica"},
-            {nume: "Moiceanu", prenume: "Elena-Ștefania"},
-            {nume: "Murariu", prenume: "Georgiana"},
-            {nume: "Pavel", prenume: "Luca-Georgian"},
-            {nume: "Santeiu", prenume: "Anda-Ștefana"},
-            {nume: "Șișeștean", prenume: "Andrei"},
-            {nume: "Tudose", prenume: "Rareș"},
+            {nume: "Tudose", prenume: "Rareș", subtitlu: "Student Reprezentant în BCF", an: "Licență, Anul 4", specializare: "Calculatoare și Tehnologia Informației", email: "Tudose.Ar.Rareș@student.utcluj.ro"},
+            {nume: "Bălănescu", prenume: "Rareș", an: "Licență, Anul 4", specializare: "Calculatoare și Tehnologia Informației", email: "Balanescu.Co.Rares@student.utcluj.ro"},
+            {nume: "Clim", prenume: "Diana", an: "Licență, Anul 3", specializare: "Calculatoare și Tehnologia Informației", email: "Clim.fl.diana@student.utcluj.ro"},
+            {nume: "Indreiu", prenume: "Daniela", an: "Licență, Anul 3", specializare: "Automatică și Informatică Aplicată", email: "Indreiu.Da.Daniela@student.utcluj.ro"},
+            {nume: "Juravle", prenume: "Monica", an: "Licență, Anul 4", specializare: "Calculatoare și Tehnologia Informației", email: "Juravle.Va.Monica@student.utcluj.ro"},
+            {nume: "Moiceanu", prenume: "Elena-Ștefania", an: "Licență, Anul 2", specializare: "Automatică și Informatică Aplicată (engleză)", email: "Moiceanu.Io.Elena@student.utcluj.ro"},
+            {nume: "Murariu", prenume: "Georgiana", an: "Licență, Anul 3", specializare: "Calculatoare și Tehnologia Informației (engleză)", email: "Murariu.Io.Georgiana@student.utcluj.ro"},
+            {nume: "Pavel", prenume: "Luca-Georgian", an: "Licență, Anul 3", specializare: "Calculatoare și Tehnologia Informației (engleză)", email: "Pavel.ma.luca@student.utcluj.ro"},
+            {nume: "Santeiu", prenume: "Anda-Ștefana", an: "Licență, Anul 2", specializare: "Automatică și Informatică Aplicată", email: "Santeiu.Ca.Anda@student.utcluj.ro"},
+            {nume: "Șișeștean", prenume: "Andrei", an: "Licență, Anul 2", specializare: "Automatică și Informatică Aplicată", email: "Sisestean.Pe.Andrei@student.utcluj.ro"},
         ]
     },
     autovehicule: {
@@ -82,13 +82,13 @@ const faculties = {
         shortName: "Facultatea de Autovehicule Rutiere, Mecatronică și Mecanică",
         formular: "https://forms.office.com/e/PCZqRCKGRv",
         members: [
-            {nume: "Bondrea", prenume: "Lucian-Andrei"},
-            {nume: "Bria", prenume: "Mara-Aiyana"},
-            {nume: "Buzgariu", prenume: "Ioana Niculina"},
-            {nume: "Crăcăoanu", prenume: "Klaudia Maria"},
-            {nume: "Haitonic", prenume: "Dacian-Alexandru"},
-            {nume: "Iaută", prenume: "Claudiu-Marian"},
-            {nume: "Veres", prenume: "Georgian-Ionuț"},
+            {nume: "Bria", prenume: "Mara-Aiyana", subtitlu: "Student Reprezentant în BCF", an: "Licență, Anul 2", specializare: "Mecatronică", email: "Bria.Du.Mara@student.utcluj.ro"},
+            {nume: "Bondrea", prenume: "Lucian-Andrei", an: "Licență, Anul 3", specializare: "Autovehicule Rutiere", email: "Bondrea.Ad.Lucian@student.utcluj.ro"},
+            {nume: "Buzgariu", prenume: "Ioana Niculina", an: "Licență, Anul 2", specializare: "Mecatronică", email: "Buzgariu.Ni.Ioana@student.utcluj.ro"},
+            {nume: "Crăcăoanu", prenume: "Klaudia Maria", an: "Licență, Anul 2", specializare: "Ingineria Autovehiculelor", email: "Cracaoanu.co.klaudia@student.utcluj.ro"},
+            {nume: "Haitonic", prenume: "Dacian-Alexandru", an: "Licență, Anul 1", specializare: "Ingineria Transporturilor și a Traficului", email: "Haitonic.Al.Dacian@student.utcluj.ro"},
+            {nume: "Iaută", prenume: "Claudiu-Marian", an: "Licență, Anul 2", specializare: "Mecanică Fină și Nanotehnologii", email: "Iauta.Ma.Claudiu@student.utcluj.ro"},
+            {nume: "Veres", prenume: "Georgian-Ionuț", an: "Licență, Anul 2", specializare: "Autovehicule Rutiere", email: "Veres.Ra.Georgian@student.utcluj.ro"},
         ]
     },
     constructii: {
@@ -97,15 +97,15 @@ const faculties = {
         shortName: "Facultatea de Construcții",
         formular: "https://forms.office.com/e/FGqc1UgaDV",
         members: [
-            {nume: "Timiș", prenume: "Traian-Marius", subtitlu: "Student Reprezentant în BCA"},
-            {nume: "Abiculesei", prenume: "Denis-Andrei"},
-            {nume: "Chira", prenume: "Daria-Larisa"},
-            {nume: "Lenghel", prenume: "Carmen-Anamaria"},
-            {nume: "Marcu", prenume: "Petra-Denisa"},
-            {nume: "Ormindean", prenume: "Vlad"},
-            {nume: "Stan", prenume: "Giulia"},
-            {nume: "Stoian-Pop", prenume: "Alexia-Ioana"},
-            {nume: "Zinici", prenume: "Diana"},
+            {nume: "Ormindean", prenume: "Vlad", subtitlu: "Student Reprezentant în BCF", an: "Licență, Anul 2", specializare: "Inginerie Civilă", email: "Ormindean.Si.Vlad@student.utcluj.ro"},
+            {nume: "Timiș", prenume: "Traian-Marius", subtitlu: "Student Reprezentant în BCA", an: "Master, Anul 1", specializare: "Construcții Durabile de Beton", email: "Timis.Al.Traian@student.utcluj.ro"},
+            {nume: "Abiculesei", prenume: "Denis-Andrei", an: "Licență, Anul 3", specializare: "Inginerie și Management în Construcții", email: "Abiculesei.So.Denis@student.utcluj.ro"},
+            {nume: "Chira", prenume: "Daria-Larisa", an: "Licență, Anul 2", specializare: "Inginerie Civilă", email: "Chira.Da.Daria@student.utcluj.ro"},
+            {nume: "Lenghel", prenume: "Carmen-Anamaria", an: "Licență, Anul 3", specializare: "Măsurători Terestre și Cadastru", email: "Lenghel.Io.Carmen@student.utcluj.ro"},
+            {nume: "Marcu", prenume: "Petra-Denisa", an: "Licență, Anul 4", specializare: "Construcții Civile, Industriale și Agricole (engleză)", email: "Marcu.Pe.Petra@student.utcluj.ro"},
+            {nume: "Stan", prenume: "Giulia", an: "Licență, Anul 2", specializare: "Inginerie Civilă", email: "Stan.Pe.Giulia@student.utcluj.ro"},
+            {nume: "Stoian-Pop", prenume: "Alexia-Ioana", an: "Licență, Anul 2", specializare: "Inginerie Civilă", email: "Stoian.Gh.Alexia@student.utcluj.ro"},
+            {nume: "Zinici", prenume: "Diana", an: "Licență, Anul 2", specializare: "Inginerie Civilă", email: "Zinici.Du.Diana@student.utcluj.ro"},
         ]
     },
     electronica: {
@@ -114,13 +114,13 @@ const faculties = {
         shortName: "Facultatea de Electronică, Telecomunicații și Tehnologia Informației",
         formular: "https://forms.office.com/e/gDaHAf3VcK",
         members: [
-            {nume: "Arimia", prenume: "Andreea-Ștefania"},
-            {nume: "Bujdei", prenume: "Robert"},
-            {nume: "Drule", prenume: "Daniela-Ileana"},
-            {nume: "Irimiciuc", prenume: "Cosmin"},
-            {nume: "Pop", prenume: "Lorena Maria"},
-            {nume: "Signori", prenume: "Gianmario"},
-            {nume: "Tivadar", prenume: "Dragoș-Filip"},
+            {nume: "Arimia", prenume: "Andreea-Ștefania", subtitlu: "Student Reprezentant în BCF", an: "Licență, Anul 3", specializare: "Inginerie Economică în Domeniul Electric, Electronic și Energetic", email: "Arimia.Io.Andreea@student.utcluj.ro"},
+            {nume: "Bujdei", prenume: "Robert", an: "Licență, Anul 2", specializare: "Inginerie Electronică, Telecomunicații și Tehnologii Informaționale (engleză)", email: "Bujdei.gh.robert@student.utcluj.ro"},
+            {nume: "Drule", prenume: "Daniela-Ileana", an: "Licență, Anul 4", specializare: "Electronică Aplicată", email: "Drule.vi.daniela@student.utcluj.ro"},
+            {nume: "Irimiciuc", prenume: "Cosmin", an: "Licență, Anul 2", specializare: "Inginerie Electronică, Telecomunicații și Tehnologii Informaționale (engleză)", email: "Irimiciuc.gh.cosmin@student.utcluj.ro"},
+            {nume: "Pop", prenume: "Lorena Maria", an: "Licență, Anul 2", specializare: "Inginerie Electronică, Telecomunicații și Tehnologii Informaționale", email: "Pop.io.lorena@student.utcluj.ro"},
+            {nume: "Signori", prenume: "Gianmario", an: "Licență, Anul 3", specializare: "Tehnologii și Sisteme de Telecomunicații", email: "Signori.gi.gianmario@student.utcluj.ro"},
+            {nume: "Tivadar", prenume: "Dragoș-Filip", an: "Licență, Anul 2", specializare: "Inginerie Electronică, Telecomunicații și Tehnologii Informaționale (engleză)", email: "Tivadar.Io.Dragos@student.utcluj.ro"},
         ]
     },
     materiale: {
@@ -129,10 +129,10 @@ const faculties = {
         shortName: "Facultatea de Ingineria Materialelor și a Mediului",
         formular: "https://forms.office.com/e/LbLkr1vKdZ",
         members: [
-            {nume: "Goman", prenume: "Denis Gabriel"},
-            {nume: "Joia", prenume: "Simona"},
-            {nume: "Oltean", prenume: "Ariana"},
-            {nume: "Pop", prenume: "Radu-Florin"},
+            {nume: "Joia", prenume: "Simona", subtitlu: "Student Reprezentant în BCF", an: "Licență, Anul 3", specializare: "Ingineria și Protecția Mediului în Industrie", email: "Joia.da.simona@student.utcluj.ro"},
+            {nume: "Goman", prenume: "Denis Gabriel", an: "Licență, Anul 2", specializare: "Ingineria Materialelor", email: "Goman.pa.denis@student.utcluj.ro"},
+            {nume: "Oltean", prenume: "Ariana", an: "Licență, Anul 1", specializare: "Ingineria și Protecția Mediului în Industrie", email: "Oltean.em.ariana@student.utcluj.ro"},
+            {nume: "Pop", prenume: "Radu-Florin", an: "Licență, Anul 2", specializare: "Ingineria Procesării Materialelor", email: "Pop.io.rf@student.utcluj.ro"},
         ]
     },
     instalatii: {
@@ -141,9 +141,9 @@ const faculties = {
         shortName: "Facultatea de Inginerie a Instalațiilor",
         formular: "https://forms.office.com/e/B09qBJHQkB",
         members: [
-            {nume: "Costea", prenume: "Alina Paula Denisa"},
-            {nume: "Nașca", prenume: "Tudor"},
-            {nume: "Precub", prenume: "Alexandru-Ioan"},
+            {nume: "Precub", prenume: "Alexandru-Ioan", subtitlu: "Student Reprezentant în BCF", an: "Licență, Anul 1", specializare: "Instalații pentru Construcții", email: "Precub.Io.Alexandru@student.utcluj.ro"},
+            {nume: "Costea", prenume: "Alina Paula Denisa", an: "Licență, Anul 4", specializare: "Instalații pentru Construcții", email: "Costea.St.Alina@student.utcluj.ro"},
+            {nume: "Nașca", prenume: "Tudor", an: "Master, Anul 1", specializare: "Ingineria Instalațiilor", email: "Nasca.Gh.Tudor@student.utcluj.ro"},
         ]
     },
     electrica: {
@@ -152,12 +152,12 @@ const faculties = {
         shortName: "Facultatea de Inginerie Electrică",
         formular: "https://forms.office.com/e/M6Qgtq2Fwf",
         members: [
-            {nume: "Chirilă", prenume: "Iulian"},
-            {nume: "Constandache", prenume: "Ionela"},
-            {nume: "Drăguș", prenume: "Ioan-Darius"},
-            {nume: "Dumitrean", prenume: "Denis"},
-            {nume: "Moldovan", prenume: "Ana-Maria"},
-            {nume: "Spătăcean", prenume: "Lidia-Giorgiana"},
+            {nume: "Spătăcean", prenume: "Lidia-Georgiana", subtitlu: "Student Reprezentant în BCF", an: "Master, Anul 2", specializare: "Științe Inginerești Aplicate în medicină", email: "Spatacean.Gh.Lidia@student.utcluj.ro"},
+            {nume: "Chirilă", prenume: "Iulian", an: "Licență, Anul 3", specializare: "Ingineria sistemelor electroenergetice", email: "Chirila.ci.iulian@student.utcluj.ro"},
+            {nume: "Constandache", prenume: "Ionela", an: "Licență, Anul 2", specializare: "Inginerie Economică în domeniul Electric, Electronic și Energetic", email: "Constandache.il.io@student.utcluj.ro"},
+            {nume: "Drăguș", prenume: "Ioan-Darius", an: "Licență, Anul 2", specializare: "Inginerie Electrică", email: "Dragus.Ma.Ioan@student.utcluj.ro"},
+            {nume: "Dumitrean", prenume: "Denis", an: "Licență, Anul 3", specializare: "Electromecanică", email: "Dumitrean.Se.Denis@student.utcluj.ro"},
+            {nume: "Moldovan", prenume: "Ana-Maria", an: "Licență, Anul 4", specializare: "Electronică de Putere și Acționări Electrice", email: "Moldovan.ma.ana@student.utcluj.ro"},
         ]
     },
     industriala: {
@@ -166,15 +166,15 @@ const faculties = {
         shortName: "Facultatea de Inginerie Industrială, Robotică și Managementul Producției",
         formular: "https://forms.office.com/e/TJYTTEWUyB",
         members: [
-            {nume: "Licu", prenume: "Arina-Andreea", subtitlu: "Student Reprezentant în BOS"},
-            {nume: "Afanas", prenume: "Neonila"},
-            {nume: "Dan", prenume: "Andrada Nicola"},
-            {nume: "Livinschi", prenume: "Cătălina"},
-            {nume: "Maxim", prenume: "Andrei"},
-            {nume: "Mititean", prenume: "Florina"},
-            {nume: "Negură", prenume: "Daria Ana-Maria"},
-            {nume: "Streza", prenume: "Bogdan"},
-            {nume: "Suciu", prenume: "Bianca"},
+            {nume: "Afanas", prenume: "Neonila", an: "Licență, Anul 2", specializare: "Inginerie Economică Industrială", email: "Afanas.Va.Neonila@student.utcluj.ro"},
+            {nume: "Dan", prenume: "Andrada Nicola", an: "Licență, Anul 3", specializare: "Robotică", email: "Dan.Ni.Andrada@student.utcluj.ro"},
+            {nume: "Licu", prenume: "Arina-Andreea", subtitlu: "Student Reprezentant în BCF", an: "Licență, Anul 3", specializare: "Robotică", email: "Licu.Ga.Arina@student.utcluj.ro"},
+            {nume: "Livinschi", prenume: "Cătălina", an: "Licență, Anul 3", specializare: "Robotică", email: "Livinschi.Vi.Ca@student.utcluj.ro"},
+            {nume: "Maxim", prenume: "Andrei", an: "Licență, Anul 4", specializare: "Tehnologia Construcțiilor de Mașini (engleză)", email: "Maxim.va.andrei@student.utcluj.ro"},
+            {nume: "Mititean", prenume: "Florina", an: "Licență, Anul 2", specializare: "Inginerie Industrială", email: "Mititean.vi.florina@student.utcluj.ro"},
+            {nume: "Negură", prenume: "Daria Ana-Maria", an: "Licență, Anul 2", specializare: "Inginerie Economică Industrială", email: "Negura.Lu.Daria@student.utcluj.ro"},
+            {nume: "Streza", prenume: "Bogdan", an: "Licență, Anul 3", specializare: "Robotică", email: "Streza.co.cornel@student.utcluj.ro"},
+            {nume: "Suciu", prenume: "Bianca", an: "Licență, Anul 2", specializare: "Tehnologia Construcțiilor de Mașini", email: "Suciu.Ni.Bianca@student.utcluj.ro"},
         ]
     },
     "inginerie-bm": {
@@ -183,10 +183,10 @@ const faculties = {
         shortName: "Facultatea de Inginerie (CUNBM)",
         formular: "https://forms.office.com/e/k2PqfE50u4",
         members: [
-            {nume: "Gyorgy", prenume: "Melissza Scemida"},
-            {nume: "Koloszvary", prenume: "Alexandru Andrei"},
-            {nume: "Sillai", prenume: "Beatrice"},
-            {nume: "Țînțaș", prenume: "Gheorghe-Mihăiță"},
+            {nume: "Gyorgy", prenume: "Melissza Scemida", an: "-", specializare: "-", email: "Gyorgy.sa.melissza@student.utcluj.ro"},
+            {nume: "Koloszvary", prenume: "Alexandru Andrei", an: "-", specializare: "-", email: "Koloszvary.Al.Al@student.utcluj.ro"},
+            {nume: "Sillai", prenume: "Beatrice", an: "-", specializare: "-", email: "Sillai.Al.Beatrice@student.utcluj.ro"},
+            {nume: "Țînțaș", prenume: "Gheorghe-Mihăiță", an: "-", specializare: "-", email: "Tintas.Gh.Gheorghe@student.utcluj.ro"},
         ]
     },
     "litere-bm": {
@@ -195,10 +195,10 @@ const faculties = {
         shortName: "Facultatea de Litere (CUNBM)",
         formular: "https://forms.office.com/e/Kq3UJvc4UW",
         members: [
-            {nume: "Gaier", prenume: "Andreea-Cristina"},
-            {nume: "Mureșan", prenume: "Ana-Maria"},
-            {nume: "Popdan", prenume: "Nicoleta-Andreea"},
-            {nume: "Suciu", prenume: "Alexandra"},
+            {nume: "Gaier", prenume: "Andreea-Cristina", an: "-", specializare: "-", email: "Gaier.Ad.Andreea@student.utcluj.ro"},
+            {nume: "Mureșan", prenume: "Ana-Maria", an: "-", specializare: "-", email: "Muresan.co.maria@student.utcluj.ro"},
+            {nume: "Popdan", prenume: "Nicoleta-Andreea", an: "-", specializare: "-", email: "Popdan.gh.nicoleta@student.utcluj.ro"},
+            {nume: "Suciu", prenume: "Alexandra", an: "-", specializare: "-", email: "Suciu.Al.Alexandra@student.utcluj.ro"},
         ]
     },
     "stiinte-bm": {
@@ -207,21 +207,36 @@ const faculties = {
         shortName: "Facultatea de Științe (CUNBM)",
         formular: "https://forms.office.com/e/xc03HQNVBe",
         members: [
-            {nume: "Borbei", prenume: "Alexandra"},
-            {nume: "Borșa", prenume: "Cătălin"},
-            {nume: "Leonte", prenume: "Cosmin"},
-            {nume: "Covaci", prenume: "Sebastian-Gabriel"},
-            {nume: "Rus", prenume: "Gabriela Maria"},
+            {nume: "Borbei", prenume: "Alexandra", an: "-", specializare: "-", email: "Borbei.al.alexandra@student.utcluj.ro"},
+            {nume: "Borșa", prenume: "Cătălin", an: "-", specializare: "-", email: "Borsa.Fe.Catalin@student.utcluj.ro"},
+            {nume: "Leonte", prenume: "Cosmin", an: "-", specializare: "-", email: "Leonte.ma.cosmin@student.utcluj.ro"},
+            {nume: "Covaci", prenume: "Sebastian-Gabriel", an: "-", specializare: "-", email: "Covaci.CS.Sebastian@student.utcluj.ro"},
+            {nume: "Rus", prenume: "Gabriela Maria", an: "-", specializare: "-", email: "Rus.Ro.Gabriela@student.utcluj.ro"},
         ]
     },
 };
 
-const ReprezCard = ({ member }: { member: { nume: string, prenume: string, subtitlu?: string } }) => (
+const ReprezCard = ({ member }: { member: { nume: string, prenume: string, subtitlu?: string, an?: string, specializare?: string, email?: string } }) => (
     <div className="sr-reprez">
         <h1>{member.nume}</h1>
         <h2>{member.prenume}</h2>
+        {member.specializare && (
+            <p className="sr-specializare" style={{ color: '#aaaaaa', fontSize: '14px', marginTop: '6px', lineHeight: '1.2' }}>
+                {member.specializare}
+            </p>
+        )}
+        {member.an && (
+            <p className="sr-an" style={{ color: '#888888', fontSize: '13px', marginTop: '4px' }}>
+                {member.an}
+            </p>
+        )}
+        {member.email && (
+            <a href={`mailto:${member.email}`} className="sr-email" style={{ color: '#cc0000', fontSize: '15px', marginTop: '8px', display: 'inline-block', textDecoration: 'none', transition: 'color 0.2s ease-in-out' }} onMouseOver={(e) => (e.currentTarget.style.color = '#ff3333')} onMouseOut={(e) => (e.currentTarget.style.color = '#cc0000')}>
+                {member.email}
+            </a>
+        )}
         {member.subtitlu && (
-            <p className="sr-subtitle" style={{ color: '#ffffff', fontWeight: 'bold', fontSize: '16px', marginTop: '10px', textTransform: 'uppercase' }}>
+            <p className="sr-subtitle" style={{ color: '#ffffff', fontWeight: 'bold', fontSize: '14px', marginTop: '10px', textTransform: 'uppercase' }}>
                 {member.subtitlu}
             </p>
         )}
