@@ -5,6 +5,7 @@ import DespreHero from "@/components/despre/DespreHero";
 import PlanetarValues from "@/components/despre/PlanetarValues";
 import TeamSection from "@/components/despre/TeamSection";
 import DepartmentsSection from "@/components/despre/DepartmentsSection";
+import AboutUsCarousel from "@/components/despre/AboutUsCarousel";
 
 export default function AboutUsContent() {
   return (
@@ -18,6 +19,7 @@ export default function AboutUsContent() {
 
       <DespreHero />
       <PlanetarValues />
+      <AboutUsCarousel />
       <TeamSection />
       <DepartmentsSection />
 
