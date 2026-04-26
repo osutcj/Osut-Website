@@ -62,7 +62,7 @@ const TeamCard = ({ photo, lastName, firstName, role, fbLink, igLink, inLink, em
 
 const TEAM_MEMBERS: TeamMember[] = [
     {
-        photo: "/assets/images/images/bc/TimișTraian.jpg",
+        photo: "/assets/images/images/bc/TimișTraian.webp",
         lastName: "Timiș",
         firstName: "Traian",
         role: "Președinte",
@@ -72,7 +72,7 @@ const TEAM_MEMBERS: TeamMember[] = [
         email: "traian.timis@osutcluj.com"
     },
     {
-        photo: "/assets/images/images/bc/TudoseRares.jpg",
+        photo: "/assets/images/images/bc/TudoseRares.webp",
         lastName: "Tudose",
         firstName: "Rareș",
         role: "Director Executiv",
@@ -82,7 +82,7 @@ const TEAM_MEMBERS: TeamMember[] = [
         email: "rares.tudose@osutcluj.com"
     },
     {
-        photo: "/assets/images/images/bc/OrtanAdela.jpg",
+        photo: "/assets/images/images/bc/OrtanAdela.webp",
         lastName: "Orțan",
         firstName: "Adela",
         role: "Secretar General",
@@ -92,7 +92,7 @@ const TEAM_MEMBERS: TeamMember[] = [
         email: "adela.ortan@osutcluj.com"
     },
     {
-        photo: "/assets/images/images/bc/ArimiaAndreea.jpg",
+        photo: "/assets/images/images/bc/ArimiaAndreea.webp",
         lastName: "Arimia",
         firstName: "Andreea",
         role: "Vicepreședinte Electro",
@@ -102,7 +102,7 @@ const TEAM_MEMBERS: TeamMember[] = [
         email: "andreea.arimia@osutcluj.com"
     },
     {
-        photo: "/assets/images/images/bc/OrmindeanVlad.jpg",
+        photo: "/assets/images/images/bc/OrmindeanVlad.webp",
         lastName: "Ormindean",
         firstName: "Vlad",
         role: "Vicepreședinte Construcții",
@@ -112,7 +112,7 @@ const TEAM_MEMBERS: TeamMember[] = [
         email: "vlad.ormindean@osutcluj.com"
     },
     {
-        photo: "/assets/images/images/bc/LicuArina.jpg",
+        photo: "/assets/images/images/bc/LicuArina.webp",
         lastName: "Licu",
         firstName: "Arina",
         role: "Vicepreședinte Mecanică",
@@ -122,7 +122,7 @@ const TEAM_MEMBERS: TeamMember[] = [
         email: "arina.licu@osutcluj.com"
     },
     {
-        photo: "/assets/images/images/bc/BălănescuRareș.jpg",
+        photo: "/assets/images/images/bc/BălănescuRareș.webp",
         lastName: "Bălănescu",
         firstName: "Rareș",
         role: "Vicepreședinte Relații Interne",
@@ -132,7 +132,7 @@ const TEAM_MEMBERS: TeamMember[] = [
         email: "rares.balanescu@osutcluj.com"
     },
     {
-        photo: "/assets/images/images/bc/CioteaAlexandra.jpg",
+        photo: "/assets/images/images/bc/CioteaAlexandra.webp",
         lastName: "Ciotea",
         firstName: "Alexandra",
         role: "Vicepreședinte Relații Externe",
@@ -142,7 +142,7 @@ const TEAM_MEMBERS: TeamMember[] = [
         email: "alexandra.ciotea@osutcluj.com"
     },
     {
-        photo: "/assets/images/images/bc/MoiceanuElena.jpg",
+        photo: "/assets/images/images/bc/MoiceanuElena.webp",
         lastName: "Moiceanu",
         firstName: "Elena",
         role: "Director PR",
@@ -158,7 +158,7 @@ export default function BiroulDeConducere() {
         <main className="bc-main">
             <div className="bc-banner">
                 <Image
-                    src="/assets/images/images/bc/Poza BC.jpg"
+                    src="/assets/images/images/bc/Poza BC.webp"
                     alt="Biroul de Conducere - Fotografie de grup"
                     fill
                     sizes="100vw"
