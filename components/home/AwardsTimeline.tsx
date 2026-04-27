@@ -91,12 +91,17 @@ const AWARDS = [
 export default function AwardsTimeline() {
   return (
     <section 
-      className="py-20 bg-zinc-50 dark:bg-[#1a1a1a] text-zinc-900 dark:text-white px-6 w-full relative z-10 border-y border-white/5"
+      className="py-20 text-zinc-900 dark:text-white px-6 w-full relative z-10 border-y border-white/5"
       suppressHydrationWarning
     >
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight">Timeline <span className="text-red-600">Premii</span></h2>
+        <div className="w-full max-w-5xl flex justify-center items-center mb-16 mx-auto gap-4 md:gap-8">
+          <div className="h-[2px] flex-1 bg-gradient-to-r from-transparent to-red-600 opacity-100"></div>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-wide text-zinc-900 dark:text-white text-center uppercase shrink-0">
+
+            Timeline <span className="text-red-600">Premii</span>
+                    </h2>
+          <div className="h-[2px] flex-1 bg-gradient-to-l from-transparent to-red-600 opacity-100"></div>
         </div>
         
         <div className="relative">

@@ -19,18 +19,19 @@ const PROJECTS = [
 
 export default function HomeProjects() {
   return (
-    <section className="py-24 bg-zinc-50 dark:bg-[#121212] text-zinc-900 dark:text-white overflow-hidden relative border-t border-zinc-200 dark:border-zinc-800">
+    <section className="py-24 text-zinc-900 dark:text-white overflow-hidden relative border-t border-zinc-200 dark:border-zinc-800">
       {/* Background decoration elements */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-red-600/5 rounded-full blur-[120px] pointer-events-none"></div>
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-red-600/5 rounded-full blur-[120px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tight mb-4 inline-block text-zinc-900 dark:text-white">
+        <div className="w-full max-w-5xl flex justify-center items-center mb-16 mx-auto gap-4 md:gap-8">
+          <div className="h-[2px] flex-1 bg-gradient-to-r from-transparent to-red-600 opacity-100"></div>
+          <h2 className="text-4xl md:text-6xl font-bold tracking-wide text-zinc-900 dark:text-white text-center uppercase shrink-0">
+
             Proiectele <span className="text-red-600">Noastre</span>
-          </h2>
-          <div className="h-1.5 w-24 bg-red-600 mx-auto rounded-full mb-8"></div>
-          
+                    </h2>
+          <div className="h-[2px] flex-1 bg-gradient-to-l from-transparent to-red-600 opacity-100"></div>
         </div>
 
         <div className="flex flex-wrap justify-center gap-6">

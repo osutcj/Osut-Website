@@ -85,7 +85,7 @@ const Carousel = ({ images }: { images: string[] }) => (
 
 export default function GreenContent() {
     return (
-        <main className="bg-white dark:bg-[#121212] min-h-screen text-zinc-900 dark:text-zinc-100 font-sans pb-24">
+        <main className="min-h-screen text-zinc-900 dark:text-zinc-100 font-sans pb-24">
             
             <section className="relative pt-44 pb-20 px-6 overflow-hidden">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none">
@@ -94,12 +94,14 @@ export default function GreenContent() {
                 </div>
 
                 <div className="max-w-7xl mx-auto relative z-10 text-center">
-                    <div className="w-full max-w-5xl relative flex justify-center items-center mb-12 mx-auto">
-                        <div className="absolute w-full h-[2px] bg-gradient-to-r from-transparent via-red-600 to-transparent top-1/2 -translate-y-1/2 opacity-100"></div>
-                        <h1 className="bg-white dark:bg-[#121212] px-10 text-4xl md:text-7xl font-bold relative z-10 tracking-wide text-zinc-900 dark:text-white text-center uppercase">
+                    <div className="w-full max-w-5xl flex justify-center items-center mb-12 mx-auto gap-4 md:gap-8">
+          <div className="h-[2px] flex-1 bg-gradient-to-r from-transparent to-red-600 opacity-100"></div>
+          <h1 className="text-4xl md:text-7xl font-bold tracking-wide text-zinc-900 dark:text-white text-center uppercase shrink-0">
+
                             Sustenabilitate
-                        </h1>
-                    </div>
+                                  </h1>
+          <div className="h-[2px] flex-1 bg-gradient-to-l from-transparent to-red-600 opacity-100"></div>
+        </div>
                 </div>
             </section>
 
@@ -130,23 +132,25 @@ export default function GreenContent() {
             <section className="max-w-7xl mx-auto px-6 py-20">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                     <div className="space-y-6">
-                        <div className="w-full max-w-3xl relative flex items-center mb-6">
-                            <div className="absolute w-full h-[2px] bg-gradient-to-r from-red-600 to-transparent top-1/2 -translate-y-1/2 opacity-100"></div>
-                            <h2 className="bg-white dark:bg-[#121212] pr-6 text-2xl md:text-3xl font-bold relative z-10 tracking-wide text-zinc-900 dark:text-white uppercase transition-colors">
+                        <div className="w-full max-w-3xl flex items-center mb-6 gap-4 md:gap-8">
+          <h2 className="text-2xl md:text-3xl font-bold tracking-wide text-zinc-900 dark:text-white uppercase transition-colors shrink-0">
+
                                 Misiune
-                            </h2>
-                        </div>
+                                      </h2>
+          <div className="h-[2px] flex-1 bg-gradient-to-l from-transparent to-red-600 opacity-100"></div>
+        </div>
                         <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed text-justify relative z-10 text-lg mb-8">
                             Fiind conștienți de impactul pe care Organizația Studenților din Universitatea Tehnică din Cluj-Napoca (OSUT Cluj) îl are în viața studenților, ne dorim să oferim acestora prilejul să construiască împreună un mediu sustenabil propice dezvoltării lor. Viziunea noastră este de a crește conștientizarea problemelor cu care ne confruntăm când vine vorba de sustenabilitate în rândul comunității studențești. Prin intermediul inițiativelor pe care le derulăm, ne angajăm să mobilizăm și să îndrumăm studenții cu privire la importanța abordării unui parcurs responsabil și sustenabile, atât în contextul academic, cât și în viața de zi cu zi.
                         </p>
                     </div>
                     <div className="space-y-6">
-                        <div className="w-full max-w-3xl relative flex items-center mb-6">
-                            <div className="absolute w-full h-[2px] bg-gradient-to-r from-red-600 to-transparent top-1/2 -translate-y-1/2 opacity-100"></div>
-                            <h2 className="bg-white dark:bg-[#121212] pr-6 text-2xl md:text-3xl font-bold relative z-10 tracking-wide text-zinc-900 dark:text-white uppercase transition-colors">
+                        <div className="w-full max-w-3xl flex items-center mb-6 gap-4 md:gap-8">
+          <h2 className="text-2xl md:text-3xl font-bold tracking-wide text-zinc-900 dark:text-white uppercase transition-colors shrink-0">
+
                                 Proiecte
-                            </h2>
-                        </div>
+                                      </h2>
+          <div className="h-[2px] flex-1 bg-gradient-to-l from-transparent to-red-600 opacity-100"></div>
+        </div>
                         <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed text-justify relative z-10 text-lg mb-8">
                             Încă din 2003, Organizația Studenților din Universitatea Tehnică din Cluj-Napoca (OSUT Cluj) își concentrează activitatea pe reprezentarea drepturilor studenților, apărarea intereselor acestora, dar și în privința nevoilor studenților și dezvoltării acestora în complementar mediului academic, prin organizarea a diferite proiecte, atât cu tematică de orientare în carieră (InfoTech, Engineering Summer University – ESU), formare profesională (PoliHack), culturală (PoliArt), cât și de bunăstare a tineretului (Zilele Universității Tehnice, Ce spun studenții?, PoliSport etc.).
                         </p>
@@ -161,12 +165,13 @@ export default function GreenContent() {
                             <Carousel images={CROS_IMAGES} />
                         </div>
                         <div className="order-1 lg:order-2 space-y-8">
-                            <div className="w-full relative flex items-center mb-8">
-                                <div className="absolute w-full h-[2px] bg-gradient-to-r from-red-600 to-transparent top-1/2 -translate-y-1/2 opacity-100"></div>
-                                <h2 className="bg-white dark:bg-[#121212] pr-8 text-3xl md:text-5xl font-bold relative z-10 tracking-tight leading-none text-zinc-900 dark:text-white uppercase transition-colors">
+                            <div className="w-full flex items-center mb-8 gap-4 md:gap-8">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-none text-zinc-900 dark:text-white uppercase transition-colors shrink-0">
+
                                     Crosul UT
-                                </h2>
-                            </div>
+                                          </h2>
+          <div className="h-[2px] flex-1 bg-gradient-to-l from-transparent to-red-600 opacity-100"></div>
+        </div>
                             <div className="space-y-6">
                                 <div>
                                     <h3 className="text-xl font-bold uppercase tracking-wide text-[#b51c1c] mb-2">DESCRIERE</h3>
@@ -185,16 +190,17 @@ export default function GreenContent() {
                     </div>
                 </section>
 
-                <section className="bg-zinc-100 dark:bg-zinc-900/30 py-24 border-y border-zinc-200 dark:border-zinc-800">
+                <section className="py-24 border-y border-zinc-200 dark:border-zinc-800">
                     <div className="max-w-7xl mx-auto px-6">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                             <div className="space-y-8 text-left">
-                                <div className="w-full relative flex items-center mb-8">
-                                    <div className="absolute w-full h-[2px] bg-gradient-to-r from-red-600 to-transparent top-1/2 -translate-y-1/2 opacity-100"></div>
-                                    <h2 className="bg-zinc-100 dark:bg-[#121212] pr-8 text-3xl md:text-5xl font-bold relative z-10 tracking-tight leading-none text-zinc-900 dark:text-white uppercase transition-colors">
+                                <div className="w-full flex items-center mb-8 gap-4 md:gap-8">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-none text-zinc-900 dark:text-white uppercase transition-colors shrink-0">
+
                                         PoliHack
-                                    </h2>
-                                </div>
+                                              </h2>
+          <div className="h-[2px] flex-1 bg-gradient-to-l from-transparent to-red-600 opacity-100"></div>
+        </div>
                                 <div className="space-y-6">
                                     <div>
                                         <h3 className="text-xl font-bold uppercase tracking-wide text-[#b51c1c] mb-2">DESCRIERE</h3>
@@ -223,12 +229,13 @@ export default function GreenContent() {
                             <Carousel images={ESU_IMAGES} />
                         </div>
                         <div className="order-1 lg:order-2 space-y-8">
-                            <div className="w-full relative flex items-center mb-8">
-                                <div className="absolute w-full h-[2px] bg-gradient-to-r from-red-600 to-transparent top-1/2 -translate-y-1/2 opacity-100"></div>
-                                <h2 className="bg-white dark:bg-[#121212] pr-8 text-3xl md:text-5xl font-bold relative z-10 tracking-tight leading-none text-zinc-900 dark:text-white uppercase transition-colors">
+                            <div className="w-full flex items-center mb-8 gap-4 md:gap-8">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-none text-zinc-900 dark:text-white uppercase transition-colors shrink-0">
+
                                     Engineering Summer University (ESU)
-                                </h2>
-                            </div>
+                                          </h2>
+          <div className="h-[2px] flex-1 bg-gradient-to-l from-transparent to-red-600 opacity-100"></div>
+        </div>
                             <div className="space-y-6">
                                 <div>
                                     <h3 className="text-xl font-bold uppercase tracking-wide text-[#b51c1c] mb-2">DESCRIERE</h3>
@@ -247,16 +254,17 @@ export default function GreenContent() {
                     </div>
                 </section>
 
-                <section className="bg-zinc-50 dark:bg-[#1a1a1a] py-24 border-y border-zinc-200 dark:border-zinc-800">
+                <section className="py-24 border-y border-zinc-200 dark:border-zinc-800">
                     <div className="max-w-7xl mx-auto px-6">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                             <div className="space-y-8">
-                                <div className="w-full relative flex items-center mb-8">
-                                    <div className="absolute w-full h-[2px] bg-gradient-to-r from-red-600 to-transparent top-1/2 -translate-y-1/2 opacity-100"></div>
-                                    <h2 className="bg-zinc-50 dark:bg-[#1a1a1a] pr-8 text-3xl md:text-5xl font-bold relative z-10 tracking-tight leading-none text-zinc-900 dark:text-white uppercase transition-colors">
+                                <div className="w-full flex items-center mb-8 gap-4 md:gap-8">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-none text-zinc-900 dark:text-white uppercase transition-colors shrink-0">
+
                                         InfoTech
-                                    </h2>
-                                </div>
+                                              </h2>
+          <div className="h-[2px] flex-1 bg-gradient-to-l from-transparent to-red-600 opacity-100"></div>
+        </div>
                                 <div className="space-y-6">
                                     <div>
                                         <h3 className="text-xl font-bold uppercase tracking-wide text-[#b51c1c] mb-2">DESCRIERE</h3>

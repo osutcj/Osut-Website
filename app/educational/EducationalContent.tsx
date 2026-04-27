@@ -264,13 +264,15 @@ export default function EducationalContent() {
     const selectedFaculty = selectedFacultyId ? faculties[selectedFacultyId as keyof typeof faculties] : null;
 
     return (
-        <main className="bg-white dark:bg-[#121212] font-sans pb-16 min-h-screen pt-40 text-zinc-900 dark:text-white flex flex-col items-center">
+        <main className="font-sans pb-16 min-h-screen pt-40 text-zinc-900 dark:text-white flex flex-col items-center">
             
             <div className="w-full flex flex-col items-center mb-24 px-6 lg:px-20" id="osut-te-informeaza">
-                <div className="w-full max-w-5xl relative flex justify-center items-center mb-10">
-                    <div className="absolute w-full h-[1px] bg-gradient-to-r from-transparent via-red-600 to-transparent top-1/2 -translate-y-1/2 opacity-70"></div>
-                    <h1 className="bg-white dark:bg-[#121212] px-10 text-4xl md:text-5xl font-bold relative z-10 tracking-wide text-zinc-900 dark:text-white text-center uppercase">OSUT te informează</h1>
-                </div>
+                <div className="w-full max-w-5xl flex justify-center items-center mb-10 gap-4 md:gap-8">
+          <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent to-red-600 opacity-100"></div>
+          <h1 className="text-4xl md:text-5xl font-bold tracking-wide text-zinc-900 dark:text-white text-center uppercase shrink-0">
+OSUT te informează          </h1>
+          <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent to-red-600 opacity-100"></div>
+        </div>
                 
                 <div className="w-full max-w-7xl">
                     <BlogSection />
@@ -278,10 +280,12 @@ export default function EducationalContent() {
             </div>
 
             <div className="w-full flex flex-col items-center mb-24 px-6 lg:px-20" id="resurse">
-                <div className="w-full max-w-5xl relative flex justify-center items-center mb-10">
-                    <div className="absolute w-full h-[1px] bg-gradient-to-r from-transparent via-red-600 to-transparent top-1/2 -translate-y-1/2 opacity-70"></div>
-                    <h1 className="bg-white dark:bg-[#121212] px-10 text-4xl md:text-5xl font-bold relative z-10 tracking-wide text-zinc-900 dark:text-white text-center uppercase">Resurse</h1>
-                </div>
+                <div className="w-full max-w-5xl flex justify-center items-center mb-10 gap-4 md:gap-8">
+          <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent to-red-600 opacity-100"></div>
+          <h1 className="text-4xl md:text-5xl font-bold tracking-wide text-zinc-900 dark:text-white text-center uppercase shrink-0">
+Resurse          </h1>
+          <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent to-red-600 opacity-100"></div>
+        </div>
 
                 <div className="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {DOCUMENTS.map((doc, i) => (
@@ -299,10 +303,12 @@ export default function EducationalContent() {
             </div>
 
             <div className="w-full flex flex-col items-center mb-16 px-6 lg:px-20" id="studenti-reprezentanti">
-                <div className="w-full max-w-5xl relative flex justify-center items-center mb-10">
-                    <div className="absolute w-full h-[1px] bg-gradient-to-r from-transparent via-red-600 to-transparent top-1/2 -translate-y-1/2 opacity-70"></div>
-                    <h1 className="bg-white dark:bg-[#121212] px-10 text-4xl md:text-5xl font-bold relative z-10 tracking-wide text-zinc-900 dark:text-white text-center uppercase">Studenți Reprezentanți</h1>
-                </div>
+                <div className="w-full max-w-5xl flex justify-center items-center mb-10 gap-4 md:gap-8">
+          <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent to-red-600 opacity-100"></div>
+          <h1 className="text-4xl md:text-5xl font-bold tracking-wide text-zinc-900 dark:text-white text-center uppercase shrink-0">
+Studenți Reprezentanți          </h1>
+          <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent to-red-600 opacity-100"></div>
+        </div>
 
                 <div className="w-full max-w-7xl">
                     <div className="sr-menu-selector">

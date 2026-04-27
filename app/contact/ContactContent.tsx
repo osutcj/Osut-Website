@@ -5,14 +5,16 @@ import { Facebook, Instagram } from "iconoir-react";
 
 export default function ContactContent() {
   return (
-    <main className="min-h-screen bg-white dark:bg-[#121212] text-zinc-900 dark:text-white font-sans pb-24 pt-32">
+    <main className="min-h-screen text-zinc-900 dark:text-white font-sans pb-24 pt-32">
       <div className="max-w-7xl mx-auto px-6">
 
-        <div className="w-full max-w-5xl relative flex justify-center items-center mb-24 mx-auto animate-fade-in">
-          <div className="absolute w-full h-[2px] bg-gradient-to-r from-transparent via-red-600 to-transparent top-1/2 -translate-y-1/2 opacity-100"></div>
-          <h1 className="bg-white dark:bg-[#121212] px-10 text-4xl md:text-6xl font-bold relative z-10 tracking-widest text-zinc-900 dark:text-white text-center uppercase">
+        <div className="w-full max-w-5xl flex justify-center items-center mb-24 mx-auto animate-fade-in gap-4 md:gap-8">
+          <div className="h-[2px] flex-1 bg-gradient-to-r from-transparent to-red-600 opacity-100"></div>
+          <h1 className="text-4xl md:text-6xl font-bold tracking-widest text-zinc-900 dark:text-white text-center uppercase shrink-0">
+
             Contactează-ne
-          </h1>
+                    </h1>
+          <div className="h-[2px] flex-1 bg-gradient-to-l from-transparent to-red-600 opacity-100"></div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-24 animate-fade-in [animation-delay:200ms]">

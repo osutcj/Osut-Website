@@ -2,10 +2,7 @@ import React from "react";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full min-h-[80vh] flex items-center justify-center pt-32 md:pt-40 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white overflow-hidden">
-      {/* Background Gradient / Effects */}
-      <div className="absolute inset-0 bg-gradient-to-b from-red-600/20 to-white dark:to-zinc-900 pointer-events-none"></div>
-
+    <section className="relative w-full min-h-[80vh] flex items-center justify-center pt-32 md:pt-40 text-zinc-900 dark:text-white overflow-hidden">
       <div className="relative z-10 max-w-5xl mx-auto px-6 py-20 text-center flex flex-col items-center gap-8">
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
           Organizația Studenților din Universitatea <span className="text-red-500">Tehnică</span> din Cluj-Napoca

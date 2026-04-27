@@ -247,7 +247,7 @@ export default function AdminDashboard() {
   // ----- 1. Login Screen (if not authenticated) -----
   if (!isAuthenticated) {
     return (
-      <main className="min-h-screen bg-[#121212] flex flex-col items-center pt-64 p-4">
+      <main className="min-h-screen flex flex-col items-center pt-64 p-4">
         <div className="bg-[#1a1a1a] p-8 md:p-12 rounded-3xl shadow-2xl max-w-md w-full border border-red-500/20 relative overflow-hidden">
           
           {/* Subtle red glow effect behind the form */}
@@ -286,7 +286,7 @@ export default function AdminDashboard() {
 
   // ----- 2. Admin Dashboard (if authenticated) -----
   return (
-    <main className="min-h-screen bg-[#121212] p-4 md:p-8 pb-24 font-sans" style={{ paddingTop: '150px' }}>
+    <main className="min-h-screen p-4 md:p-8 pb-24 font-sans" style={{ paddingTop: '150px' }}>
       <style>{`
         @keyframes post-fade-in {
           0% { opacity: 0; transform: translateY(-15px); }

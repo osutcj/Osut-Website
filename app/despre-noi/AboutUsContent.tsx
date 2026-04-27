@@ -9,12 +9,13 @@ import AboutUsCarousel from "@/components/despre/AboutUsCarousel";
 
 export default function AboutUsContent() {
   return (
-    <main className="main-wrap bg-white dark:bg-[#121212] text-zinc-900 dark:text-white font-sans min-h-screen pt-36 pb-10 overflow-hidden">
-      <div className="w-full max-w-5xl relative flex justify-center items-center mb-12 mx-auto px-6">
-        <div className="absolute w-full h-[2px] bg-gradient-to-r from-transparent via-red-600 to-transparent top-1/2 -translate-y-1/2 opacity-100"></div>
-        <h1 className="bg-white dark:bg-[#121212] px-10 text-4xl md:text-7xl font-bold relative z-10 tracking-wide text-zinc-900 dark:text-white text-center uppercase">
+    <main className="main-wrap text-zinc-900 dark:text-white font-sans min-h-screen pt-36 pb-10 overflow-hidden">
+      <div className="w-full max-w-5xl flex items-center justify-center mb-12 mx-auto px-6 gap-4 md:gap-8">
+        <div className="h-[2px] flex-1 bg-gradient-to-r from-transparent to-red-600 opacity-100"></div>
+        <h1 className="text-4xl md:text-7xl font-bold tracking-wide text-zinc-900 dark:text-white text-center uppercase shrink-0">
           Despre <span className="text-red-600">Noi</span>
         </h1>
+        <div className="h-[2px] flex-1 bg-gradient-to-l from-transparent to-red-600 opacity-100"></div>
       </div>
 
       <DespreHero />
@@ -23,13 +24,14 @@ export default function AboutUsContent() {
       <TeamSection />
       <DepartmentsSection />
 
-      <section className="py-24 bg-zinc-100 dark:bg-[#121212] border-t border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white">
+      <section className="py-24 border-t border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white">
         <div className="max-w-6xl mx-auto px-6 flex flex-col items-center">
-          <div className="w-full max-w-5xl relative flex justify-center items-center mb-10">
-            <div className="absolute w-full h-[2px] bg-gradient-to-r from-transparent via-red-600 to-transparent top-1/2 -translate-y-1/2 opacity-100"></div>
-            <h2 className="bg-zinc-100 dark:bg-[#121212] px-10 text-4xl md:text-5xl font-bold relative z-10 tracking-wide text-zinc-900 dark:text-white text-center uppercase">
+          <div className="w-full max-w-5xl flex items-center justify-center mb-10 gap-4 md:gap-8">
+            <div className="h-[2px] flex-1 bg-gradient-to-r from-transparent to-red-600 opacity-100"></div>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-wide text-zinc-900 dark:text-white text-center uppercase shrink-0">
               Raportul de <span className="text-red-600">activitate</span>
             </h2>
+            <div className="h-[2px] flex-1 bg-gradient-to-l from-transparent to-red-600 opacity-100"></div>
           </div>
           
           <a 

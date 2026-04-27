@@ -31,7 +31,7 @@ const Counter = ({ targetNumber, suffix = "", textLabel, icon }: CounterProps) =
 
 export default function CounterStats() {
   return (
-    <section className="py-20 bg-white dark:bg-zinc-900 border-y border-zinc-200 dark:border-zinc-800">
+    <section className="py-20 border-y border-zinc-200 dark:border-zinc-800">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           <Counter

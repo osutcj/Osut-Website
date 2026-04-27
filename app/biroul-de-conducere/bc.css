@@ -1,7 +1,6 @@
 /* ===== BC Page Layout ===== */
 .bc-main {
   min-height: 100vh;
-  background-color: #121212;
   color: white;
   font-family: inherit;
   padding: 8rem 2rem 5rem 2rem;

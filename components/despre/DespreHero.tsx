@@ -2,7 +2,7 @@ import React from "react";
 
 export default function DespreHero() {
   return (
-    <section className="pt-0 pb-20 bg-white dark:bg-[#121212] text-zinc-900 dark:text-white relative overflow-hidden">
+    <section className="pt-0 pb-20 text-zinc-900 dark:text-white relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 flex flex-col gap-12">
         {/* Viziune */}
         <div className="py-12 border-b border-zinc-200 dark:border-zinc-800">

@@ -5,7 +5,7 @@ import "./butonul-rosu.css";
 
 export default function ButonulRosu() {
     return (
-        <main className="min-h-screen bg-[#121212] text-white font-sans pt-40 pb-20 px-6 relative overflow-hidden">
+        <main className="min-h-screen text-zinc-900 dark:text-white font-sans pt-40 pb-20 px-6 relative overflow-hidden">
             {/* Background Decorations */}
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-red-600/5 rounded-full blur-[140px] -mr-80 -mt-80 pointer-events-none"></div>
             <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-red-600/5 rounded-full blur-[100px] -ml-40 -mb-40 pointer-events-none"></div>

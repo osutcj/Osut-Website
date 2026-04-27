@@ -170,13 +170,15 @@ export default function ProiecteSiInitiativePage() {
   const closePopup = () => setSelectedItem(null);
 
   return (
-    <main className="bg-white dark:bg-[#121212] min-h-screen text-zinc-900 dark:text-white pt-40 pb-20 font-sans">
+    <main className="min-h-screen text-zinc-900 dark:text-white pt-40 pb-20 font-sans">
       
       {/* SECTIUNEA 1: PROIECTE */}
       <section className="w-full flex flex-col items-center mb-24 lg:px-20 px-6">
-        <div className="w-full max-w-5xl relative flex justify-center items-center mb-16">
-          <div className="absolute w-full h-[1px] bg-gradient-to-r from-transparent via-red-600 to-transparent opacity-70"></div>
-          <h1 className="bg-white dark:bg-[#121212] px-10 text-4xl md:text-5xl font-bold relative z-10 tracking-wide text-zinc-900 dark:text-white text-center uppercase">Proiecte</h1>
+        <div className="w-full max-w-5xl flex justify-center items-center mb-16 gap-4 md:gap-8">
+          <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent to-red-600 opacity-100"></div>
+          <h1 className="text-4xl md:text-5xl font-bold tracking-wide text-zinc-900 dark:text-white text-center uppercase shrink-0">
+Proiecte          </h1>
+          <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent to-red-600 opacity-100"></div>
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-7xl w-full">
@@ -205,9 +207,11 @@ export default function ProiecteSiInitiativePage() {
 
       {/* SECTIUNEA 2: INITIATIVE (Merged Initiative + OSUT La ...) */}
       <section className="w-full flex flex-col items-center mb-20 lg:px-20 px-6">
-        <div className="w-full max-w-5xl relative flex justify-center items-center mb-16">
-          <div className="absolute w-full h-[1px] bg-gradient-to-r from-transparent via-red-600 to-transparent opacity-70"></div>
-          <h1 className="bg-white dark:bg-[#121212] px-10 text-4xl md:text-5xl font-bold relative z-10 tracking-wide text-zinc-900 dark:text-white text-center uppercase">Inițiative</h1>
+        <div className="w-full max-w-5xl flex justify-center items-center mb-16 gap-4 md:gap-8">
+          <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent to-red-600 opacity-100"></div>
+          <h1 className="text-4xl md:text-5xl font-bold tracking-wide text-zinc-900 dark:text-white text-center uppercase shrink-0">
+Inițiative          </h1>
+          <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent to-red-600 opacity-100"></div>
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-7xl w-full">

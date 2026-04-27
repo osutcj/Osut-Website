@@ -92,9 +92,56 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} antialiased bg-[#121212] text-zinc-100 min-h-screen`}
+        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} antialiased text-zinc-100 min-h-screen relative`}
         suppressHydrationWarning
       >
+        {/* Global Pattern Background */}
+        <div className="fixed inset-0 z-[-1] pointer-events-none bg-[#121212] overflow-hidden">
+          <style>{`
+            @keyframes flow1 {
+              0% { transform: translate(0, 0) scale(1); }
+              33% { transform: translate(30vw, 20vh) scale(1.2); }
+              66% { transform: translate(-20vw, 30vh) scale(0.8); }
+              100% { transform: translate(0, 0) scale(1); }
+            }
+            @keyframes flow2 {
+              0% { transform: translate(0, 0) scale(1); }
+              33% { transform: translate(-30vw, -30vh) scale(0.8); }
+              66% { transform: translate(20vw, -20vh) scale(1.2); }
+              100% { transform: translate(0, 0) scale(1); }
+            }
+            @keyframes flow3 {
+              0% { transform: translate(0, 0) scale(1); }
+              33% { transform: translate(40vw, -10vh) scale(1.3); }
+              66% { transform: translate(-30vw, 20vh) scale(0.7); }
+              100% { transform: translate(0, 0) scale(1); }
+            }
+            .animate-flow1 { animation: flow1 10s infinite ease-in-out; }
+            .animate-flow2 { animation: flow2 12s infinite ease-in-out; }
+            .animate-flow3 { animation: flow3 14s infinite ease-in-out; }
+          `}</style>
+          
+          {/* Animated Glows - Subtler opacity without mix-blend-screen to prevent bright overlap */}
+          <div className="absolute top-[-10%] left-[10%] w-[40vw] h-[40vw] bg-red-600/10 blur-[120px] rounded-full animate-flow1"></div>
+          <div className="absolute top-[30%] right-[10%] w-[35vw] h-[35vw] bg-red-600/10 blur-[100px] rounded-full animate-flow2"></div>
+          <div className="absolute bottom-[0%] left-[40%] w-[45vw] h-[45vw] bg-red-600/10 blur-[130px] rounded-full animate-flow3"></div>
+
+          {/* Diagonal Mesh (Diamond) Pattern */}
+          <div 
+            className="absolute inset-0 opacity-[0.4]" 
+            style={{
+              backgroundImage: `repeating-linear-gradient(45deg, rgba(220, 38, 38, 0.15) 0, rgba(220, 38, 38, 0.15) 1px, transparent 1px, transparent 40px), repeating-linear-gradient(-45deg, rgba(220, 38, 38, 0.15) 0, rgba(220, 38, 38, 0.15) 1px, transparent 1px, transparent 40px)`
+            }}
+          ></div>
+          
+          {/* Vignette Fade - more transparent so glows are highly visible */}
+          <div 
+            className="absolute inset-0 pointer-events-none" 
+            style={{
+              background: 'radial-gradient(ellipse at 50% 50%, transparent 20%, #121212 110%)'
+            }}
+          ></div>
+        </div>
           <LoadingScreen />
           <Header />
           {children}

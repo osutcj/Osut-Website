@@ -21,7 +21,7 @@ const images = [
 
 export default function AboutUsCarousel() {
   return (
-    <section className="w-full bg-white dark:bg-[#121212] py-16 relative z-10">
+    <section className="w-full py-16 relative z-10">
       <div className="max-w-6xl mx-auto px-6">
         <div className="w-full relative rounded-2xl overflow-hidden shadow-2xl border border-zinc-200 dark:border-zinc-800">
           <Swiper
