@@ -136,7 +136,7 @@ export default function BlogSection({ limit }: { limit?: number } = {}) {
                   {/* Image Container */}
                   <div className="w-full h-48 sm:h-56 relative overflow-hidden bg-white/10 shrink-0">
                     <Image
-                      src={post.imageUrl || "/assets/images/images/bgr.png"}
+                      src={post.imageUrl || "/assets/images/images/bgr.webp"}
                       alt={post.title}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -212,7 +212,7 @@ export default function BlogSection({ limit }: { limit?: number } = {}) {
             {/* Modal Image */}
             <div className="w-full h-64 sm:h-80 md:h-[400px] shrink-0 relative">
                 <Image
-                  src={selectedPost.imageUrl || "/assets/images/images/bgr.png"}
+                  src={selectedPost.imageUrl || "/assets/images/images/bgr.webp"}
                   alt={selectedPost.title}
                   fill
                   sizes="(max-width: 768px) 100vw, 800px"

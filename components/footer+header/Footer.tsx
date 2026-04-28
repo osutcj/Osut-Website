@@ -15,7 +15,7 @@ export default function Footer() {
           {/* OSUT Logo */}
           <Link href="/" className="relative h-24 w-48 shrink-0">
             <Image 
-              src="/assets/images/images/OSUT alb.png" 
+              src="/assets/images/images/OSUT alb.webp" 
               alt="OSUT Logo" 
               fill
               sizes="192px"
@@ -33,7 +33,7 @@ export default function Footer() {
             <div className="flex items-center gap-8">
               <a href="https://anosr.ro" target="_blank" rel="noreferrer" className="hover:opacity-100 transition-opacity relative h-16 w-24">
                 <Image 
-                  src="/assets/images/images/anosr.png" 
+                  src="/assets/images/images/anosr.webp" 
                   fill
                   sizes="96px"
                   className="object-contain brightness-0 invert opacity-90 relative top-1" 
@@ -42,7 +42,7 @@ export default function Footer() {
               </a>
               <a href="https://ftcluj.ro/" target="_blank" rel="noreferrer" className="hover:opacity-100 transition-opacity relative h-12 w-20">
                 <Image 
-                  src="/assets/images/images/ftc.png" 
+                  src="/assets/images/images/ftc.webp" 
                   fill
                   sizes="80px"
                   className="object-contain brightness-0 invert opacity-90" 
@@ -51,7 +51,7 @@ export default function Footer() {
               </a>
               <a href="https://www.facebook.com/cosclujnapoca/" target="_blank" rel="noreferrer" className="hover:opacity-100 transition-opacity relative h-14 w-20">
                 <Image 
-                  src="/assets/images/images/cos.png" 
+                  src="/assets/images/images/cos.webp" 
                   fill
                   sizes="80px"
                   className="object-contain brightness-0 invert opacity-90" 

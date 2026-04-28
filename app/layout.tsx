@@ -40,8 +40,8 @@ export const metadata: Metadata = {
     telephone: false,
   },
   icons: {
-    icon: "/assets/images/images/Cometa rosie.png",
-    apple: "/assets/images/images/Cometa rosie.png",
+    icon: "/assets/images/images/Cometa rosie.webp",
+    apple: "/assets/images/images/Cometa rosie.webp",
   },
   openGraph: {
     type: "website",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     description: "Reprezentăm studenții Universității Tehnice din Cluj-Napoca. Află mai multe despre proiectele și inițiativele noastre.",
     images: [
       {
-        url: "/assets/images/images/OSUT Color.png",
+        url: "/assets/images/images/OSUT Color.webp",
         width: 1200,
         height: 630,
         alt: "OSUT Cluj Logo",
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "OSUT Cluj - Organizația Studenților din UTCN",
     description: "Reprezentăm studenții Universității Tehnice din Cluj-Napoca.",
-    images: ["/assets/images/images/OSUT Color.png"],
+    images: ["/assets/images/images/OSUT Color.webp"],
   },
   robots: {
     index: true,

@@ -11,41 +11,41 @@ import Image from "next/image";
 import "./green.css";
 
 const CROS_IMAGES = [
-    "/assets/images/images/Poze Sustenabilitate/crosulUT.png",
-    "/assets/images/images/Poze Sustenabilitate/Crosul UT/cros1.jpg",
-    "/assets/images/images/Poze Sustenabilitate/Crosul UT/cros2.jpg",
-    "/assets/images/images/Poze Sustenabilitate/Crosul UT/cros3.jpg",
-    "/assets/images/images/Poze Sustenabilitate/Crosul UT/cros4.jpg",
-    "/assets/images/images/Poze Sustenabilitate/Crosul UT/cros5.jpg"
+    "/assets/images/images/Poze Sustenabilitate/crosulUT.webp",
+    "/assets/images/images/Poze Sustenabilitate/Crosul UT/cros1.webp",
+    "/assets/images/images/Poze Sustenabilitate/Crosul UT/cros2.webp",
+    "/assets/images/images/Poze Sustenabilitate/Crosul UT/cros3.webp",
+    "/assets/images/images/Poze Sustenabilitate/Crosul UT/cros4.webp",
+    "/assets/images/images/Poze Sustenabilitate/Crosul UT/cros5.webp"
 ];
 
 const POLIHACK_IMAGES = [
-    "/assets/images/images/Poze Sustenabilitate/polihack.jpg",
-    "/assets/images/images/Poze Sustenabilitate/PoliHack/PoliHack 1.jpg",
-    "/assets/images/images/Poze Sustenabilitate/PoliHack/PoliHack 2.jpg",
-    "/assets/images/images/Poze Sustenabilitate/PoliHack/PoliHack 3.jpg",
-    "/assets/images/images/Poze Sustenabilitate/PoliHack/PoliHack 4.jpg",
-    "/assets/images/images/Poze Sustenabilitate/PoliHack/PoliHack 5.jpg"
+    "/assets/images/images/Poze Sustenabilitate/polihack.webp",
+    "/assets/images/images/Poze Sustenabilitate/PoliHack/PoliHack 1.webp",
+    "/assets/images/images/Poze Sustenabilitate/PoliHack/PoliHack 2.webp",
+    "/assets/images/images/Poze Sustenabilitate/PoliHack/PoliHack 3.webp",
+    "/assets/images/images/Poze Sustenabilitate/PoliHack/PoliHack 4.webp",
+    "/assets/images/images/Poze Sustenabilitate/PoliHack/PoliHack 5.webp"
 ];
 
 const ESU_IMAGES = [
-    "/assets/images/images/Poze Sustenabilitate/esu.jpg",
-    "/assets/images/images/Poze Sustenabilitate/ESU/ESU 1.jpg",
-    "/assets/images/images/Poze Sustenabilitate/ESU/ESU 2.JPG",
-    "/assets/images/images/Poze Sustenabilitate/ESU/ESU 3.jpg",
-    "/assets/images/images/Poze Sustenabilitate/ESU/ESU 4.jpg",
-    "/assets/images/images/Poze Sustenabilitate/ESU/ESU 5.jpg",
-    "/assets/images/images/Poze Sustenabilitate/ESU/ESU 6.jpg",
-    "/assets/images/images/Poze Sustenabilitate/ESU/ESU 7.jpg"
+    "/assets/images/images/Poze Sustenabilitate/esu.webp",
+    "/assets/images/images/Poze Sustenabilitate/ESU/ESU 1.webp",
+    "/assets/images/images/Poze Sustenabilitate/ESU/ESU 2.webp",
+    "/assets/images/images/Poze Sustenabilitate/ESU/ESU 3.webp",
+    "/assets/images/images/Poze Sustenabilitate/ESU/ESU 4.webp",
+    "/assets/images/images/Poze Sustenabilitate/ESU/ESU 5.webp",
+    "/assets/images/images/Poze Sustenabilitate/ESU/ESU 6.webp",
+    "/assets/images/images/Poze Sustenabilitate/ESU/ESU 7.webp"
 ];
 
 const INFOTECH_IMAGES = [
-    "/assets/images/images/Poze Sustenabilitate/InfoTech.png",
-    "/assets/images/images/Poze Sustenabilitate/InfoTech/infotech1.jpg",
-    "/assets/images/images/Poze Sustenabilitate/InfoTech/infotech2.jpg",
-    "/assets/images/images/Poze Sustenabilitate/InfoTech/infotech3.jpg",
-    "/assets/images/images/Poze Sustenabilitate/InfoTech/infotech4.jpg",
-    "/assets/images/images/Poze Sustenabilitate/InfoTech/infotech5.jpg"
+    "/assets/images/images/Poze Sustenabilitate/InfoTech.webp",
+    "/assets/images/images/Poze Sustenabilitate/InfoTech/infotech1.webp",
+    "/assets/images/images/Poze Sustenabilitate/InfoTech/infotech2.webp",
+    "/assets/images/images/Poze Sustenabilitate/InfoTech/infotech3.webp",
+    "/assets/images/images/Poze Sustenabilitate/InfoTech/infotech4.webp",
+    "/assets/images/images/Poze Sustenabilitate/InfoTech/infotech5.webp"
 ];
 
 const Carousel = ({ images }: { images: string[] }) => (

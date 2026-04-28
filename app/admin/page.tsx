@@ -131,7 +131,7 @@ export default function AdminDashboard() {
         const post = posts.find(p => p.id === editingId);
         setPreviewImageUrl(post?.imageUrl || null);
       } else {
-        setPreviewImageUrl("/assets/images/images/bgr.png");
+        setPreviewImageUrl("/assets/images/images/bgr.webp");
       }
       return;
     }
@@ -390,7 +390,7 @@ export default function AdminDashboard() {
                   <div className="w-full h-48 relative overflow-hidden bg-white/5">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                      src={previewImageUrl || "/assets/images/images/bgr.png"}
+                      src={previewImageUrl || "/assets/images/images/bgr.webp"}
                       alt="preview"
                       className="w-full h-full object-cover"
                     />
@@ -519,7 +519,7 @@ export default function AdminDashboard() {
                     {/* Small preview image */}
                     <div className="w-24 h-24 shrink-0 bg-black/40 rounded-xl overflow-hidden relative">
                       <Image 
-                        src={post.imageUrl || "/assets/images/images/bgr.png"} 
+                        src={post.imageUrl || "/assets/images/images/bgr.webp"} 
                         alt="thumb" 
                         fill
                         sizes="96px"
@@ -592,7 +592,7 @@ export default function AdminDashboard() {
             <div className="w-full h-64 sm:h-80 md:h-[400px] shrink-0 relative">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={previewImageUrl || "/assets/images/images/bgr.png"}
+                  src={previewImageUrl || "/assets/images/images/bgr.webp"}
                   alt="preview"
                   className="w-full h-full object-cover"
                 />

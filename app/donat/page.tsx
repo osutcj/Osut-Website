@@ -105,7 +105,7 @@ export default function Donat() {
 
                     <div className="absolute -top-10 -right-10 w-44 h-44">
                       <Image 
-                          src="/assets/images/images/cometa2.png" 
+                          src="/assets/images/images/cometa2.webp" 
                           alt="Cometă" 
                           fill
                           sizes="176px"

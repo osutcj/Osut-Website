@@ -12,9 +12,9 @@ export interface Post {
 
 const DATA_PATH = "database/posts.json";
 const LOCAL_DATA_PATH = path.join(process.cwd(), "public", "assets", "data", "posts.json");
-const OLD_PLACEHOLDER = "/assets/images/placeholder.jpg";
-const PREVIOUS_PLACEHOLDER = "/assets/images/images/no-image.png";
-const NEW_PLACEHOLDER = "/assets/images/images/bgr.png";
+const OLD_PLACEHOLDER = "/assets/images/placeholder.webp";
+const PREVIOUS_PLACEHOLDER = "/assets/images/images/no-image.webp";
+const NEW_PLACEHOLDER = "/assets/images/images/bgr.webp";
 
 /**
  * Clean post data to fix old placeholder URLs.

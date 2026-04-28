@@ -53,7 +53,7 @@ export default function LoadingScreen() {
       `}</style>
       <div className="relative w-32 h-32 md:w-48 md:h-48">
         <Image 
-          src="/assets/images/images/Cometa rosie.png" 
+          src="/assets/images/images/Cometa rosie.webp" 
           alt="Loading..." 
           fill
           sizes="(max-width: 768px) 128px, 192px"

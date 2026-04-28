@@ -18,7 +18,7 @@ export default function Header() {
         <div className="nav-logo">
           <NextLink href="/" className="relative block h-12 w-32">
             <Image 
-              src="/assets/images/images/OSUT alb.png" 
+              src="/assets/images/images/OSUT alb.webp" 
               alt="OSUT Logo" 
               fill
               sizes="128px"
