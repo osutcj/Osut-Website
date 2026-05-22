@@ -46,11 +46,6 @@ const PROJECT_ITEMS = [
     text: "Scopul proiectului InfoTech este să faciliteze tranziția studenților spre piața muncii prin oferirea de cunoștințe și conexiuni esențiale în industria tehnologiei. Inițiativa asigură accesul la workshopuri de programare, simulări de interviuri și vizite la companii importante din domeniu. Prin evenimente precum ContestNight sau InfoNight, studenții își dezvoltă abilitățile practice alături de profesioniști și transformă teoria în avantaje reale pentru viitoarea carieră."
   },
   {
-    image: "/assets/images/images/Proiecte/PPP.webp",
-    alt: "Private Poli Party",
-    text: "Private Poli Party este cel mai așteptat party semestrial de către studenții Universității Tehnice și nu numai. Cu peste 1200 de bilete vândute în ultimele 3 ediții, Private Poli Party reprezintă începutul perfect de semestru alături de colegi și de prieteni. Te așteptăm și pe tine să petreci până dimineața pe muzică pentru toate gusturile în Club Noa!\n\nNe vedem la party?"
-  },
-  {
     image: "/assets/images/images/Proiecte/Logo-uri/logo_css.webp",
     alt: "Ce Spun Studenții",
     text: "Te-ai întrebat mereu cum gândesc colegii și prietenii tăi? Acum este șansa ta să aflii răspunsul lor la cele mai amuzante și interesante situații.\nO adaptare a emisiunii “Family Feud” este cea mai bună ocazie să vezi cum unele dintre cele mai simple întrebări te pot pune în dificultate și cum evenimentele uzuale din viața oricărei persoane au o rezolvare complet diferită de la om la om. Cu reflexe bune, intuiție și cel mai important, un strop de noroc poți chiar tu să fi câștigătorul acestui joc!\nCele două echipe se află puse față în față cu un set de întrebări neașteptate la care trebuie să răspundă cu cele mai comune variante, în cel mai scurt timp. Fiecare rundă câștigată te duce tot mai aproape de marele premiu, dar nu uita că o mică greșeală te poate scoate din competiție. Entuziasmul și adrenalina își pot spune cuvântul, ducând atât emoțiile participanților, cât și pe cele ale spectatorilor la cele mai înalte nivele. Un concurs perfect daca ești o fire competitivă, dar și dacă ești doar în cătare de distracție și voie bună alături de persoanele tale preferate."
@@ -127,11 +122,6 @@ const INITIATIVE_AND_OSUTLA_ITEMS = [
     image: "/assets/images/images/training/polisport1.webp",
     alt: "PoliSport1",
     text: "Aceste sesiuni interactive au fost dedicate menținerii echilibrului între viața academică și personală, oferind participanților instrumente utile pentru gestionarea stresului, importanța unei alimentații sănătoase și crearea unor obiceiuri care să sprijine atât sănătatea fizică, cât și cea mentală.\nSusținute de Ionuț Rada și Marius Berbecuț, atelierele au furnizat strategii practice pentru optimizarea energiei, organizarea timpului și abordarea provocărilor zilnice, oferind participanților șansa de a îmbunătăți atât performanța academică, cât și starea generală de bine."
-  },
-  {
-    image: "/assets/images/images/adapost.webp",
-    alt: "Adăpost",
-    text: "Arca lui Noe este locul perfect unde te poți refugia atunci când ai nevoie de o pauză de la agitația cotidiană. Imaginați-vă o oază de liniște, unde fiecare colț emană energie pozitivă, iar fiecare zâmbet este însoțit de lăbuțe jucăușe și priviri pline de iubire. În această „mică lume paralelă” a cățeilor, timpul pare să stea în loc, iar grijile dispar imediat ce te afli în mijlocul lor.🐶\n\nFiecare câine are povestea sa, iar tu ai oportunitatea să le oferi nu doar iubire, ci și un strop de speranță. E un loc unde inimile se deschid și se vindecă, iar fiecare moment petrecut acolo este o lecție despre afecțiune necondiționată și conexiuni pure.💫"
   },
   {
     image: "/assets/images/images/Proiecte/casutabucuriei.webp",
