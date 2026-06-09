@@ -109,8 +109,8 @@ export default function Header() {
         </a>
         <div className="flex items-center justify-center my-4">
         </div>
-        <NextLink href="/contact/" className="red-button" onClick={toggleSidebar}>
-          Contact
+        <NextLink href="/butonul-rosu/" className="red-button" onClick={toggleSidebar}>
+          Butonul Roșu
         </NextLink>
       </div>
     </>

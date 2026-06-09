@@ -25,7 +25,7 @@ const TeamCard = ({ photo, lastName, firstName, role, fbLink, igLink, inLink, em
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="bc-card-photo"
-                style={{ objectPosition: photoPosition || "top center", objectFit: "cover" }}
+                style={{ objectPosition: photoPosition || "center", objectFit: "contain" }}
             />
         </div>
         <div className="bc-card-info">
