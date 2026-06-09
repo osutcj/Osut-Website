@@ -62,40 +62,10 @@ const TeamCard = ({ photo, lastName, firstName, role, fbLink, igLink, inLink, em
 
 const TEAM_MEMBERS: TeamMember[] = [
     {
-        photo: "/assets/images/images/bc/TimișTraian.webp",
-        lastName: "Timiș",
-        firstName: "Traian",
-        role: "Președinte",
-        fbLink: "https://www.facebook.com/timis.traian02",
-        igLink: "https://www.instagram.com/timistm/",
-        inLink: "https://www.linkedin.com/in/traian-timis/",
-        email: "traian.timis@osutcluj.com"
-    },
-    {
-        photo: "/assets/images/images/bc/TudoseRares.webp",
-        lastName: "Tudose",
-        firstName: "Rareș",
-        role: "Director Executiv",
-        fbLink: "https://www.facebook.com/rares.tudose08",
-        igLink: "https://www.instagram.com/rares_tudose/",
-        inLink: "https://www.linkedin.com/in/rare%C8%99-tudose/",
-        email: "rares.tudose@osutcluj.com"
-    },
-    {
-        photo: "/assets/images/images/bc/OrtanAdela.webp",
-        lastName: "Orțan",
-        firstName: "Adela",
-        role: "Secretar General",
-        fbLink: "https://www.facebook.com/adela.ortan",
-        igLink: "https://www.instagram.com/adela_ortan/",
-        inLink: "https://www.linkedin.com/in/adela-ortan/",
-        email: "adela.ortan@osutcluj.com"
-    },
-    {
         photo: "/assets/images/images/bc/ArimiaAndreea.webp",
         lastName: "Arimia",
         firstName: "Andreea",
-        role: "Vicepreședinte Electro",
+        role: "Președinte",
         fbLink: "https://www.facebook.com/andreea.arimia",
         igLink: "https://www.instagram.com/andreeaa_stefaniaa/?ref=osut.org",
         inLink: "https://www.linkedin.com/in/andreea-arimia-0713972a2/",
@@ -105,11 +75,41 @@ const TEAM_MEMBERS: TeamMember[] = [
         photo: "/assets/images/images/bc/OrmindeanVlad.webp",
         lastName: "Ormindean",
         firstName: "Vlad",
-        role: "Vicepreședinte Construcții",
+        role: "Director Executiv",
         fbLink: "https://www.facebook.com/vlad.ormindean.1/",
         igLink: "https://www.instagram.com/__vld._/?ref=osut.org",
         inLink: "https://www.linkedin.com/in/vlad-ormindean-089752375/",
         email: "vlad.ormindean@osutcluj.com"
+    },
+    {
+        photo: "/assets/images/images/bc/CosTudor.webp",
+        lastName: "Coș",
+        firstName: "Tudor",
+        role: "Secretar General",
+        fbLink: "https://www.facebook.com/tudor.cos.5",
+        igLink: "https://www.instagram.com/tudor._.cos/",
+        inLink: "https://www.linkedin.com/in/tudor-co%C8%99-958490224/",
+        email: "tudor.cos@osutcluj.com"
+    },
+    {
+        photo: "/assets/images/images/bc/IrimiciucCosmin.webp",
+        lastName: "Irimiciuc",
+        firstName: "Cosmin",
+        role: "Vicepreședinte Electro",
+        fbLink: "https://www.facebook.com/cosmin.irimiciuc",
+        igLink: "https://www.instagram.com/cosmin.irimiciuc/",
+        inLink: "https://www.linkedin.com/in/cosmin-irimiciuc-23442b357/",
+        email: "cosmin.irimiciuc@osutcluj.com"
+    },
+    {
+        photo: "/assets/images/images/bc/LenghelCarmen.webp",
+        lastName: "Lenghel",
+        firstName: "Carmen",
+        role: "Vicepreședinte Construcții",
+        fbLink: "https://www.facebook.com/carmen.lenghel.9",
+        igLink: "https://www.instagram.com/carmen.anamaria_/?ref=osut.org",
+        inLink: "https://www.linkedin.com/in/carmen-lenghel-3b8457415/",
+        email: "carmen.lenghel@osutcluj.com"
     },
     {
         photo: "/assets/images/images/bc/LicuArina.webp",
@@ -122,24 +122,24 @@ const TEAM_MEMBERS: TeamMember[] = [
         email: "arina.licu@osutcluj.com"
     },
     {
-        photo: "/assets/images/images/bc/BălănescuRareș.webp",
-        lastName: "Bălănescu",
-        firstName: "Rareș",
+        photo: "/assets/images/images/bc/BujdeiRobert.webp",
+        lastName: "Bujdei",
+        firstName: "Robert",
         role: "Vicepreședinte Relații Interne",
-        fbLink: "https://www.facebook.com/rares.balanescu?locale=ro_RO",
-        igLink: "https://www.instagram.com/rares.bala_4/?ref=osut.org",
-        inLink: "https://www.linkedin.com/in/rares-balanescu-790958298/",
-        email: "rares.balanescu@osutcluj.com"
+        fbLink: "https://www.facebook.com/robert.bujdei",
+        igLink: "https://www.instagram.com/robertbujdei18/",
+        inLink: "https://www.linkedin.com/in/robert-bujdei-59a5bb355/",
+        email: "robert.bujdei@osutcluj.com"
     },
     {
-        photo: "/assets/images/images/bc/CioteaAlexandra.webp",
-        lastName: "Ciotea",
-        firstName: "Alexandra",
+        photo: "/assets/images/images/bc/AvramMaia.webp",
+        lastName: "Avram",
+        firstName: "Maia",
         role: "Vicepreședinte Relații Externe",
-        fbLink: "https://www.facebook.com/alexandra.ciotea.58",
-        igLink: "https://www.instagram.com/lexa.ciotea?igsh=YmptNDZyOHZ5cTdh&utm_source=qr",
-        inLink: "https://www.linkedin.com/in/alexandra-anamaria-ciotea-9832a42b1/",
-        email: "alexandra.ciotea@osutcluj.com"
+        fbLink: "https://www.facebook.com/profile.php?id=100008618348137", 
+        igLink: "https://www.instagram.com/maia_avram?igsh=MWFkcHJzc2E0cnFjcQ%3D%3D&utm_source=qr",
+        inLink: "https://www.linkedin.com/in/maia-avram-398a352b4/",
+        email: "maia.avram@osutcluj.com"
     },
     {
         photo: "/assets/images/images/bc/MoiceanuElena.webp",
@@ -158,7 +158,7 @@ export default function BiroulDeConducere() {
         <main className="bc-main">
             <div className="bc-banner">
                 <Image
-                    src="/assets/images/images/bc/Poza BC.webp"
+                    src="/assets/images/images/bc/PozaBC.webp"
                     alt="Biroul de Conducere - Fotografie de grup"
                     fill
                     sizes="100vw"

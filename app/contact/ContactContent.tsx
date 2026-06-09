@@ -41,10 +41,10 @@ export default function ContactContent() {
               În caz de întrebări urgente, contactează-ne telefonic.
             </p>
             <div className="flex flex-col gap-1">
-              <a href="tel:0757332298" className="text-sm font-bold underline decoration-2 underline-offset-4 decoration-red-600 hover:text-red-400 transition-colors w-fit text-zinc-900 dark:text-white">
-                0757 332 298
+              <a href="tel:0762385168" className="text-sm font-bold underline decoration-2 underline-offset-4 decoration-red-600 hover:text-red-400 transition-colors w-fit text-zinc-900 dark:text-white">
+                0762 385 168
               </a>
-              <span className="text-sm text-zinc-500 font-semibold mt-1">Timiș Traian - Președinte</span>
+              <span className="text-sm text-zinc-500 font-semibold mt-1">Arimia Andreea - Președinte</span>
             </div>
           </div>
 
