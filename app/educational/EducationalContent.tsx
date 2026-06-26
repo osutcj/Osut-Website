@@ -152,7 +152,7 @@ const faculties = {
         shortName: "Facultatea de Inginerie Electrică",
         formular: "https://forms.office.com/e/M6Qgtq2Fwf",
         members: [
-            {nume: "Spătăcean", prenume: "Lidia-Georgiana", subtitlu: "Student Reprezentant în BCF", an: "Master, Anul 2", specializare: "Științe Inginerești Aplicate în medicină", email: "Spatacean.Gh.Lidia@student.utcluj.ro"},
+            {nume: "Spătăcean", prenume: "Lidia-Giorgiana", subtitlu: "Student Reprezentant în BCF", an: "Master, Anul 2", specializare: "Științe Inginerești Aplicate în medicină", email: "Spatacean.Gh.Lidia@student.utcluj.ro"},
             {nume: "Chirilă", prenume: "Iulian", an: "Licență, Anul 3", specializare: "Ingineria sistemelor electroenergetice", email: "Chirila.ci.iulian@student.utcluj.ro"},
             {nume: "Constandache", prenume: "Ionela", an: "Licență, Anul 2", specializare: "Inginerie Economică în domeniul Electric, Electronic și Energetic", email: "Constandache.il.io@student.utcluj.ro"},
             {nume: "Drăguș", prenume: "Ioan-Darius", an: "Licență, Anul 2", specializare: "Inginerie Electrică", email: "Dragus.Ma.Ioan@student.utcluj.ro"},
