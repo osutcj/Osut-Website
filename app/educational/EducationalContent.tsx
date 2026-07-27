@@ -15,6 +15,81 @@ const DOCUMENTS = [
     { title: "Ghidul Studentului (Master)", icon: "fas fa-book-reader", downloadLink: "/assets/pdf/ghid_student_master.pdf" }
 ];
 
+const ACTIVITY_REPORTS: Record<string, string> = {
+    "bondrea.ad.lucian@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/01. ARMM/01.Raport de activitate - Bondrea Lucian Andrei.pdf",
+    "cracaoanu.co.klaudia@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/01. ARMM/02. Raport de activitate - Crăcăoanu Klaudia Maria.pdf",
+    "veres.ra.georgian@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/01. ARMM/03. Raport de activitate - Vereș Georgian Ionut.pdf",
+    "haitonic.al.dacian@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/01. ARMM/04. Raport de activitate - Haitonic Dacian-Alexandru.pdf",
+    "bria.du.mara@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/01. ARMM/05.Raport de activitate - Bria Mara-Aiyana.pdf",
+    "buzgariu.ni.ioana@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/01. ARMM/06.Raport de activitate - Buzgariu Ioana-Niculina.pdf",
+    "iauta.ma.claudiu@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/01. ARMM/07. Raport de activitate - Iaută Claudiu Marian .pdf",
+    "licu.ga.arina@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/02. IIRMP/01.Raport de activitate - Licu Arina.pdf",
+    "dan.ni.andrada@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/02. IIRMP/02. Raport de activitate  - Dan Andrada.pdf",
+    "livinschi.vi.ca@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/02. IIRMP/03. Raport de activitate - Livinschi Cătălina.pdf",
+    "streza.co.cornel@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/02. IIRMP/04. Raport de activitate - Streza Bogdan.pdf",
+    "maxim.va.andrei@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/02. IIRMP/05.Raport de activitate - Maxim Andrei.pdf",
+    "mititean.vi.florina@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/02. IIRMP/06. Raport de activitate - Mititean Florina.pdf",
+    "suciu.ni.bianca@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/02. IIRMP/07. Raport de activitate - Suciu Bianca.pdf",
+    "afanas.va.neonila@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/02. IIRMP/08. Raport de activitate - Afanas Neonila.pdf",
+    "negura.lu.daria@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/02. IIRMP/09. Raport de activitate - Negură Daria.pdf",
+    "joia.da.simona@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/03. IMM/01.Raport de activitate - Simona Joia.pdf",
+    "oltean.em.ariana@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/03. IMM/02.Raport de activitate - Oltean Ariana.pdf",
+    "pop.io.rf@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/03. IMM/03.Raport de activitate - Pop Radu.pdf",
+    "goman.pa.denis@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/03. IMM/04. Raport de activitate - Goman Denis.pdf",
+    "abiculesei.so.denis@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/04. Construcții/Raport de activitate - Abiculesei Denis - Semestrul II.pdf",
+    "chira.da.daria@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/04. Construcții/Raport de activitate - Chira Daria Larisa  - Semestrul II.pdf",
+    "lenghel.io.carmen@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/04. Construcții/Raport de activitate - Lenghel Carmen Anamaria - Semestrul II (1).pdf",
+    "marcu.pe.petra@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/04. Construcții/Raport de activitate - Marcu Petra-Denisa - Semestrul II.pdf",
+    "ormindean.si.vlad@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/04. Construcții/Raport de activitate - Ormindean Vlad Cosmin - Semestrul II.pdf",
+    "stan.pe.giulia@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/04. Construcții/Raport de activitate - Stan Giulia - Semestrul II.pdf",
+    "stoian.gh.alexia@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/04. Construcții/Raport de activitate - Stoian-Pop Alexia-Ioana - Semestrul II.pdf",
+    "timis.al.traian@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/04. Construcții/Raport de activitate - Timiș Traian-Marius - Semestrul II.pdf",
+    "zinici.du.diana@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/04. Construcții/Raport de activitate - Zinici Diana - Semestrul II.pdf",
+    "couti.ma.paul@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/05. Arhitectură/Raport de activitate - Couți Paul - Semestrul II.pdf",
+    "dasca.pe.sabrina@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/05. Arhitectură/Raport de activitate - Dâscă Sabrina-Ioana - Semestrul II.pdf",
+    "rusu.da.george@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/05. Arhitectură/Raport de activitate - Rusu George - Semestrul II.pdf",
+    "costea.st.alina@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/06. Instalații/Raport de activitate - Costea Alina Paula - Semestrul II.pdf",
+    "nasca.gh.tudor@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/06. Instalații/Raport de activitate - Nașca Tudor - Semestrul II.docx.pdf",
+    "precub.io.alexandru@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/06. Instalații/Raport de activitate - Precub Alexandru-Ioan - Semestrul II.pdf",
+    "cos.ad.tudor@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/07. AC/01. Raport de activitate - Tudor-Adrian Coș.pdf",
+    "moiceanu.io.elena@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/07. AC/02. Raport de activitate  - Elena Moiceanu.pdf",
+    "balanescu.co.rares@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/07. AC/03. Raport de activitate - Rareș-Ioan Bălănescu.pdf",
+    "juravle.va.monica@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/07. AC/04. Raport de activitate - Monica Juravle.pdf",
+    "tudose.ar.rares@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/07. AC/05. Raport de activitate - Rareș Tudose.pdf",
+    "santeiu.ca.anda@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/07. AC/06. Raport de activitate - Anda-Ștefania Santeiu.pdf",
+    "indreiu.da.daniela@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/07. AC/07. Raport de activitate - Daniela Indreiu.pdf",
+    "sisestean.pe.andrei@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/07. AC/08. Raport de activitate - Andrei Șișeștean.pdf",
+    "pavel.ma.luca@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/07. AC/09. Raport de activitate - Luca-Georgian Pavel.pdf",
+    "clim.fl.diana@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/07. AC/10. Raport de activitate - Diana-Florentina Clim.pdf",
+    "murariu.io.georgiana@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/07. AC/11. Raport de activitate - Georgiana-Roxana Murariu.pdf",
+    "arimia.io.andreea@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/08. ETTI/01. Raport de activitate - Andreea-Ștefania Arimia.pdf",
+    "irimiciuc.gh.cosmin@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/08. ETTI/02. Raport de activitate - Cosmin-Alexandru Irimiciuc.pdf",
+    "bujdei.gh.robert@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/08. ETTI/03. Raport de activitate - Robert-Cosmin Bujdei.pdf",
+    "ciotea.ad.alexandra@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/08. ETTI/04. Raport de activitate - Alexandra-Anamaria Ciotea.pdf",
+    "tivadar.io.dragos@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/08. ETTI/05. Raport de activitate - Dragoș-Filip Tivadar.pdf",
+    "pop.io.lorena@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/08. ETTI/06. Raport de activitate - Lorena-Maria Pop.pdf",
+    "signori.gi.gianmario@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/08. ETTI/07. Raport de activitate - Gianmario Signori.pdf",
+    "drule.vi.daniela@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/08. ETTI/08. Raport de activitate - Daniela-Ileana Drule.pdf",
+    "spatacean.gh.lidia@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/09. IE/01. Raport de activitate - Lidia-Giorgiana Spătăcean.pdf",
+    "dumitrean.se.denis@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/09. IE/02. Raport de activitate - Denis-Andrei Dumitrean.pdf",
+    "moldovan.ma.ana@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/09. IE/03. Raport de activitate - Ana-Maria Moldovan.pdf",
+    "dragus.ma.ioan@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/09. IE/04. Raport de activitate - Ioan-Darius Drăguș.pdf",
+    "constandache.il.io@student.utcluj.ro": "/assets/02. Rapoarte de activitate/01. Cluj-Napoca/09. IE/06. Raport de activitate - Ionela Constandache.pdf",
+    "gaier.ad.andreea@student.utcluj.ro": "/assets/02. Rapoarte de activitate/02. Baia Mare/01. Litere/01. Raport de activitate - Gaier Andreea.pdf",
+    "muresan.co.maria@student.utcluj.ro": "/assets/02. Rapoarte de activitate/02. Baia Mare/01. Litere/02. Raport de activitate - Mureșan Ana-Maria.pdf",
+    "popdan.gh.nicoleta@student.utcluj.ro": "/assets/02. Rapoarte de activitate/02. Baia Mare/01. Litere/03.Raport de activitate - Popdan Nicoleta.pdf",
+    "suciu.al.alexandra@student.utcluj.ro": "/assets/02. Rapoarte de activitate/02. Baia Mare/01. Litere/04. Raport de activitate - Suciu Alexandra.pdf",
+    "gyorgy.sa.melissza@student.utcluj.ro": "/assets/02. Rapoarte de activitate/02. Baia Mare/02. Inginerie/Raport de activitate - Gyorgy Melissza Szemida - Semestrul II.pdf",
+    "koloszvary.al.al@student.utcluj.ro": "/assets/02. Rapoarte de activitate/02. Baia Mare/02. Inginerie/Raport de activitate - Koloszvary Alexandru Andrei - Semestrul II.pdf",
+    "sillai.al.beatrice@student.utcluj.ro": "/assets/02. Rapoarte de activitate/02. Baia Mare/02. Inginerie/Raport de activitate - Sillai Beatrice - Semestrul II.pdf",
+    "tintas.gh.gheorghe@student.utcluj.ro": "/assets/02. Rapoarte de activitate/02. Baia Mare/02. Inginerie/Raport de activitate - Țînțaș Gheorghe-Mihăiță - Semestrul II.pdf",
+    "covaci.cs.sebastian@student.utcluj.ro": "/assets/02. Rapoarte de activitate/02. Baia Mare/03. Științe/01. Raport de activitate - Sebastian-Gabriel Covaci.pdf",
+    "borbei.al.alexandra@student.utcluj.ro": "/assets/02. Rapoarte de activitate/02. Baia Mare/03. Științe/02. Raport de activitate - Alexandra Borbei.pdf",
+    "borsa.fe.catalin@student.utcluj.ro": "/assets/02. Rapoarte de activitate/02. Baia Mare/03. Științe/03. Raport de activitate - Cătălin Borșa.pdf",
+    "leonte.ma.cosmin@student.utcluj.ro": "/assets/02. Rapoarte de activitate/02. Baia Mare/03. Științe/04. Raport de activitate - Cosmin Leonte.pdf",
+    "rus.ro.gabriela@student.utcluj.ro": "/assets/02. Rapoarte de activitate/02. Baia Mare/03. Științe/05. Raport de activitate - Gabriela-Maria Rus.pdf",
+};
+
 const senatMembers = [
     {nume: "Licu", prenume: "Arina-Andreea", subtitlu: "Student Reprezentant în BOS", an: "Licență, Anul 3", specializare: "Robotică", email: "Licu.Ga.Arina@student.utcluj.ro"},
     {nume: "Timiș", prenume: "Traian-Marius", subtitlu: "Student Reprezentant în BCA", an: "Master, Anul 1", specializare: "Construcții Durabile de Beton", email: "Timis.Al.Traian@student.utcluj.ro"},
@@ -64,7 +139,7 @@ const faculties = {
         shortName: "Facultatea de Automatică și Calculatoare",
         formular: "https://forms.office.com/e/2S0mtH8R6J",
         members: [
-            {nume: "Tudose", prenume: "Rareș", subtitlu: "Student Reprezentant în BCF", an: "Licență, Anul 4", specializare: "Calculatoare și Tehnologia Informației", email: "Tudose.Ar.Rareș@student.utcluj.ro"},
+            {nume: "Tudose", prenume: "Rareș", subtitlu: "Student Reprezentant în BCF", an: "Licență, Anul 4", specializare: "Calculatoare și Tehnologia Informației", email: "Tudose.Ar.Rares@student.utcluj.ro"},
             {nume: "Bălănescu", prenume: "Rareș", an: "Licență, Anul 4", specializare: "Calculatoare și Tehnologia Informației", email: "Balanescu.Co.Rares@student.utcluj.ro"},
             {nume: "Clim", prenume: "Diana", an: "Licență, Anul 3", specializare: "Calculatoare și Tehnologia Informației", email: "Clim.fl.diana@student.utcluj.ro"},
             {nume: "Indreiu", prenume: "Daniela", an: "Licență, Anul 3", specializare: "Automatică și Informatică Aplicată", email: "Indreiu.Da.Daniela@student.utcluj.ro"},
@@ -216,32 +291,50 @@ const faculties = {
     },
 };
 
-const ReprezCard = ({ member }: { member: { nume: string, prenume: string, subtitlu?: string, an?: string, specializare?: string, email?: string } }) => (
-    <div className="sr-reprez">
-        <h1>{member.nume}</h1>
-        <h2>{member.prenume}</h2>
-        {member.specializare && (
-            <p className="sr-specializare" style={{ color: '#aaaaaa', fontSize: '14px', marginTop: '6px', lineHeight: '1.2' }}>
-                {member.specializare}
-            </p>
-        )}
-        {member.an && (
-            <p className="sr-an" style={{ color: '#888888', fontSize: '13px', marginTop: '4px' }}>
-                {member.an}
-            </p>
-        )}
-        {member.email && (
-            <a href={`mailto:${member.email}`} className="sr-email" style={{ color: '#cc0000', fontSize: '15px', marginTop: '8px', display: 'inline-block', textDecoration: 'none', transition: 'color 0.2s ease-in-out' }} onMouseOver={(e) => (e.currentTarget.style.color = '#ff3333')} onMouseOut={(e) => (e.currentTarget.style.color = '#cc0000')}>
-                {member.email}
-            </a>
-        )}
-        {member.subtitlu && (
-            <p className="sr-subtitle" style={{ color: '#ffffff', fontWeight: 'bold', fontSize: '14px', marginTop: '10px', textTransform: 'uppercase' }}>
-                {member.subtitlu}
-            </p>
-        )}
-    </div>
-);
+type Representative = {
+    nume: string;
+    prenume: string;
+    subtitlu?: string;
+    an?: string;
+    specializare?: string;
+    email?: string;
+};
+
+const ReprezCard = ({ member }: { member: Representative }) => {
+    const raportLink = member.email ? ACTIVITY_REPORTS[member.email.toLowerCase()] : undefined;
+
+    return (
+        <div className="sr-reprez">
+            <h1>{member.nume}</h1>
+            <h2>{member.prenume}</h2>
+            {member.specializare && (
+                <p className="sr-specializare" style={{ color: '#aaaaaa', fontSize: '14px', marginTop: '6px', lineHeight: '1.2' }}>
+                    {member.specializare}
+                </p>
+            )}
+            {member.an && (
+                <p className="sr-an" style={{ color: '#888888', fontSize: '13px', marginTop: '4px' }}>
+                    {member.an}
+                </p>
+            )}
+            {member.email && (
+                <a href={`mailto:${member.email}`} className="sr-email" style={{ color: '#cc0000', fontSize: '15px', marginTop: '8px', display: 'inline-block', textDecoration: 'none', transition: 'color 0.2s ease-in-out' }} onMouseOver={(e) => (e.currentTarget.style.color = '#ff3333')} onMouseOut={(e) => (e.currentTarget.style.color = '#cc0000')}>
+                    {member.email}
+                </a>
+            )}
+            {raportLink && (
+                <a href={raportLink} target="_blank" rel="noopener noreferrer" className="sr-activity-report">
+                    Raport de Activitate
+                </a>
+            )}
+            {member.subtitlu && (
+                <p className="sr-subtitle" style={{ color: '#ffffff', fontWeight: 'bold', fontSize: '14px', marginTop: '10px', textTransform: 'uppercase' }}>
+                    {member.subtitlu}
+                </p>
+            )}
+        </div>
+    );
+};
 
 export default function EducationalContent() {
     const [activeTab, setActiveTab] = useState<"senat" | "consiliu" | null>(null);
