@@ -8,7 +8,7 @@ const DOCUMENTS = [
     { title: "CARTA", icon: "fas fa-book", downloadLink: "/assets/pdf/carta.pdf" },
     { title: "ECTS", icon: "fas fa-graduation-cap", downloadLink: "/assets/pdf/ects.pdf" },
     { title: "BURSE", icon: "fas fa-money-bill", downloadLink: "/assets/pdf/burse.pdf" },
-    { title: "TAXE", icon: "fas fa-file-invoice-dollar", downloadLink: "/assets/pdf/taxe.pdf" },
+    { title: "TAXE", icon: "fas fa-file-invoice-dollar", downloadLink: "/assets/pdf/Taxele_pentru_anul_universitar_2026-2027-1.pdf" },
     { title: "CĂMINE & CANTINE", icon: "fas fa-building", downloadLink: "/assets/pdf/caminecantine.pdf" },
     { title: "CDOS", icon: "fas fa-file-alt", downloadLink: "/assets/pdf/CDOS.pdf" },
     { title: "Ghidul Studentului (Licență)", icon: "fas fa-book-open", downloadLink: "/assets/pdf/ghid_student_licenta.pdf" },
