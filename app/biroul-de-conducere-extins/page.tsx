@@ -25,7 +25,7 @@ const TeamCard = ({ photo, lastName, firstName, role, fbLink, igLink, inLink, em
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="bc-card-photo"
-                style={{ objectPosition: photoPosition || "center", objectFit: "contain" }}
+                style={{ objectPosition: photoPosition || "center", objectFit: "cover" }}
             />
         </div>
         <div className="bc-card-info">
@@ -36,22 +36,22 @@ const TeamCard = ({ photo, lastName, firstName, role, fbLink, igLink, inLink, em
             </div>
             <div className="bc-card-links">
                 {fbLink && (
-                    <a href={fbLink} target="_blank" rel="noreferrer" className="bc-social-btn">
+                    <a href={fbLink} target="_blank" rel="noreferrer" className="bc-social-btn" aria-label={`Facebook ${firstName} ${lastName}`}>
                         <i className="fab fa-facebook-f"></i>
                     </a>
                 )}
                 {igLink && (
-                    <a href={igLink} target="_blank" rel="noreferrer" className="bc-social-btn">
+                    <a href={igLink} target="_blank" rel="noreferrer" className="bc-social-btn" aria-label={`Instagram ${firstName} ${lastName}`}>
                         <i className="fab fa-instagram"></i>
                     </a>
                 )}
                 {inLink && (
-                    <a href={inLink} target="_blank" rel="noreferrer" className="bc-social-btn">
+                    <a href={inLink} target="_blank" rel="noreferrer" className="bc-social-btn" aria-label={`LinkedIn ${firstName} ${lastName}`}>
                         <i className="fab fa-linkedin-in"></i>
                     </a>
                 )}
                 {email && (
-                    <a href={`mailto:${email}`} className="bc-social-btn">
+                    <a href={`mailto:${email}`} className="bc-social-btn" aria-label={`Email ${firstName} ${lastName}`}>
                         <i className="fas fa-envelope"></i>
                     </a>
                 )}
@@ -71,27 +71,141 @@ const SectionTitle = ({ label }: { label: string }) => (
 );
 
 const DIRECTII: TeamMember[] = [
-    { photo: "/assets/images/images/bce/AnaMihali.webp", lastName: "Mihali", firstName: "Ana", role: "Coordonator Cultural", fbLink: "https://www.facebook.com/profile.php?id=100008125005627", igLink: "https://www.instagram.com/anuk_ana/", inLink: "https://www.linkedin.com/in/ana-mihali-01076b405/", email: "ana.mihali@osutcluj.com" },
-    { photo: "/assets/images/images/bce/CristianFelic.webp", lastName: "Felic", firstName: "Cristian", role: "Coordonator Divertisment", fbLink: "https://www.facebook.com/felic.cristian", igLink: "https://www.instagram.com/felic.cristian/", inLink: "https://www.linkedin.com/in/cristian-felic-7b9560364/", email: "cristian.felic@osutcluj.com" },
-    { photo: "/assets/images/images/bce/LenghelCarmen.webp", lastName: "Lenghel", firstName: "Carmen", role: "Coordonator Educațional", fbLink: "https://www.facebook.com/carmen.lenghel.9", igLink: "https://www.instagram.com/carmen.anamaria_/?ref=osut.org", email: "carmen.lenghel@osutcluj.com" },
-    { photo: "/assets/images/images/bce/RobertBujdei.webp", lastName: "Bujdei", firstName: "Robert", role: "Coordonator Sport și Sănătate", fbLink: "https://www.facebook.com/robert.bujdei", igLink: "https://www.instagram.com/robertbujdei18/", inLink: "https://www.linkedin.com/in/robert-bujdei-59a5bb355/", email: "robert.bujdei@osutcluj.com" },
-    { photo: "/assets/images/images/bce/MaiaAvram.webp", lastName: "Avram", firstName: "Maia", role: "Coordonator Tineret", fbLink: "https://www.facebook.com/profile.php?id=100008618348137", igLink: "https://www.instagram.com/maia_avram?igsh=MWFkcHJzc2E0cnFjcQ%3D%3D&utm_source=qr", inLink: "https://www.linkedin.com/in/maia-avram-398a352b4/", email: "maia.avram@osutcluj.com" },
+    {
+        photo: "/assets/images/images/bce/GabrielDoana.webp",
+        lastName: "Doană",
+        firstName: "Gabriel",
+        role: "Coordonator Divertisment",
+        fbLink: "https://www.facebook.com/gabriel.doana.10",
+        igLink: "https://www.instagram.com/doanagabriel/",
+        email: "gabriel.doana@osutcluj.com"
+    },
+    {
+        photo: "/assets/images/images/bce/PrecubIoan.webp",
+        lastName: "Precub",
+        firstName: "Alexandru Ioan",
+        role: "Coordonator Educațional",
+        fbLink: "https://www.facebook.com/share/1F1i5pvmwH/",
+        igLink: "https://www.instagram.com/alexandruprecub?igsi=MWhoMXRhNTBhc29tdQ==",
+        email: "alexandru.precub@osutcluj.com"
+    },
+    {
+        photo: "/assets/images/images/bce/ArmeanAndrei.webp",
+        lastName: "Armean",
+        firstName: "Andrei",
+        role: "Coordonator Sport și Sănătate",
+        fbLink: "https://www.facebook.com/profile.php?id=100083719936978",
+        igLink: "https://www.instagram.com/andrei.armean/",
+        email: "andrei.armean@osutcluj.com"
+    },
+    {
+        photo: "/assets/images/images/bce/SofinetiPatrick.webp",
+        lastName: "Sofineti",
+        firstName: "Patrick",
+        role: "Coordonator Tineret",
+        fbLink: "https://www.facebook.com/patrick.sofineti01/",
+        igLink: "https://www.instagram.com/patrikutzz?igsi=2Myb2FxaWFsbWQ=",
+        email: "patrick.sofineti@osutcluj.com"
+    }
 ];
 
 const SERVICII: TeamMember[] = [
-    { photo: "/assets/images/images/bce/CosminIrimiciuc.webp", lastName: "Irimiciuc", firstName: "Cosmin", role: "Coordonator Financiar", fbLink: "https://www.facebook.com/cosmin.irimiciuc", igLink: "https://www.instagram.com/cosmin.irimiciuc/", inLink: "https://www.linkedin.com/in/cosmin-irimiciuc-23442b357/", email: "cosmin.irimiciuc@osutcluj.com" },
-    { photo: "/assets/images/images/bce/TimeaPal.webp", lastName: "Pal", firstName: "Timea", role: "Coordonator Imagine", fbLink: "https://www.facebook.com/timea.pal.948", igLink: "https://www.instagram.com/timiii.p/", inLink: "https://www.linkedin.com/in/timea-pal-5101b4398/", email: "timea.pal@osutcluj.com" },
-    { photo: "/assets/images/images/bce/TudorCos.webp", lastName: "Coș", firstName: "Tudor", role: "Coordonator IT", fbLink: "https://www.facebook.com/tudor.cos.5", igLink: "https://www.instagram.com/tudor._.cos/", inLink: "https://www.linkedin.com/in/tudor-co%C8%99-958490224/", email: "tudor.cos@osutcluj.com" },
-    { photo: "/assets/images/images/bce/MarianIauta.webp", lastName: "Iaută", firstName: "Marian", role: "Coordonator Media", fbLink: "https://www.facebook.com/marian.iauta.5", igLink: "https://www.instagram.com/marianiauta/", email: "marian.iauta@osutcluj.com" },
-    { photo: "/assets/images/images/bce/RobertoSpuma.webp", lastName: "Spumă", firstName: "Roberto", role: "Coordonator Tehnic-Administrativ", fbLink: "https://www.facebook.com/roberto.spuma.1", igLink: "https://www.instagram.com/roberto._.sp/", email: "roberto.spuma@osutcluj.com" },
+    {
+        photo: "/assets/images/images/bce/DenisDumitrean.webp",
+        lastName: "Dumitrean",
+        firstName: "Denis",
+        role: "Coordonator Financiar",
+        fbLink: "https://www.facebook.com/share/18PSbh7ZyX/",
+        igLink: "https://www.instagram.com/denis._071?igsi=MWVtejAwYTJ0eTNqeQ==",
+        email: "denis.dumitrean@osutcluj.com"
+    },
+    {
+        photo: "/assets/images/images/bce/IonutIspir.webp",
+        lastName: "Ispir-Boltea",
+        firstName: "Ionuț",
+        role: "Coordonator Imagine",
+        fbLink: "https://www.facebook.com/share/1GVnB6A2Hf/",
+        igLink: "https://www.instagram.com/_ionut_130?igsi=MXNhcndoMnJsczBreQ==",
+        inLink: "https://www.linkedin.com/in/ionut-boltea-105922430?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+        email: "ionut.ispir@osutcluj.com"
+    },
+    {
+        photo: "/assets/images/images/bce/IonutDomniteanu.webp",
+        lastName: "Domnițeanu",
+        firstName: "Ionuț",
+        role: "Coordonator IT",
+        fbLink: "https://www.facebook.com/ionut.domniteanu.583",
+        igLink: "https://www.instagram.com/ionut.dom/",
+        inLink: "https://www.linkedin.com/in/domniteanu-ioan-12991821a",
+        email: "ionut.domniteanu@osutcluj.com"
+    },
+    {
+        photo: "/assets/images/images/bce/PavelOctavian.webp",
+        lastName: "Pavel",
+        firstName: "Octavian",
+        role: "Coordonator Media",
+        fbLink: "https://www.facebook.com/share/1Kbr4t5Yct/",
+        igLink: "https://www.instagram.com/_octavian.p_?igsi=cnEyZjRrc3hwbDli",
+        email: "octavian.pavel@osutcluj.com"
+    },
+    {
+        photo: "/assets/images/images/bce/RobertLuta.webp",
+        lastName: "Luța",
+        firstName: "Robert",
+        role: "Coordonator PR",
+        fbLink: "https://www.facebook.com/robert.luta.1#",
+        igLink: "https://www.instagram.com/robert._l00/",
+        email: "robert.luta@osutcluj.com"
+    },
+    {
+        photo: "/assets/images/images/bce/CalinSecara.webp",
+        lastName: "Secară",
+        firstName: "Călin",
+        role: "Coordonator Tehnic-Administrativ",
+        fbLink: "https://www.facebook.com/share/19V15dvhiM/?mibextid=wwXIfr",
+        igLink: "https://www.instagram.com/secaracalin?igsi=MXF3MDY1Z25veWdobA%3D%3D&utm_source=qr",
+        email: "secara.calin@osutcluj.com"
+    }
 ];
 
 const PROIECTE: TeamMember[] = [
-    { photo: "/assets/images/images/bce/CalinSecara.webp", lastName: "Secară", firstName: "Călin", role: "Coordonator Engineering Summer University", fbLink: "https://www.facebook.com/profile.php?id=100005923397549", igLink: "https://www.instagram.com/secaracalin/", email: "calin.secara@osutcluj.com" },
-    { photo: "/assets/images/images/bce/JessicaSuciu.webp", lastName: "Suciu", firstName: "Jessica", role: "Coordonator Gala Aniversară", fbLink: "https://www.facebook.com/suciu.jessica", igLink: "https://www.instagram.com/jessi_suciu/", email: "jessica.suciu@osutcluj.com" },
-    { photo: "/assets/images/images/bce/GeorgianaMurariu.webp", lastName: "Murariu", firstName: "Georgiana", role: "Coordonator InfoTech", fbLink: "https://www.facebook.com/profile.php?id=100009081565180", igLink: "https://www.instagram.com/georgiamurariu/?ref=osut.org", inLink: "https://www.linkedin.com/in/georgiana-roxana-murariu-aa7272271/", email: "georgiana.murariu@osutcluj.com" },
-    { photo: "/assets/images/images/bce/IulianChirila.webp", lastName: "Chirilă", firstName: "Iulian", role: "Coordonator PoliHack", fbLink: "https://www.facebook.com/profile.php?id=100084863419146", igLink: "https://www.instagram.com/c.iulian08/", inLink: "https://www.linkedin.com/in/iulian-chirila-8b9704241/", email: "iulian.chirila@osutcluj.com" },
-    { photo: "/assets/images/images/bce/AndaSanteiu.webp", lastName: "Santeiu", firstName: "Anda", role: "Coordonator Viitor Inginer", fbLink: "https://www.facebook.com/anda.santeiu.7", igLink: "https://www.instagram.com/anda._.santeiu/", inLink: "https://www.linkedin.com/in/anda-stefana-santeiu-479930239/", email: "anda.santeiu@osutcluj.com" },
+    {
+        photo: "/assets/images/images/bce/CirtitaBianca.webp",
+        lastName: "Cîrtiță",
+        firstName: "Bianca",
+        role: "Coordonator Balul Bobocilor",
+        fbLink: "https://www.facebook.com/share/18SNsUDHGC/?mibextid=wwXIfr",
+        igLink: "https://www.instagram.com/bianca_cirtita?igsi=MXFpa2hrY2szMXExZA%3D%3D&utm_source=qr",
+        email: "bianca.cirtita@osutcluj.com"
+    },
+    {
+        photo: "/assets/images/images/bce/DianaZinici.webp",
+        lastName: "Zinici",
+        firstName: "Diana",
+        role: "Coordonator InfoTech",
+        fbLink: "https://www.facebook.com/share/1EkzYnRmvK/?mibextid=wwXIfr",
+        igLink: "https://www.instagram.com/diana._.zinici?igsi=ZmkyNWw4OGtieGdy&utm_source=qr",
+        email: "diana.zinici@osutcluj.com"
+    },
+    {
+        photo: "/assets/images/images/bce/BeldeanIoana.webp",
+        lastName: "Beldean",
+        firstName: "Ioana",
+        role: "Coordonator PoliHack",
+        fbLink: "https://www.facebook.com/share/1JNZKZ2b7k/?mibextid=wwXIfr",
+        igLink: "https://www.instagram.com/beldeaan?igsi=MTloODJheTVnZHpxMA%3D%3D&utm_source=qr",
+        inLink: "https://ro.linkedin.com/in/ioana-beldean-0b33a5338",
+        email: "ioana.beldean@osutcluj.com"
+    },
+    {
+        photo: "/assets/images/images/bce/ZagoniMario.webp",
+        lastName: "Zagoni",
+        firstName: "Cristopher Mario",
+        role: "Coordonator Viitor Inginer",
+        fbLink: "https://www.facebook.com/mario.zagoni",
+        igLink: "https://www.instagram.com/mario_zagoni/?hl=en",
+        email: "mario.zagoni@osutcluj.com"
+    }
 ];
 
 export default function BiroulDeConducereExtins() {
