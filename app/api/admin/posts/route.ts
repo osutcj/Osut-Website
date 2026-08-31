@@ -5,6 +5,8 @@ import { put } from "@vercel/blob";
 import { getPosts, savePosts, deleteImage, Post } from "@/lib/posts";
 import sharp from "sharp";
 
+export const dynamic = "force-dynamic";
+
 // Password MUST be provided via environment variable
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 
@@ -45,10 +47,14 @@ export async function POST(req: Request) {
     if (file && file.size > 0) {
       const bytes = await file.arrayBuffer();
       const buffer = Buffer.from(bytes);
-      const webpBuffer = await sharp(buffer).webp().toBuffer();
+      const webpBuffer = await sharp(buffer)
+        .resize({ width: 1600, height: 1600, fit: "inside", withoutEnlargement: true })
+        .webp({ quality: 82 })
+        .toBuffer();
 
+      const cleanName = path.parse(file.name || "image").name.replace(/[^a-zA-Z0-9_-]/g, "_") || "image";
       if (process.env.BLOB_READ_WRITE_TOKEN) {
-        const filename = `${Date.now()}-${path.parse(file.name).name}.webp`;
+        const filename = `${Date.now()}-${cleanName}.webp`;
         const blob = await put(`posts/${filename}`, webpBuffer, {
           access: "public",
         });
@@ -124,19 +130,25 @@ export async function PUT(req: Request) {
       let newImageUrl = "";
       const bytes = await file.arrayBuffer();
       const buffer = Buffer.from(bytes);
-      const webpBuffer = await sharp(buffer).webp().toBuffer();
+      const webpBuffer = await sharp(buffer)
+        .resize({ width: 1600, height: 1600, fit: "inside", withoutEnlargement: true })
+        .webp({ quality: 82 })
+        .toBuffer();
 
+      const cleanName = path.parse(file.name || "image").name.replace(/[^a-zA-Z0-9_-]/g, "_") || "image";
       if (process.env.BLOB_READ_WRITE_TOKEN) {
-        const filename = `${Date.now()}-${path.parse(file.name).name}.webp`;
+        const filename = `${Date.now()}-${cleanName}.webp`;
         const blob = await put(`posts/${filename}`, webpBuffer, {
           access: "public",
         });
         newImageUrl = blob.url;
       } else {
-        const filename = `post-${Date.now()}.webp`;
+        const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
+        const filename = `post-${uniqueSuffix}.webp`;
         const uploadDir = path.join(process.cwd(), "public", "assets", "uploads");
         try { await fs.access(uploadDir); } catch { await fs.mkdir(uploadDir, { recursive: true }); }
-        await fs.writeFile(path.join(uploadDir, filename), webpBuffer);
+        const filePath = path.join(uploadDir, filename);
+        await fs.writeFile(filePath, webpBuffer);
         newImageUrl = `/assets/uploads/${filename}`;
       }
 

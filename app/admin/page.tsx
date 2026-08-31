@@ -45,6 +45,71 @@ function renderContent(text: string): React.ReactNode[] {
   return parts;
 }
 
+/**
+ * Compresses and resizes an image file in the browser using HTML5 Canvas.
+ * Limits maximum dimensions to 1600x1600 while preserving aspect ratio,
+ * and encodes to WebP format with quality 0.82.
+ */
+async function compressImageFile(file: File, maxWidth = 1600, maxHeight = 1600, quality = 0.82): Promise<File> {
+  if (!file.type.startsWith("image/") || file.type === "image/svg+xml" || file.type === "image/gif") {
+    return file;
+  }
+
+  return new Promise((resolve) => {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const img = document.createElement("img");
+      img.onload = () => {
+        let { width, height } = img;
+
+        if (width > maxWidth || height > maxHeight) {
+          if (width / height > maxWidth / maxHeight) {
+            height = Math.round((height * maxWidth) / width);
+            width = maxWidth;
+          } else {
+            width = Math.round((width * maxHeight) / height);
+            height = maxHeight;
+          }
+        }
+
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        const ctx = canvas.getContext("2d");
+        if (!ctx) {
+          resolve(file);
+          return;
+        }
+
+        ctx.drawImage(img, 0, 0, width, height);
+
+        canvas.toBlob(
+          (blob) => {
+            if (!blob) {
+              resolve(file);
+              return;
+            }
+            const cleanBaseName = file.name.replace(/\.[^/.]+$/, "").replace(/[^a-zA-Z0-9_-]/g, "_") || "image";
+            const compressedFile = new File([blob], `${cleanBaseName}.webp`, {
+              type: "image/webp",
+              lastModified: Date.now(),
+            });
+            resolve(compressedFile);
+          },
+          "image/webp",
+          quality
+        );
+      };
+
+      img.onerror = () => resolve(file);
+      img.src = e.target?.result as string;
+    };
+
+    reader.onerror = () => resolve(file);
+    reader.readAsDataURL(file);
+  });
+}
+
 export default function AdminDashboard() {
   const [password, setPassword] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -56,6 +121,7 @@ export default function AdminDashboard() {
   const [displayDate, setDisplayDate] = useState(new Date().toISOString().split('T')[0]); // Default to today
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);
+  const [isCompressing, setIsCompressing] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const [editingId, setEditingId] = useState<number | null>(null);
   const [deletingId, setDeletingId] = useState<number | null>(null);
@@ -87,8 +153,10 @@ export default function AdminDashboard() {
       if (res.ok) {
         setIsAuthenticated(true);
         fetchPosts();
-      } else {
+      } else if (res.status === 401) {
         setErrorMsg("Parolă incorectă! Acces refuzat.");
+      } else {
+        setErrorMsg(`Eroare de autentificare (${res.status}).`);
       }
     } catch {
       setErrorMsg("Eroare de conexiune la server.");
@@ -109,6 +177,32 @@ export default function AdminDashboard() {
         }
       })
       .catch((err) => console.error("Error fetching posts:", err));
+  };
+
+  const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const selected = e.target.files ? e.target.files[0] : null;
+    if (!selected) {
+      setImageFile(null);
+      return;
+    }
+
+    if (selected.size > 25 * 1024 * 1024) {
+      setErrorMsg("Imaginea selectată este prea mare (peste 25MB). Te rugăm să alegi o imagine mai mică.");
+      e.target.value = "";
+      setImageFile(null);
+      return;
+    }
+
+    setErrorMsg("");
+    setIsCompressing(true);
+    try {
+      const compressed = await compressImageFile(selected);
+      setImageFile(compressed);
+    } catch {
+      setImageFile(selected);
+    } finally {
+      setIsCompressing(false);
+    }
   };
 
   const handleAddPost = async (e?: React.FormEvent) => {
@@ -141,6 +235,16 @@ export default function AdminDashboard() {
     setErrorMsg("");
 
     try {
+      let finalImageFile = imageFile;
+      if (finalImageFile) {
+        finalImageFile = await compressImageFile(finalImageFile);
+        if (finalImageFile.size > 4 * 1024 * 1024) {
+          setErrorMsg("Imaginea este prea mare pentru încărcare (peste 4MB). Te rugăm să alegi o imagine mai mică.");
+          setLoading(false);
+          return;
+        }
+      }
+
       const formData = new FormData();
       formData.append("title", title);
       formData.append("content", content);
@@ -150,8 +254,8 @@ export default function AdminDashboard() {
         formData.append("id", String(editingId));
       }
 
-      if (imageFile) {
-         formData.append("image", imageFile);
+      if (finalImageFile) {
+        formData.append("image", finalImageFile);
       }
 
       const res = await fetch("/api/admin/posts", {
@@ -162,26 +266,42 @@ export default function AdminDashboard() {
         body: formData,
       });
 
-      const data = await res.json();
       if (!res.ok) {
-        setErrorMsg(data.error || "Eroare la salvare.");
-      } else {
-        // Clear inputs on success and grab updated database list
-        setTitle("");
-        setContent("");
-        setDisplayDate(new Date().toISOString().split('T')[0]);
-        setImageFile(null);
-        setEditingId(null);
-        setShowPreview(false);
-        setPreviewImageUrl(null);
-        fetchPosts(); 
-        showToast("Postarea a fost salvată cu succes! Modificările vor fi vizibile peste câteva secunde.");
-        
-        // Reset file input in DOM
-        const fileInput = document.getElementById("imageUpload") as HTMLInputElement;
-        if (fileInput) fileInput.value = "";
+        if (res.status === 413) {
+          setErrorMsg("Fișierul trimis depășește limita serverului (Content Too Large). Te rugăm să alegi o imagine cu dimensiuni mai mici.");
+        } else if (res.status === 401) {
+          setErrorMsg("Neautorizat! Parolă incorectă sau sesiune expirată.");
+        } else {
+          try {
+            const data = await res.json();
+            setErrorMsg(data.error || `Eroare server (${res.status})`);
+          } catch {
+            setErrorMsg(`Eroare la salvare de pe server (Status: ${res.status}).`);
+          }
+        }
+        return;
       }
-    } catch {
+
+      await res.json();
+      // Clear inputs on success and grab updated database list
+      setTitle("");
+      setContent("");
+      setDisplayDate(new Date().toISOString().split('T')[0]);
+      setImageFile(null);
+      setEditingId(null);
+      setShowPreview(false);
+      if (previewImageUrl && previewImageUrl.startsWith("blob:")) {
+        URL.revokeObjectURL(previewImageUrl);
+      }
+      setPreviewImageUrl(null);
+      fetchPosts(); 
+      showToast("Postarea a fost salvată cu succes! Modificările vor fi vizibile.");
+      
+      // Reset file input in DOM
+      const fileInput = document.getElementById("imageUpload") as HTMLInputElement;
+      if (fileInput) fileInput.value = "";
+    } catch (err) {
+      console.error("Error saving post:", err);
       setErrorMsg("Eroare de rețea. Verifică conexiunea.");
     } finally {
       setLoading(false);
@@ -201,6 +321,9 @@ export default function AdminDashboard() {
     setEditingId(post.id);
     setTitle(post.title);
     setContent(post.content);
+    setImageFile(null);
+    const fileInput = document.getElementById("imageUpload") as HTMLInputElement;
+    if (fileInput) fileInput.value = "";
     
     // Format date for the input (YYYY-MM-DD)
     if (post.createdAt) {
@@ -232,9 +355,15 @@ export default function AdminDashboard() {
         showToast("Postarea a fost ștearsă cu succes!");
         fetchPosts(); 
       } else {
-        const data = await res.json();
+        let errText = "Eroare la ștergere.";
+        try {
+          const data = await res.json();
+          if (data.error) errText = data.error;
+        } catch {
+          errText = `Eroare la ștergere (${res.status})`;
+        }
         setPosts(previousPosts); // Rollback
-        showToast(data.error || "Eroare la ștergere.", "error");
+        showToast(errText, "error");
       }
     } catch {
       setPosts(previousPosts); // Rollback
@@ -443,14 +572,21 @@ export default function AdminDashboard() {
               </div>
 
               <div>
-                <label className="block text-gray-400 mb-2 text-sm font-medium">Imagine*</label>
+                <label className="block text-gray-400 mb-2 text-sm font-medium">
+                  {editingId ? "Imagine (opțional)" : "Imagine"}
+                </label>
                 <input
                   type="file"
                   id="imageUpload"
                   accept="image/*"
-                  onChange={(e) => setImageFile(e.target.files ? e.target.files[0] : null)}
+                  onChange={handleImageChange}
                   className="w-full px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-red-500 transition-colors file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-sm file:font-semibold file:bg-red-600/20 file:text-red-400 hover:file:bg-red-600/30 file:cursor-pointer"
                 />
+                {isCompressing && (
+                  <p className="text-xs text-yellow-400 mt-1.5 animate-pulse">
+                    Se optimizează imaginea...
+                  </p>
+                )}
               </div>
               
               <div>
@@ -479,10 +615,10 @@ export default function AdminDashboard() {
 
               <button
                 type="submit"
-                disabled={loading}
+                disabled={loading || isCompressing}
                 className={`w-full text-white font-bold py-3.5 rounded-xl transition-all disabled:opacity-50 mt-2 shadow-lg active:scale-[0.98] ${editingId ? 'bg-orange-600 hover:bg-orange-700 shadow-orange-600/20' : 'bg-red-600 hover:bg-red-700 shadow-red-600/20'}`}
               >
-                {loading ? "Se salvează în DB..." : (editingId ? "Vezi Previzualizarea Modificărilor" : "Vezi Previzualizarea")}
+                {isCompressing ? "Se optimizează imaginea..." : loading ? "Se salvează în DB..." : (editingId ? "Vezi Previzualizarea Modificărilor" : "Vezi Previzualizarea")}
               </button>
               {editingId && (
                 <button

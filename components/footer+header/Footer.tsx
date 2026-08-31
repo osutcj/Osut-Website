@@ -77,12 +77,14 @@ export default function Footer() {
                 Cum devin voluntar OSUT Cluj?
               </Link>
               {/* Link spre pagina cu detalii credite SAU un document */}
-              <Link
+              <a
                 href="/assets/pdf/Regulament credite voluntariat.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-sm text-zinc-400 hover:text-white transition"
               >
                 Credite de voluntariat
-              </Link>
+              </a>
             </div>
 
             {/* Resurse */}
